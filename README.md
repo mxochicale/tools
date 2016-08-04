@@ -1,20 +1,16 @@
+# My Scientific Tools Collection
 
-tools
-#####
-
-pomodoro_mx.sh   
-show a timer of 25 minutes and 5 minutes break creaing a beep sound.
-
-screenshoot_mx.sh  
-take a screenshot and then open gimp to resize the image
+> Miguel Xochicale <http://mxochicale.github.io>  
+> Doctoral Researcher in Human-Robot Interaction   
+> University of Birmingham, U.K. (2014-2017)
 
 
-Usage
-----
-Change the permissions to run the sh scripts using chmod +x *.sh, then for instance use the following commands:
+# TODO
+* create a main sh script that install all the previous tools
+* add R, GNU-Octave, blender, elan, supercollider using the following format:  
+	README.md  
+	INSTALLATION.md  
+	USAGE.md  
 
-	./pomodoro_mx.sh 3  
 
-	./screenshot_mx.sh
-
-
+	

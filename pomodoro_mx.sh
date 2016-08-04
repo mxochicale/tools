@@ -1,16 +1,18 @@
-#! /bin/sh 
+#! /bin/sh
 
-# how to use
-#./pomodoro_mx.sh number of pomodoros 
-# for instance
+# Change the permissions to run the sh scripts using chmod +x *.sh
+
+# show a timer of 25 minutes and 5 minutes break creating a beep sound after it finished.
+
+#./pomodoro_mx.sh _NUMBER_OF_POMODOROS_  ; for instance
 #./pomodoro_mx.sh 2
 
 
 #http://superuser.com/questions/611538/is-there-a-way-to-display-a-countdown-or-stopwatch-timer-in-a-terminal
 
 countdown(){
-   date1=$((`date +%s` + $1)); 
-   while [ "$date1" -ge `date +%s` ]; do 
+   date1=$((`date +%s` + $1));
+   while [ "$date1" -ge `date +%s` ]; do
      echo "  *** RESEARCH ***  " "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)  ** RESEARCH *** ";
      sleep 1
    done
@@ -18,8 +20,8 @@ countdown(){
 
 
 countdownbreak(){
-   date1=$((`date +%s` + $1)); 
-   while [ "$date1" -ge `date +%s` ]; do 
+   date1=$((`date +%s` + $1));
+   while [ "$date1" -ge `date +%s` ]; do
      echo "  >>>  BREAK  <<<  " "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 1
    done
@@ -45,8 +47,8 @@ _alarm() {
 #http://superuser.com/questions/224265/pomodoro-timer-for-linux
 
 
-#sleep 1 && _alarm 400 500 &&  zenity --warning --text="25 minutes passed"  
-#sleep 10 && _alarm 400 500 &&  notify-send "break"; 
+#sleep 1 && _alarm 400 500 &&  zenity --warning --text="25 minutes passed"
+#sleep 10 && _alarm 400 500 &&  notify-send "break";
 #sleep 5 && _alarm 400 500 && notify-send "back to work"
 
 
@@ -59,10 +61,7 @@ for k in `seq 1 $max`
 do
     echo "$k"
     echo ">>>>>>>>>>>>> 25 min <<<<<<<<<<<<<"
-    countdown 1500 && _alarm 400 900 &&  notify-send "BREAK";  
+    countdown 1500 && _alarm 400 900 &&  notify-send "BREAK";
     echo ">>>>>>>>>>>>> 5 min <<<<<<<<<<<<<"
-    countdownbreak 310 && _alarm 400 900 &&  notify-send "BACK TO RESEARCH"; 
+    countdownbreak 310 && _alarm 400 900 &&  notify-send "BACK TO RESEARCH";
 done
-
-
-
