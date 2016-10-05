@@ -1,4 +1,4 @@
-# My Scientific Tools Collection
+# My Collection Of Scientific Tools
 
 > Miguel Xochicale <http://mxochicale.github.io>  
 > Doctoral Researcher in Human-Robot Interaction   
@@ -11,6 +11,3 @@
 	README.md  
 	INSTALLATION.md  
 	USAGE.md  
-
-
-	
