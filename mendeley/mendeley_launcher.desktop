@@ -1,0 +1,19 @@
+# Miguel Xochicale <http://mxochicale.github.io/>
+
+[Desktop Entry]
+Name=Mendeley
+Comment=
+Terminal=false
+Type=Application
+Categories=
+
+#Exec=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.15-linux-x86_64/bin/./mendeleydesktop
+#Icon=/home/map479-admin/mxochicale/mendeley/launcher_conf_files/mendeley_icon.png
+#Exec=/home/map479-admin/.mendeleydesktop//mendeleydesktop-1.16-dev2-linux-x86_64/bin/./mendeleydesktop
+#Icon=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.16-dev2-linux-x86_64/share/icons/hicolor/128x128/apps/mendeleydesktop.png
+#Exec=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.16.1-linux-x86_64/bin/./mendeleydesktop
+#Icon=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.16.1-linux-x86_64/share/icons/hicolor/128x128/apps/mendeleydesktop.png
+#Exec=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.17-dev2-linux-x86_64/bin/./mendeleydesktop
+#Icon=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.17-dev2-linux-x86_64/share/icons/hicolor/128x128/apps/mendeleydesktop.png
+Exec=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.17-dev5-linux-x86_64/bin/./mendeleydesktop
+Icon=/home/map479-admin/.mendeleydesktop/mendeleydesktop-1.17-dev5-linux-x86_64/share/icons/hicolor/128x128/apps/mendeleydesktop.png
