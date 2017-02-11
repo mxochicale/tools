@@ -1,3 +1,6 @@
+Installation of openshot
+--
+
 
 ```
 sudo apt-get update
