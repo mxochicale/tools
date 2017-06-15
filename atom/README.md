@@ -6,7 +6,7 @@
 1. Download atom-amd64.deb from the Atom releases page.
 ```
 cd && mkdir -p .atomtmp && cd .atomtmp
-wget https://github.com/atom/atom/releases/download/v1.16.0/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.18.0/atom-amd64.deb
 ```
 2. Run sudo dpkg --install atom-amd64.deb on the downloaded package.
 ```
