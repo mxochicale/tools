@@ -1,5 +1,8 @@
 # [Installation/Update of Atom in debian-linux-ubuntu](https://github.com/atom/atom#debian-linux-ubuntu)
 
+
+Make sure that you install GitHub and its dependencies.
+
 1. Download atom-amd64.deb from the [Atom releases page](https://github.com/atom/atom/releases).
 ```
 cd && mkdir -p .atomtmp && cd .atomtmp
@@ -32,41 +35,36 @@ Processing triggers for mime-support (3.54ubuntu1.1) ...
 ```
 cd && rm -rf .atomtmp
 ```
-3. Launch Atom using the installed atom command.
+
+
+# spell-check Settings
+
+
+```
+sudo apt-get install hunspell-en-gb
+```
+
+
+## Grammar
+For spell check using latex, you  have to add the scope name ["text.tex.latex"]
+to the list of grammars that the spell check package checks. Such grammar options
+are into the settings of the spell-check package.
+[How to enable spell checking for another language](https://discuss.atom.io/t/how-to-enable-spell-checking-for-another-language/4895/4)
+
+
+## Locales
+en-GB
+
+## Locale Paths
+/usr/share/hunspell
 
 
 
-# List of Useful Atom Packages
+
+
+# Atom Packages
 
 - Markdown Preview  
 - Terminal plus: A terminal package for Atom, complete with themes and more.  
 - language-r: A language description and snippets for R  
 - split-diff: Diffs text between two split panes.
-
-
-
-## ISSUES
-
-The following issue is because the machine has not been updated neither upgraded.
-```
-$ sudo dpkg --install atom-amd64.deb
-[sudo] password for map479:
-Selecting previously unselected package atom.
-(Reading database ... 238644 files and directories currently installed.)
-Preparing to unpack atom-amd64.deb ...
-Unpacking atom (1.18.0) ...
-dpkg: dependency problems prevent configuration of atom:
- atom depends on git; however:
-  Package git is not installed.
-
-dpkg: error processing package atom (--install):
- dependency problems - leaving unconfigured
-Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
-Processing triggers for desktop-file-utils (0.22-1ubuntu5) ...
-Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20160701-0ubuntu1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for mime-support (3.59ubuntu1) ...
-Errors were encountered while processing:
- atom
-```
-However, it works!
