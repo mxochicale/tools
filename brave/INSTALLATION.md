@@ -1,10 +1,6 @@
 
 
-[Linux Installation](https://github.com/brave/browser-laptop/blob/master/docs/linuxInstall.md)
-
-
-# To install brave using apt and lsb_release :
-
+# Installation of brave using apt and lsb_release :
 
 ```
 curl https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
@@ -15,3 +11,8 @@ echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release
 sudo apt update
 sudo apt install brave
 ```
+
+
+# References:
+[Linux Installation](https://github.com/brave/browser-laptop/blob/master/docs/linuxInstall.md)
+
