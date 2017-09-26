@@ -57,5 +57,10 @@ go to the installation directory "/home/map479/tmp/anvil/installation"
 ```
 Then, ANVIL's main window should come up.
 
-
 http://www.anvil-software.org/download/index.html
+
+
+
+# Video Tutorials
+
+https://www.youtube.com/playlist?list=PLglgr37NjmD4xdeupyXs8fSdINs49vLvs
