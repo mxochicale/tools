@@ -1,33 +1,35 @@
 # [Installation/Update of Atom in debian-linux-ubuntu](https://github.com/atom/atom#debian-linux-ubuntu)
 
 
-Make sure that you install GitHub and its dependencies.
+Before the installation of atom, make sure that you install GitHub and its dependencies.
 
 1. Download atom-amd64.deb from the [Atom releases page](https://github.com/atom/atom/releases).
 ```
 cd && mkdir -p .atomtmp && cd .atomtmp
-wget https://github.com/atom/atom/releases/download/v1.19.0-beta7/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.23.0-beta1/atom-amd64.deb
 ```
 2. Run sudo dpkg --install atom-amd64.deb on the downloaded package.
-NB. To avoid any issue in the installation, you have to "sudo apt-get update" and "sudo apt-get upgrade" your machine
+NB. To avoid any issue in the installation, you have to "sudo apt-get update" and 
+"sudo apt-get upgrade" your machine, specially if the OS of machine has been recently
+installed.
+
 ```
 sudo dpkg --install atom-amd64.deb
 ```
 
-OUTPUT
+TERMINAL OUTPUT
 ```
 $ sudo dpkg --install atom-amd64.deb
-[sudo] password for map479-admin:
-Selecting previously unselected package atom-beta.
-(Reading database ... 344309 files and directories currently installed.)
+[sudo] password for map479: 
+(Reading database ... 699706 files and directories currently installed.)
 Preparing to unpack atom-amd64.deb ...
-Unpacking atom-beta (1.19.0-beta7) ...
-Setting up atom-beta (1.19.0-beta7) ...
-Processing triggers for gnome-menus (3.10.1-0ubuntu2) ...
-Processing triggers for desktop-file-utils (0.22-1ubuntu1) ...
-Processing triggers for bamfdaemon (0.5.1+14.04.20140409-0ubuntu1) ...
+Unpacking atom-beta (1.23.0-beta1) over (1.19.0-beta7) ...
+Setting up atom-beta (1.23.0-beta1) ...
+Processing triggers for desktop-file-utils (0.22-1ubuntu5.1) ...
+Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20160824-0ubuntu1) ...
 Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for mime-support (3.54ubuntu1.1) ...
+Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
 ```
 
 
@@ -37,7 +39,7 @@ cd && rm -rf .atomtmp
 ```
 
 
-# spell-check Settings
+# Setting up the spell-check
 
 
 ```
