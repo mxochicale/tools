@@ -48,10 +48,12 @@ sudo apt-get install hunspell-en-gb
 
 
 ## Grammar
-For spell check using latex, you  have to add the scope name ["text.tex.latex"]
+* For spell check using latex, you  have to add the scope name ["text.tex.latex"]
 to the list of grammars that the spell check package checks. Such grammar options
 are into the settings of the spell-check package.
 [How to enable spell checking for another language](https://discuss.atom.io/t/how-to-enable-spell-checking-for-another-language/4895/4)
+
+* For spell check in html code, you have to add the scope name "text.html.basic". [source](https://atom.io/packages/spell-check)
 
 
 ## Locales
