@@ -4,7 +4,7 @@
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
 
-# Other list of tools that I use as repositories
+# These are other tools that I am also familiar with:
 * [R](https://github.com/mxochicale/r-code_repository) is a language and environment for statistical computing and graphics.
 * [python](https://github.com/mxochicale/python)  is powerful... and fast;  plays well with others;  runs everywhere;  is friendly & easy to learn;  is Open.
 * [LaTeX](https://github.com/mxochicale/LaTeX) «Lay-tech» is a document preparation
