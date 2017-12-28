@@ -1,8 +1,7 @@
+Kdenlive | Libre Video Editor [website](https://kdenlive.org/)
+---
 
-Installation on Ubuntu 1604x64
-
-
-
+# Installation on Ubuntu 1604x64
 ```
 sudo apt-add-repository ppa:kdenlive/kdenlive-stable && sudo apt-get update
 sudo apt-get install kdenlive
