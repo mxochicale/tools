@@ -29,6 +29,9 @@ References: [ref1](https://www.linux.com/learn/using-spell-checking-vim),
 ## copy text to the systen clipboard
 Add "set clipboard=unnamedplus" to ~/.vimrc then
 you can use "yy" in vim to copy text to the clibboard 
+```
+clipboard=unnamedplus
+```
 
 ## display line numbers
 ```
@@ -54,6 +57,16 @@ so to get out of it press "Ctrl+q"
 ## Cheat Sheet
 
 [Cheat Sheet](http://overapi.com/static/cs/vim-cheat-sheet-full.png)
+
+
+### multiple windows
+
+* :vsplit file -- vertical split [ref](https://www.cs.oberlin.edu/~kuperman/help/vim/windows.html)
+
+### Navigating splits
+* Ctrl-W w -- move cursor to other window [ref](http://vim.wikia.com/wiki/Buffers) 
+* Ctrl-W hjkl -- Use Ctrl-W followed by one of the hjkl movement keys [ref](http://vim.wikia.com/wiki/Buffers) 
+
 
 
 
