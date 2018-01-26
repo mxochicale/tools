@@ -1,7 +1,9 @@
 VIM (V IMproved) text editor 
 ---
 
-[About](https://vim.sourceforge.io/about.php)
+VIM is a highly configurable text editor built to enable efficient text editing. Learn more [here](https://vim.sourceforge.io/about.php)
+![General Overview of VIM](https://vim.sourceforge.io/images/0xbabaf000l.png)
+
 
 
 # Installing Vim0.8
@@ -40,6 +42,7 @@ set nonumber "to use no number
 ```
 
 ## Colours
+
 ```
 colo peachpuff
 syntax on
@@ -48,6 +51,7 @@ syntax on
 [ref](https://alvinalexander.com/linux/vi-vim-editor-color-scheme-colorscheme)
 
 ## Stuck in the insert mode
+
 You might accidentally hit "Ctrl+s" and got stuck in the insert mode, 
 so to get out of it press "Ctrl+q"
 [Source](https://superuser.com/questions/129900/vim-stuck-in-insert-mode)
@@ -67,10 +71,20 @@ so to get out of it press "Ctrl+q"
 * Ctrl-W w -- move cursor to other window [ref](http://vim.wikia.com/wiki/Buffers) 
 * Ctrl-W hjkl -- Use Ctrl-W followed by one of the hjkl movement keys [ref](http://vim.wikia.com/wiki/Buffers) 
 
+## Basic search and replace
 
+Change each 'foo' to 'bar', but ask for confirmation first [ref](http://vim.wikia.com/wiki/Search_and_replace)
+```
+:%s/foo/bar/gc
+```
 
+## Insert C++ or Latex or other comments
 
-# TODO
-- [ ] Learn how to create multiple windows in VIM
+Select visually the block or text (using v key), press ':' for entering a vim command [ref](http://vim.wikia.com/wiki/Insert_C%2B%2B_or_LaTeX_or_other_comments_easily).
+For latex comments, the whole command then looks like:
+```
+:'<,'>s/%/
+```
+
 
 
