@@ -6,8 +6,15 @@ VIM is a highly configurable text editor built to enable efficient text editing.
 
 
 
-# Installing Vim0.8
 
+# Installing Vim0.8
+* In Ubuntu 18.04
+```
+sudo apt update
+sudo apt install vim vim-gtk
+```
+
+* In Ubuntu 16.04
 ```
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
@@ -56,6 +63,11 @@ You might accidentally hit "Ctrl+s" and got stuck in the insert mode,
 so to get out of it press "Ctrl+q"
 [Source](https://superuser.com/questions/129900/vim-stuck-in-insert-mode)
 
+
+## `cp .vimrc to ~/`
+```
+cp .vimrc ~/
+```
 
 
 ## Cheat Sheet
