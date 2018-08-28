@@ -6,9 +6,7 @@ Brave Installation
 
 ```
 sudo echo
-
-curl https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
-
+wget -qO - https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-`lsb_release -sc`.list
 
 ```
@@ -35,7 +33,7 @@ Reported [issue](https://github.com/brave/browser-laptop/issues/13861) on its in
 
 ```
 wget -qO - https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt xenial main"
+echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-`lsb_release -sc`.list
 sudo apt update
 sudo apt install brave
 ```
