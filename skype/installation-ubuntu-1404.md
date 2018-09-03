@@ -1,5 +1,22 @@
 
 
+# latest version from website for All Ubuntu releases as of July 2017
+
+```
+wget https://repo.skype.com/latest/skypeforlinux-64.deb
+sudo dpkg -i skypeforlinux-64.deb
+sudo apt install -f
+```
+
+ref https://askubuntu.com/questions/7498/how-do-i-install-skype
+
+
+Mon Sep  3 15:57:24 BST 2018
+
+
+
+
+# using softare and updates
 
 Open “Software & Updates” and enable Canonical partners repository under
 Other Software tab.
