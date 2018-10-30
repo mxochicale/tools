@@ -41,6 +41,7 @@ sudo apt install brave
 
 
 
+
 # General 
 
 ```
@@ -77,5 +78,45 @@ The following packages have unmet dependencies.
  linux-image-generic : Depends: linux-image-3.13.0-125-generic but it is not going to be installed
 E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).
 ```
+
+
+
+# ISSUES: Ubunut 12.04
+
+
+
+
+```
+sudo echo
+wget -qO - https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-`lsb_release -sc`.list
+
+grep lsb_release /etc/apt/sources.list.d/brave*
+`NOTHING`
+
+sudo apt-get update
+sudo apt-get install brave
+```
+
+
+
+```
+
+Ign https://s3-us-west-2.amazonaws.com precise/main Translation-en_US
+Ign https://s3-us-west-2.amazonaws.com precise/main Translation-en
+W: Failed to fetch https://s3-us-west-2.amazonaws.com/brave-apt/dists/precise/main/binary-amd64/Packages  
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+mapx@N55SL:~/github/scientificTOOLS/brave$ sudo apt-get install brave
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package brave
+mapx@N55SL:~/github/scientificTOOLS/brave$ w
+
+```
+
+
+
 
 
