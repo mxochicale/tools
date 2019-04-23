@@ -5,27 +5,23 @@ Brave Installation
 # Ubuntu 18.04 Bionic
 
 ```
-sudo echo
-wget -qO - https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
-echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-`lsb_release -sc`.list
-
-```
 
 
-* TIP, the following command should return empty if all went well:
-```
-grep lsb_release /etc/apt/sources.list.d/brave*
-```
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
+source /etc/os-release
 
-Finally, install Brave:
-```
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+
 sudo apt update
-sudo apt install brave
+
+sudo apt install brave-keyring brave-browser
+
+
 ```
 
-Reference [:link:](https://github.com/brave/browser-laptop/blob/master/docs/linuxInstall.md).
-Reported [issue](https://github.com/brave/browser-laptop/issues/13861) on its installation.
+Reference 
+https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
 
 
 
