@@ -1,4 +1,44 @@
 
+# Inkscape 0.92.4 (unknown) in Ubuntu 18.04 x64
+
+```
+sh install-inkscape-latestversion.sh 
+```
+
+
+
+```
+The following additional packages will be installed:
+  libatkmm-1.6-1v5 libblas3 libcairomm-1.0-1v5 libgfortran4 libglibmm-2.4-1v5
+  libgsl23 libgslcblas0 libgtkmm-2.4-1v5 libgtkspell0 libimage-magick-perl
+  libimage-magick-q16-perl liblapack3 libmagick++-6.q16-7 libpangomm-1.4-1v5
+  libpotrace0 libpython-stdlib libquadmath0 libsigc++-2.0-0v5 libvisio-0.1-1
+  libwmf-bin libwpd-0.10-10 libwpg-0.3-3 perlmagick python python-bs4
+  python-chardet python-html5lib python-lxml python-minimal python-numpy
+  python-pkg-resources python-scour python-six python-webencodings python2.7
+  python2.7-minimal python3-scour scour
+Suggested packages:
+  dia | dia-gnome libgnomevfs2-extra libsvg-perl libxml-xql-perl transfig
+  pstoedit gsl-ref-psdoc | gsl-doc-pdf | gsl-doc-info | gsl-ref-html
+  imagemagick-doc python-doc python-tk python-genshi python-lxml-dbg
+  python-lxml-doc gcc gfortran python-dev python-nose python-numpy-dbg
+  python-numpy-doc python-setuptools python2.7-doc binfmt-support
+Recommended packages:
+  python-uniconvertor
+The following NEW packages will be installed
+  inkscape libatkmm-1.6-1v5 libblas3 libcairomm-1.0-1v5 libgfortran4
+  libglibmm-2.4-1v5 libgsl23 libgslcblas0 libgtkmm-2.4-1v5 libgtkspell0
+  libimage-magick-perl libimage-magick-q16-perl liblapack3 libmagick++-6.q16-7
+  libpangomm-1.4-1v5 libpotrace0 libpython-stdlib libquadmath0
+  libsigc++-2.0-0v5 libvisio-0.1-1 libwmf-bin libwpd-0.10-10 libwpg-0.3-3
+  perlmagick python python-bs4 python-chardet python-html5lib python-lxml
+  python-minimal python-numpy python-pkg-resources python-scour python-six
+  python-webencodings python2.7 python2.7-minimal python3-scour scour
+0 to upgrade, 39 to newly install, 0 to remove and 8 not to upgrade.
+Need to get 28.0 MB of archives.
+```
+
+
 # Inkscape 0.92.3 (unknown) in Ubuntu 16.04
 
 ```

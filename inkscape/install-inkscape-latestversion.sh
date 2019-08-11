@@ -1,8 +1,7 @@
 #!/bin/bash  
 
 ##USAGE:
-#chmod +x file
-#./file
+# sh *.sh
 
 
 sudo add-apt-repository --yes ppa:inkscape.dev/stable

@@ -9,7 +9,7 @@ Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linu
 
 Run
 ```
-./install-inkscape-latestversion.sh
+sh install-inkscape-latestversion.sh
 ```
 which runs:
 ```
