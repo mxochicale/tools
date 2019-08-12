@@ -4,8 +4,15 @@ Brave Installation
 
 # Ubuntu 18.04 Bionic
 
+Run 
+```
+sh installation-ubuntu1804.sh
 ```
 
+or copy and paste the following lines: 
+```
+
+sudo apt install apt-transport-https
 
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
@@ -15,13 +22,14 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_C
 
 sudo apt update
 
-sudo apt install brave-keyring brave-browser
+sudo apt install brave-browser
 
 
 ```
 
 Reference 
 https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
+
 
 
 
