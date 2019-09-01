@@ -21,9 +21,16 @@ https://www.howtoinstall.co/en/ubuntu/trusty/pdftk
 sudo snap install pdftk
 ```
 
+or
+
+```
+sudo add-apt-repository ppa:malteworld/ppa
+sudo apt update
+sudo apt install pdftk
+```
+
+
 https://askubuntu.com/questions/1028522/how-can-i-install-pdftk-in-ubuntu-18-04-and-later
-
-
 
 
 
