@@ -1,12 +1,10 @@
 Skype Installation
 ---
 
-
 # installation
 ```
-./install_skype.sh
+sh install_skype.sh
 ```
-
 
 # usage
 ```

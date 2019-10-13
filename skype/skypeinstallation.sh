@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#chmod +x *.sh
-
 cd
 cd Downloads
 wget https://repo.skype.com/latest/skypeforlinux-64.deb
