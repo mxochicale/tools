@@ -1,10 +1,12 @@
 # My Collection Of Scientific Tools
+This repository presents various tools that 
+I have been using in my journey of becoming a scientist. 
 
 ## _The tools we use have profound (and devious!) influence on our thinking habits, and therefore, on our thinking abilities_
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
 
-# These are other tools that I am also familiar with:
+## These are other tools that I am also familiar with:
 * [R](https://github.com/mxochicale/r-code_repository) is a language and environment for statistical computing and graphics.
 * [python](https://github.com/mxochicale/python)  is powerful... and fast;  plays well with others;  runs everywhere;  is friendly & easy to learn;  is Open.
 * [LaTeX](https://github.com/mxochicale/LaTeX) «Lay-tech» is a document preparation
@@ -23,10 +25,9 @@ system for high-quality typesetting.
 * [elan](https://github.com/mxochicale/elan) Annotations on video and audio resources.
 
 
+## Contact 
+If you have specific questions about the content of this repository, you can contact 
+[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[tools]"). 
+If your question might be relevant to other people, please instead 
+[open an issue](https://github.com/mxochicale/tools/issues).
 
-
-## TODO LIST
-- [ ] add, blender using the following format:  
-	README.md  
-	INSTALLATION.md  
-	USAGE.md  
