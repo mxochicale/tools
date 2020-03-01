@@ -24,8 +24,8 @@ echo "alias c='clear' "
 echo "alias h='history' "
 echo "alias ll=\"ls -liah\" "
 echo "alias ..='cd ..' "
-echo "alias pwdc='pwd | tr \"\n\" \" \" | xsel -bi' "
-echo "alias datec='date | tr \"\n\" \" \" | xsel -bi' "
+echo "alias pwdc='pwd | tr \" \" \" \" | xsel -bi' "
+echo "alias datec='date | tr \" \" \" \" | xsel -bi' "
 echo ''
 echo ''
 echo ''

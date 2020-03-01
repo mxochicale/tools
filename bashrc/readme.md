@@ -15,8 +15,8 @@ alias h='history'
 alias ll="ls -liah" ##alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias pwdc='pwd | tr "\n" " " | xsel -bi'
-alias datec='date | tr "\n" " " | xsel -bi'
+alias pwdc='pwd | tr " " " " | xsel -bi'
+alias datec='date | tr " " " " | xsel -bi'
 alias ..='cd ..'
 ```
 
