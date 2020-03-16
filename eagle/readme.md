@@ -16,8 +16,13 @@ cd $HOME/Downloads/eagle-*
 ```
 "Sign into your existing Autodesk account or create a new one and you should now be seeing the Autodesk EAGLE Control Panel." [3]
 
-## Examples
+## Examples of EAGLE files
 * See [AFE4490_Oximeter/hardware](https://github.com/Protocentral/AFE4490_Oximeter/tree/master/Hardware) - All Eagle design files (.brd, .sch)
+
+## Tutorials
+* https://www.jeremyblum.com/category/eagle-tutorials/
+* https://github.com/sciguy14/Eagle-Tutorial-Series
+* https://www.youtube.com/watch?v=SkxbnIypGwY
 
 ## References
 [1] https://www.autodesk.com/products/eagle/overview    
