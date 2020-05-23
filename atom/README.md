@@ -1,58 +1,16 @@
-Atom
----
-
+# Atom
 [Atom](https://atom.io/) is a text editor that's modern, approachable,
 yet hackable to the core—a tool you can customize to do anything but also
 use productively without ever touching a config file.
-More: [GitHub](https://github.com/atom); [Twitter](https://twitter.com/atomeditor) 
 
-
-# INSTALLATION AND UPDATES on Ubuntu 16.04 x64 [:link:](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux)
-
-Before the installation of atom, make sure that you install GitHub and its dependencies.
-
-You can run [`./install-atom.sh`](https://github.com/mxochicale/myCollectionOfScientificTools/blob/master/atom/install-atom.sh)
-for the following steps:
-
-1. Download atom-amd64.deb from the [Atom releases page](https://github.com/atom/atom/releases).
+## Installation/Uninstall in Ubuntu 18.04x64
+Run [install-atom](install-atom.sh)
 ```
-cd && mkdir -p .atomtmp && cd .atomtmp
-wget https://github.com/atom/atom/releases/download/v1.23.0-beta1/atom-amd64.deb
-```
-2. Run sudo dpkg --install atom-amd64.deb on the downloaded package.
-NB. To avoid any issue in the installation, you have to "sudo apt-get update" and 
-"sudo apt-get upgrade" your machine, specially if the OS of machine has been recently
-installed.
-
-```
-sudo dpkg --install atom-amd64.deb
+sh install-atom.sh
+sh uninstall-atom.sh
 ```
 
-TERMINAL OUTPUT
-```
-$ sudo dpkg --install atom-amd64.deb
-[sudo] password for map479: 
-(Reading database ... 699706 files and directories currently installed.)
-Preparing to unpack atom-amd64.deb ... 
-Unpacking atom-beta (1.23.0-beta1) over (1.19.0-beta7) ... 
-Setting up atom-beta (1.23.0-beta1) ... 
-Processing triggers for desktop-file-utils (0.22-1ubuntu5.1) ... 
-Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20160824-0ubuntu1) ... 
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ... 
-Processing triggers for mime-support (3.59ubuntu1) ... 
-```
-
-
-3. delete temporal files
-```
-cd && rm -rf .atomtmp
-```
-
-
-
-# Setting up the spell-check
-
+## Setting up the spell-check
 ```
 sudo apt-get install hunspell-en-gb
 ```
@@ -71,19 +29,22 @@ en-GB
 ## Locale Paths
 /usr/share/hunspell
 
+## General Atom Packages
 
-# General Atom Packages 
-
-- Markdown Preview  
-- Terminal plus: A terminal package for Atom, complete with themes and more.  
-- language-r: A language description and snippets for R   
-- split-diff: Diffs text between two split panes.
+- [Markdown Preview](https://atom.io/packages/markdown-preview)  
+- [terminal-plus](https://atom.io/packages/terminal-plus): A terminal package for Atom, complete with themes and more.  
+- [language-r](https://atom.io/packages/atom-language-r): A language description and snippets for R   
+- [split-diff](https://atom.io/packages/split-diff): Diffs text between two split panes.
 - [wordcount](https://atom.io/packages/wordcount), add tex in the autoactivated file extensions:
 
 ```
-md, markdown, readme, txt, rst, adoc, log, msg, tex 
+md, markdown, readme, txt, rst, adoc, log, msg, tex
 ```
 
-# Using atom for academic writing
-This post was created on 23 July 2015 but the list of packages and the comments are a good start point 
-if you are using atom for academic writing. [:link:](https://discuss.atom.io/t/using-atom-for-academic-writing/19222)
+## Using atom for academic writing
+The following post was created on 23 July 2015 but the list of packages and the comments are a good starting point in case you are in using atom for academic writing [:link:](https://discuss.atom.io/t/using-atom-for-academic-writing/19222).
+
+## References
+* [GitHub](https://github.com/atom)
+* [Twitter](https://twitter.com/atomeditor)
+* INSTALLATION AND UPDATES in Linux machines [:link:](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux)

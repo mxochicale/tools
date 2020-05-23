@@ -1,21 +1,12 @@
-#!/bin/bash    
+#!/bin/bash
 
-
-
-# add variable for version
+# Change variable of the latest version
+VERSION=v1.47.0
 #VERSION=v1.20.0-beta2
 #VERSION=v1.23.0-beta1
 
-echo "Installing atom v1.20.0-beta2"
-
-
-
-
-cd && mkdir -p .atomtmp && cd .atomtmp
-
-#wget https://github.com/atom/atom/releases/download/v1.20.0-beta2/atom-amd64.deb
-wget https://github.com/atom/atom/releases/download/v1.23.0-beta1/atom-amd64.deb
-
-
+echo "Installing atom"
+cd ~/Downloads
+wget https://github.com/atom/atom/releases/download/$VERSION/atom-amd64.deb
 sudo dpkg --install atom-amd64.deb
-cd && rm -rf .atomtmp
+rm -rf atom-amd64.deb
