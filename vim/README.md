@@ -78,16 +78,29 @@ so to get out of it press "Ctrl+q"
 * Ctrl-W hjkl -- Use Ctrl-W followed by one of the hjkl movement keys [ref](http://vim.wikia.com/wiki/Buffers) 
 
 ### Basic search and replace
-Change each 'foo' to 'bar', but ask for confirmation first [ref](http://vim.wikia.com/wiki/Search_and_replace)
+* Change each 'foo' to 'bar', but ask for confirmation first [ref](http://vim.wikia.com/wiki/Search_and_replace)
 ```
 :%s/foo/bar/gc
 ```
+* Change each 'Unix' to 'Linux' for all lines from line 36 to line 42 [:link:](https://www.cyberciti.biz/faq/vim-text-editor-find-and-replace-all-text/)
+```
+:36,42s/Unix/Linux/gc
+```
+* If you would like to search to the end of the file, use $ [:link:](https://stackoverflow.com/questions/3264120)
+```
+:36,%s/Unix/Linux/gc
+```
+* You can use . for the current position, and .+10 for 10 lines down [:link:](https://stackoverflow.com/questions/18020381)
+```
+:.,.+10s/foo/bar/g
+```
+
 
 ### Insert C++ or Latex or other comments
 Select visually the block or text (using v key), press ':' 
 for entering a vim command [ref](http://vim.wikia.com/wiki/Insert_C%2B%2B_or_LaTeX_or_other_comments_easily).
 For latex comments, the whole command then looks like:
 ```
-:'<,'>s/%/
+:'<,'>s/^/% #comment
+:'<,'>s/^%/ #uncomment
 ```
-
