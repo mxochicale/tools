@@ -6,12 +6,13 @@
 
 ## Ubuntu 18.04x64
 ### Install Arduino 
-1. Download Arduino Linux 64 bits IDE software for free [here](https://www.arduino.cc/en/Main/Software)
+1. Download the lastet version of Arduino Linux 64 bits IDE software [here](https://www.arduino.cc/en/Main/Software)
 2. Install and run Arduino IDE software 
 ```
 cd ~/Downloads
+wget https://downloads.arduino.cc/arduino-1.8.13-linux64.tar.xz
 tar -xvf arduino-*.tar.xz
-sudo mv arduino-1.8.13/ /opt
+sudo mv arduino-1.8.13 opt/
 cd /opt/arduino-1.*/
 sudo ./install.sh 
 ```
@@ -21,7 +22,6 @@ sudo ./install.sh
 ls -l /dev/ttyUSB*
 crw-rw---- 1 root dialout 188, 0 Aug 15 10:54 /dev/ttyUSB0
 ```
-
 
 
 4. Run  arduino and upload blink example 
