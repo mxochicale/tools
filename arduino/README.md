@@ -11,19 +11,23 @@
 ```
 cd ~/Downloads
 tar -xvf arduino-*.tar.xz
-cd arduino-1.8.13/
-~/Downloads/arduino-1.8.13$ ./arduino
+sudo mv arduino-1.8.13/ /opt
+cd /opt/arduino-1.*/
+sudo ./install.sh 
 ```
-3. check port name which could be ACM or USb
 
+3. check port name which could be ACM or USB
 ```
 ls -l /dev/ttyUSB*
 crw-rw---- 1 root dialout 188, 0 Aug 15 10:54 /dev/ttyUSB0
 ```
+
+
+
 4. Run  arduino and upload blink example 
+Open terminal and run 
 ```
-cd ~/Downloads/arduino-1.8.13/
-./arduino
+arduino
 ```
 * go to tools and choose processor: Arduino Nano and port: /ttyUSB0
 * go to examples and choose blink
