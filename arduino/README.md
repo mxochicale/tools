@@ -1,11 +1,36 @@
+# Arduino 
+> open-source electronics platform
 
-# Arduino Installation @ Ubuntu 14.04 X64
+* https://github.com/arduino/Arduino
+* https://www.arduino.cc/en/Guide/Linux
 
-## TODO
+## Ubuntu 18.04x64
+### Install Arduino 
+1. Download Arduino Linux 64 bits IDE software for free [here](https://www.arduino.cc/en/Main/Software)
+2. Install and run Arduino IDE software 
+```
+cd ~/Downloads
+tar -xvf arduino-*.tar.xz
+cd arduino-1.8.13/
+~/Downloads/arduino-1.8.13$ ./arduino
+```
+3. check port name which could be ACM or USb
 
- * merge the following instructions
+```
+ls -l /dev/ttyUSB*
+crw-rw---- 1 root dialout 188, 0 Aug 15 10:54 /dev/ttyUSB0
+```
+4. Run  arduino and upload blink example 
+```
+cd ~/Downloads/arduino-1.8.13/
+./arduino
+```
+* go to tools and choose processor: Arduino Nano and port: /ttyUSB0
+* go to examples and choose blink
+* then click on the icon: Upload and you will see led blinking
 
 
+## Ubuntu 14.04x64
 ### How to Install The Latest Arduino IDE 1.6.6 in Ubuntu
 
 ```
@@ -26,18 +51,15 @@ http://ubuntuhandbook.org/index.php/2015/11/install-arduino-ide-1-6-6-ubuntu/
 
 
 
-## install arduino-1.0.5-linux64.tgz
-
-
+### Alternatively, install arduino-1.0.5-linux64.tgz
 The easiest way to install the Arduino software is:
 
 ```
 sudo apt-get install arduino
 ```
 
-The down side is that this installs an older version, to install the latest
+The downside is that this installs an older version, to install the latest
 version follow the instructions below.
-
 ```
 cd ~/Downloads
 tar -zxvf arduino-1.0.5-linux64.tgz
@@ -52,3 +74,10 @@ ln -s /opt/arduino-1.0.5/arduino
 ```
 
 http://planfully.com/install-arduino-ubuntu/
+
+
+## Issues
+
+### port permissions 
+https://www.arduino.cc/en/Guide/Linux
+
