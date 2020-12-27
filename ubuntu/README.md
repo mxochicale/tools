@@ -49,7 +49,7 @@ git config --global user.email "@gmail.com"
 ```
 
 ### Install google chrome
-* see installations [here](/tools/chrome/)
+* see installations [tools/chrome](../chrome)
 
 ### (5) Extras
 #### Setting left-handed mouse
