@@ -1,6 +1,6 @@
 # GNU/Linux Ubuntu installation and related topics
 ## Things to do after [Ubuntu installation via usb-stick](installation-usb-stick.md)
-### (1) run [basics.sh](basics.sh) to update and upgrade OS
+### Install [basics.sh](basics.sh) tools which also update and upgrade OS
 Download basics.sh
 ```
 wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.sh
@@ -9,16 +9,10 @@ and run
 ```
 sudo echo
 sh basics.sh
+rm basics.sh 
 ```
 
-### (2) Github Setting up
-* set up
-```
-git config --global user.name "mxochicale"
-git config --global user.email "@gmail.com"
-```
-
-### (3) Add aliases and functions to .bashrc file 
+### Add aliases and functions to .bashrc file 
 ```
 cd 
 wget https://raw.githubusercontent.com/mxochicale/tools/master/bashrc/append_aliases_to_bashrc.sh
@@ -39,12 +33,23 @@ cd
 rm append_aliases_to_bashrc.sh
 ```
 
-### (4) setup .vimrc
+### Setup .vimrc
 ```
 cd
 wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/.vimrc
 ```
 See [here](https://github.com/mxochicale/tools/tree/master/vim) for more about vim configuration 
+
+
+### Github Setting up
+* set up
+```
+git config --global user.name "mxochicale"
+git config --global user.email "@gmail.com"
+```
+
+### Install google chrome
+* see installations [here](/tools/chrome/)
 
 ### (5) Extras
 #### Setting left-handed mouse
@@ -56,11 +61,12 @@ See [here](https://github.com/mxochicale/tools/tree/master/vim) for more about v
 	3. [CLICK] Single click to open items
 
 #### Unlock libre office launchers and others from the desktop
+by removing from favorites with a right-click!
 
 #### Settings of the terminal 
 	preferences
 		profiles > colors: Green on black
 		Background > Transparent background 0.9  
-		text > Monospace Regular 14
+		text > Monospace Regular 13
 
 ### (6) [Tricks](tricks.md)
