@@ -1,15 +1,11 @@
 # Tricks for Ubuntu
-This file contains a list a collection of tricks for Ubuntu and 
-Ubuntu-like distributions (i.e. Debian).
+This file contains a list a collection of tricks for Ubuntu and Ubuntu-like distributions (i.e. Debian).
 
 ## Ubuntu 16.04
-
 ### Remove show desktop in the alt-tab application switcher 
-
 ```
 sudo apt-get install compizconfig-settings-manager
 ```
-
 Now open CCSM and search for Ubuntu Unity plugin, go to Switcher tab. 
 Then tick the check box next to `Disable Show Desktop in the switcher` 
 
@@ -17,11 +13,9 @@ Then tick the check box next to `Disable Show Desktop in the switcher`
 
 
 ### Unity grabs Alt and Super key
-
 ```
 sudo apt-get install compizconfig-settings-manager
 ```
-
 Start it from the Dash or by typing `ccsm` from the terminal  
 Type "Ubuntu Unity plugin" in the filter box on the left, and click on the Ubuntu Unity Plugin:
 
@@ -31,9 +25,6 @@ Launcher >> `Key to show the Dash, Launcher and Help Overlay` >>  "< Disabled >"
 References
 * [how-do-i-prevent-ubuntu-from-capturing-the-alt-key-to-show-the-hud](https://askubuntu.com/questions/151951/how-do-i-prevent-ubuntu-from-capturing-the-alt-key-to-show-the-hud)
 * [-unity-grabs-alt-and-super-key](https://askubuntu.com/questions/764253/virtualbox-in-ubuntu-16-04-unity-grabs-alt-and-super-key)
-
-
-
 
 
 ### Increase/Decrease Shell Workspaces
@@ -72,7 +63,6 @@ Simply close Brightness and Lock to apply the new settings.
 
 
 ### suspend-hibernate-from-command-line
-
 Install
 
 ```
@@ -89,9 +79,7 @@ sudo pm-suspend
 
 
 ### Move faster in Bash command line
-
 http://teohm.com/blog/shortcuts-to-move-faster-in-bash-command-line/
-
 
 ### Sorry Ubuntu 16.04 has experienced internal error solve
 

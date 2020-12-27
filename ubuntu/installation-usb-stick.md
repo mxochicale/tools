@@ -1,6 +1,6 @@
 # (A) Create Booteable UBS-stick 
 
-## 2. Requirements
+## Requirements
 * A 2GB or larger USB stick/flash drive
 * Ubuntu Desktop 14.04 or later installed
 * An Ubuntu ISO file from:
@@ -13,7 +13,7 @@
 	* [Ubuntu 20.04 (Focal Fossa)](http://releases.ubuntu.com/focal/)
 		* ubuntu-20.04.1-desktop-amd64.iso	2020-07-31 16:52 	2.6G  
 
-## 3. Launch 'Startup Disk Creator'
+## Launch 'Startup Disk Creator'
 * Insert your USB stick (select ‘Do nothing' if prompted by Ubuntu)  
 * On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'  
 * In older versions of Ubuntu, use the top left icon to open the dash  
@@ -21,7 +21,7 @@
 * Select Startup Disk Creator from the results to launch the application. If you don't have it, install it from the terminal with`sudo apt install usb-creator-gtk` 
 [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 
-## 4. ISO and USB selection
+## ISO and USB selection
 It's likely that both your Ubuntu ISO and the correct USB device will have been 
 detected and set as ‘Source disc image' and ‘Disk to use' in the application window. 
 If not, use the ‘Other' button to locate your ISO file and select the exact USB 
@@ -30,14 +30,14 @@ device you want to use from the list of devices.
 Click Make Startup Disk to start the process.  
 [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#3)
 
-## 5. Confirm USB device
+## Confirm USB device
 Before making any permanent changes, you will be asked to confirm the USB 
 device you've chosen is correct and you will provide your administrator password. 
 This is important because any data currently stored on this device will be destroyed.  
 [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#4)
 
 
-## 6. Installation complete  
+## Installation complete  
 That's it! You now have Ubuntu on a USB stick, bootable and ready to go.  
 [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#5)
 
