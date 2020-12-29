@@ -11,4 +11,4 @@ sudo apt-get install git
 sudo apt-get install vim vim-gtk
 sudo apt-get install xsel
 sudo apt-get install tree
-
+sudo apt install make 
