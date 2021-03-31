@@ -1,10 +1,13 @@
 # My Collection Of Scientific Tools
-This repository presents various tools that 
-I have been using in my journey of becoming a scientist. 
+In this repository, I register various tools that I have been using in this journey of becoming not only a better scientist but also I guess a better engineer. One quote that summarise the tools I am presenting here is:
 
 ## _The tools we use have profound (and devious!) influence on our thinking habits, and therefore, on our thinking abilities_
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
+## Clone repo
+```
+git clone git@github.com:mxochicale/tools.git
+```
 
 ## These are other tools that I am also familiar with:
 * [R](https://github.com/mxochicale/r-code_repository) is a language and environment for statistical computing and graphics.
