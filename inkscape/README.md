@@ -2,12 +2,6 @@
 Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linux. It's free and open source [:link:](https://inkscape.org/en/).
 
 ## Installation
-* using snap
-```
-#sudo apt install snapd
-sudo snap install inkscape
-```
-
 * Using repository
 ```
 bash install-inkscape-latestversion.bash
@@ -17,6 +11,7 @@ which runs:
 sudo add-apt-repository --yes ppa:inkscape.dev/stable
 sudo apt --yes update
 sudo apt --yes install inkscape
+sudo add-apt-repository --remove ppa:inkscape.dev/stable
 ```
 
 * using appimage [:link:](https://inkscape.org/release/inkscape-1.0.2/gnulinux/appimage/dl/)
@@ -24,6 +19,14 @@ sudo apt --yes install inkscape
 wget https://inkscape.org/gallery/item/23849/Inkscape-e86c870-x86_64.AppImage
 chmod u+x Inkscape-e86c870-x86_64.AppImage
 ./Inkscape-e86c870-x86_64.AppImage
+```
+
+* using snap
+```
+#sudo apt install snapd
+sudo snap install inkscape
+#sudo snap remove inkscape
+#rm -r inkscape
 ```
 
 
