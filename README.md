@@ -1,6 +1,5 @@
-# My Collection Of Scientific Tools
-In this repository, I register various tools that I have been using in this journey of becoming not only a better scientist but also I guess a better engineer. One quote that summarise the tools I am presenting here is:
-
+# My Collection Of Scientific/Engineering Tools
+In this repository, I register various tools that I have been using in this journey of becoming not only a better scientist but also I guess a better engineer. One quote that summarises this repo is:
 ## _The tools we use have profound (and devious!) influence on our thinking habits, and therefore, on our thinking abilities_
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
