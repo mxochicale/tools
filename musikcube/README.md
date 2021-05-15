@@ -24,7 +24,21 @@ https://github.com/clangen/musikcube/releases/download/0.96.6/musikcube_0.96.6_u
 
 
 ## Usage
-See https://musikcube.com/ and https://github.com/clangen/musikcube 
+Open a terminal and type
+```
+musikcube
+```
+playback:
+    i volume up 5%  
+    k volume down 5%  
+    u back 10 seconds  
+    o forward 10 seconds   
+    j previous track  
+    l next track  
+    m toggle volume mute   
+
+See [user-guide](https://github.com/clangen/musikcube/wiki/user-guide) for shortcuts
 
 ## References
-https://github.com/clangen/musikcube
+https://musikcube.com/   
+https://github.com/clangen/musikcube  
