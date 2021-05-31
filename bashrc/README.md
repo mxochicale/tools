@@ -1,6 +1,12 @@
-# Bashrc 
+# .bashrc 
 
-## my alias in the .bashrc file
+## Dependencies
+xsel to copy and paste from the terminal
+```
+sudo apt install xsel
+```
+
+## Add my alias in the .bashrc file
 The following is list of personal aliases that are helping me 
 to move easily in the GNU/Linux terminal. 
 
@@ -23,12 +29,12 @@ alias ..='cd ..'
 ### Adding aliases and functions to .bashrc file 
 ```
 cd 
-wget https://raw.githubusercontent.com/mxochicale/tools/master/bashrc/append_aliases_to_bashrc.sh
+wget https://raw.githubusercontent.com/mxochicale/tools/master/bashrc/append_aliases_to_bashrc.bash
 ```
 
 append lines to bashrc:
 ```
-sh append_aliases_to_bashrc.sh
+bash append_aliases_to_bashrc.bash
 ```
 
 Reload bashrc file

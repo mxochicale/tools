@@ -32,3 +32,6 @@ echo ''
 echo ''
 } >> .bashrc
 
+
+#reload bashrc file
+source ~/.bashrc
