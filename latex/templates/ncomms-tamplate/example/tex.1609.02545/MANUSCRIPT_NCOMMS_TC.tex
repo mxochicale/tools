@@ -1,0 +1,991 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper,margin=0.5in} % or letterpaper (US) or a5paper or....
+ %\geometry{margins=2in}{a4paper} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{color} 
+\usepackage{epstopdf}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{lineno}
+\usepackage{multirow}
+%%% PACKAGES
+\usepackage{amsmath} 
+\usepackage[table]{xcolor}
+\usepackage{breakcites}
+\usepackage{amsfonts}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig}
+% make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{bm}
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+\usepackage{authblk}
+
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Supervised Learning in Spiking Neural Networks with FORCE Training} 
+
+
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\author[1]{Wilten Nicola}
+\author[1]{Claudia Clopath \thanks{c.clopath@imperial.ac.uk}}
+\affil[1]{Department of Bioengineering, Imperial College London.  Royal School of Mines\\ London  UK\\  SW7 2AZ}
+
+\begin{document}
+\maketitle    
+
+
+ \section*{Acceptance} Note that this manuscript has been accepted and published as of Dec 20th, 2017 in Nature Communications.  Please cite the following when referencing this manuscript: 
+
+
+ \textbf{
+Nicola, W., \& Clopath, C. (2017). Supervised learning in spiking neural networks with FORCE training. Nature communications, 8(1), 2208.}
+
+
+\section*{Abstract}
+
+Populations of neurons display an extraordinary diversity in the behaviors they affect and display. Machine learning techniques have recently emerged that allow us to create networks of model neurons that display behaviours of similar complexity. Here, we demonstrate the direct applicability of one such technique, the FORCE method, to spiking neural networks.  We train these networks to mimic dynamical systems, classify inputs, and store discrete sequences that correspond to the notes of a song. Finally, we use FORCE training to create two biologically motivated model circuits. One is inspired by the  zebra-finch and successfully reproduces songbird singing. The second network is motivated by the hippocampus and is trained to store and replay a movie scene.   FORCE trained networks reproduce behaviors comparable in complexity to their inspired circuits and yield information not easily obtainable with other techniques such as behavioral responses to pharmacological manipulations and spike timing statistics.  
+
+\section*{Introduction}  
+
+ Human beings can naturally learn to perform a wide variety of tasks  quickly and efficiently.  Examples include learning the complicated sequence of motions in order to take a slap-shot in Hockey or learning to replay the notes of a song after music class.   While there are approaches to solving these different problems in fields such as machine learning, control theory, etc., humans use a very distinct tool to solve these problems: the spiking neural network.  
+
+%Our attempts at understanding how these populations of neurons solve problems can be broadly assigned to one of two categories: bottom-up or top-down.  Bottom-up approaches start with a biologically constrained network of model neurons.  They attempt to determine what the network function is or how a particular property of the network behavior emerges (e.g. \cite{NF1,NF2,MF1,WC,nesse,omurtag,nykamp,sirovich,strogatz1,strogatz2,omurtag2,vreeswijk1,vreeswijk2,vreeswijk3}).  Broadly speaking, given a spiking neural network, a bottom-up approach may tell us what particular problem a network is trying to solve.  
+% 
+  Recently, a broad class of techniques have been derived that allow us to enforce a certain behavior or dynamics onto a neural network \cite{FORCE1,FORCE2,FORCE3,FORCE4,Deneve1,Deneve2,Deneve4,Chris1,Chris2,Gilra}.  These top-down techniques start with an intended task that a recurrent spiking neural network should perform, and determine what the connection strengths between neurons should be to achieve this.   The dominant approaches are currently the FORCE method \cite{FORCE1,FORCE2},  spike-based or predictive coding networks \cite{Deneve1,Deneve2,Deneve4}, and the Neural Engineering Framework (NEF) \cite{Chris1,Chris2}.  Both the NEF and spike-based coding approaches have yielded substantial insights into network functioning.  Examples include how networks can be organized to solve behavioral problems \cite{Chris1} or process information in robust but metabolically efficient ways \cite{Deneve1,Deneve2}.  
+
+  While the NEF and spike-based coding approaches create functional spiking networks, they are not agnostic towards the underlying network of neurons (although see \cite{Deneve2,Ali,Brendel} for recent advances).   Second, in order to apply either approach, the task has to be specified in terms of closed-form differential equations.  This is a constraint on the potential problems these networks can solve (although see \cite{Ben,Deneve4} for  recent advances).    Despite these constraints, both the NEF and spike-based coding techniques have led to a resurgence in the top-down analysis of network function \cite{FORCE3}.  
+
+%For example, in the NEF approach the weight matrix solutions are derived assuming specific types of postsynaptic filtering or neurons.  For the spike-based coding approach, the underlying neuronal dynamics and synapses are derived from the optimization procedure.  These two approaches are not easily extended when one adds an increasing degree of realism to the network or changes the underlying neurons or synaptic connection types (although see \cite{Deneve2,Ali,Brendel} for recent advance).   Second, in order to apply either approach, the task has to be specified in terms of closed-form differential equations.  This is a restrictive constraint on the potential problems these networks can solve.    Despite these constraints, both the NEF and spike-based coding techniques have led to a resurgence in the top-down analysis of network function \cite{FORCE2}.  
+
+Fortunately, FORCE training is agnostic towards both the network under consideration, or the tasks that the network has to solve.  Originating in the field of reservoir computing, FORCE training takes a high dimensional dynamical system and utilizes this systems complex dynamics to perform computations \cite{FORCE1,RCreview1,RCreview2,RCreview3,dominey1,maass1,jaeger4,PSM,chaoticreservoir1,maass2,maass3,HHLSM,B2}.  Unlike other techniques, the target behavior does not have to be specified as a closed form differential equation for training.  All that is required for training is a supervisor to provide an error signal.  The use of any high dimensional dynamical system as a reservoir makes the FORCE method applicable to many more network types while the use of an error signal expands the potential applications for these networks.  Unfortunately, FORCE training has only been directly implemented in networks of rate equations that phenomenologically represent how neurons' firing rate varies smoothly in time, with little work done in spiking network implementations in the literature (although see \cite{FORCE2,FORCE4} for recent advances. 
+
+%  A spiking implementation has been thought to be difficult so far and only two implementations have been proposed.   DePasquale et. al., use a network of rate equations to train a spiking network \cite{FORCE2}.  The rate system is used to nonlinearly transform the target signal into a high dimensional temporal basis set.  This basis set is used as a supervisor for the network of spiking neurons to learn.  As this approach requires training the full connectivity matrix as opposed to just readout weights, it is computationally more difficult to apply.   Thalmier et. al., construct a spiking network of leaky integrate-and-fire neurons that implements the FORCE method to approximate linear and nonlinear dynamics.  However, the network under consideration cannot perform nonlinear dynamics without nonlinear dendrites \cite{FORCE4}.  Additionally, the network output and type under consideration in \cite{FORCE4} have a very particular structure and architecture.  It remains unclear whether FORCE training can generalize to other networks.    Given the potential of the FORCE method in providing a novel and powerful top-down approach to network training, it is critical to see whether this technique can be directly applied to different networks consisting of different model neurons and what type of dynamics or functions these networks can learn.  
+
+We show that FORCE training can be directly applied to spiking networks and is robust against different implementations, neuron models, and potential supervisors.  To demonstrate the potential of these networks, we FORCE train two spiking networks that are biologically motivated.  The first of these circuits corresponds to the zebra finch HVC-RA circuit and reproduces the singing behavior while the second circuit is inspired by the hippocampus and encodes and replays a movie scene.  Both circuits can be perturbed to determine how robust circuit functioning is post-training.  
+
+%
+% Finally, we demonstrate that spiking neural networks can statistically classify inputs, and spontaneously replay natural patterns after being trained with the FORCE method using a suitable teaching signal.  These networks can be both constrained by experimental data, such as empirically measured firing rate distributions and perturbed to generate new experimental predictions post-training.   
+%
+
+
+
+%     Post-training inspection of the constituent neurons reveals behavior that is consistent with experimentally determined data such as the distribution of firing rates .   Thus, post-training analysis of the underlying neurons that form the network yields insight into how neuronal functioning relates to macroscopic and observable behaviors.   We also found that the circuit constructed to recall our birdsong can display firing rate distributions that mirror experimentally obtained data from the primary nuclei responsible for songbird behavior, the High Vocal Center (HVC) and the robust nucleus of the arcopallium (RA).  In the bird song circuit, area HVC provides a chain of synaptic activity to RA, which elicits bird song replay.   We found that a similar chain of activity also facilitated learning and recall of a scene from a movie.  Surprisingly, the network constructed to replay the movie displayed a prominent theta oscillation post-training in a proxy of its local field potential (LFP).  By compressing, reversing, or attenuating the activity chain or clock, we could compress, reverse, or degrade replay of the movie respectively with corresponding changes to the LFP.   \cite{thetareview1,thetareview2}.  
+
+
+\section*{Results} 
+
+\subsection*{FORCE Training Weight Matrices} 
+
+We explored the potential of the FORCE method in training spiking neural networks to perform an arbitrary task.  In these networks, the synaptic weight matrix is the sum of a set of static weights and a set of learned weights $\bm \omega = G\bm{\omega}^0+Q\bm \eta \bm \phi^T$.   The static weights, $G\bm\omega^0$ are set to initialize the network into chaotic spiking  \cite{SOMP,OSTOJIC,Harish}.  The learned component of the weights, $\bm \phi$, are determined online using a supervised learning method called Recursive Least Squares (RLS).  The quantity $\bm \phi$ also serves as a linear decoder for the network dynamics.  The parameter $\bm \eta$ defines the tuning preferences of the neurons to the learned feedback term.  The components of $\bm\eta$ are static and always randomly drawn.  The parameters $G$ and $Q$ control the relative balance between the chaos inducing static weight matrix and the learned feedback term, respectively.  The parameters are discussed in greater detail in the Materials and Methods. The goal of RLS is to minimize the squared error between the network dynamics ($\hat{x}(t)$) and the target dynamics (i.e. the task, $x(t)$) (Figure \ref{FORCE1}A) \cite{haykin,bishop}.  This method is successful if the network dynamics can mimic the target dynamics when RLS is turned off.   We considered three types of spiking integrate-and-fire model: the theta model, the leaky integrate-and-fire (LIF) and the Izhikevich model (see Materials and Methods for a more detailed explanation).  The parameters for the models can be found in Table \ref{Table1}.  All networks considered were constrained to be intermediate in size (1000-5000 neurons), have low post-training average firing rates ($<60$ Hz).  The synaptic time constants were typically $\tau_R = 2$ ms and $\tau_D$ = 20 ms with other values considered in the Supplementary Material.   The code used for this paper can be found on modelDB (\cite{modeldb}), under accession number 190565.
+
+
+\subsubsection*{FORCE Trained Rate Networks Learn Using Chaos} 
+
+To demonstrate the basic principle of this method and to compare with our spiking network simulations, we applied FORCE training to a network of rate equations (Figure \ref{FORCE1}A) as in \cite{FORCE1}.  We trained a network to learn a simple 5 Hz sinusoidal oscillator.  The static weight matrix initializes high-dimensional chaotic dynamics onto the network of rate equations (Figure \ref{FORCE1}B).  These dynamics form a suitable reservoir to allow the network to learn from a target signal quickly.   As in the original formulation of the FORCE method, the rates are heterogeneous across the network and varied strongly in time (see Figure 2A in \cite{FORCE1}). RLS is activated after a short initialization period for the network.  After learning the appropriate weights $\phi_j $ (Figure \ref{FORCE1} D), the network reproduces the oscillation without any guidance from the teacher signal, albeit with a slight frequency and amplitude error (Figure \ref{FORCE1}C).   To ascertain how these networks can learn to perform the target dynamics, we computed the eigenvalues of the resulting weight matrix before and after learning (Figure \ref{FORCE1}E).  Unlike other top-down techniques, FORCE trained weight matrices are always high rank \cite{AbbottR}, and as we will demonstrate, can have dominant eigenvalues for large $Q$.
+
+
+%   The eigenvalues lie within a circle whose radius can be predicted with results from random matrix theory (see for example \cite{AbbottR}).  As these eigenvalues are randomly distributed within a circle, there is no dominant eigenvalue (or singular value).   This is a fundamentally different behavior than weight matrices generated by other top-down techniques such as the Neural Engineering Framework (NEF).   NEF generated weight matrices are low rank for all-to-all coupled networks and thus have a small number of non-zero eigenvalues.    The number of non-zero eigenvalues indicates the dimensionality of the target dynamics.  
+
+
+
+%In these regimes, FORCE trained and NEF generated weight matrices are more comparable in structure and the dimensionality of the target dynamics is reflected by the number of dominant eigenvalues (see supplementary Figures S1 and S2).  
+
+%We note that the NEF procedure can also be derived to yield a high rank weight matrix by optimizing directly for the synaptic weights.  After solving for this weight matrix, a separate equation can be derived for the resulting optimal decoders.  These decoders can be determined online, as in FORCE training or all in one batch (see supplementary section S1 for the derivation of the NEF procedure for sparse networks, and supplementary Figures S1, and S2).    We leave the exploration of how FORCE and NEF trained networks compare for future work.  
+
+
+\subsubsection*{FORCE Trained Spiking Networks Learn Using Chaos} 
+
+
+We sought to determine whether the FORCE method could train spiking neural networks given the impressive capabilities of this technique in training smooth systems of rate equations (Figure \ref{FORCE1}) previously demonstrated in \cite{FORCE1}.  We implemented the FORCE method in different spiking neural networks of integrate-and-fire neurons in order to compare the robustness of the method across neuronal models and potential supervisors.  
+
+
+ First, to demonstrate the chaotic nature of these networks, we deleted a single spike in the network \cite{London}.  After deletion, the resulting spike trains immediately diverged, indicating chaotic behavior  (Figure \ref{FORCE2}A).  To determine where the onset of chaos occurred as a function of $G$, we simulated networks of these neurons over a range of $G$ parameters and computed the coefficients of variation and the interspike-interval (ISI) distributions (see Supplementary Fig. 1).  For the Izhikevich and Theta neurons, there was an immediate onset to chaotic spiking from quiescence ($G \approx 10^3$, $G\approx 0.02$, respectively) as the bias currents for these models were placed at rheobase or threshold value.  For the LIF model, we considered networks with both superthreshold and threshold bias currents (see Table 1 for parameters).  In the superthreshold case, the LIF transitioned from tonic spiking to chaotic spiking ($G\approx 0.04$).  The subthreshold case was qualitatively similar to the theta neuron model, with a transition to chaotic spiking at a small $G$ value ($0<G<0.01$).  
+All neuron models exhibited bimodal interspike-interval distributions indicative of a possible transition to rate chaos for sufficiently high $G$ values \cite{OSTOJIC,Harish}.  Finally, a perturbation analysis revealed that all three networks of neurons contained flux-tubes of stability, \cite{fluxtube} (Supplementary Fig. 1). 
+
+
+%  These types of networks display irregular spiking activity, however perturbations of magnitude $\epsilon$ have a probability $P(\epsilon)\approx 1- \exp(-\epsilon/\epsilon_{FT})$ of forcing divergence, where $\epsilon_{FT}$ is the flux-tube radius and is an estimate of the region of stability around a particular trajectory \cite{fluxtube}.  
+
+To FORCE train chaotic spiking networks, we used the original work in \cite{FORCE1} as a guide to determine the parameter regime for $(G,Q)$.  In \cite{FORCE1}, the contributions of the static and learned synaptic inputs are of the same magnitude. Similarly, we scale $Q$ to ensure the appropriate balance (see Materials and Methods for a derivation on how Q should be scaled).   Finally, FORCE training in \cite{FORCE1} works by quickly stabilizing the rates. Subsequent weight changes are devoted to stabilizing the weight matrix.  For fast learning, RLS had to be applied on a faster time scale in the spiking networks versus the rate networks ($<O(1)$ ms vs $O(10)$ ms, respectively).  The learning rate $\lambda$ was taken to be fast enough to stabilize the spiking basis during the first presentation of the supervisor.
+
+%An additional parameter $\lambda$ also controls the learning rate in FORCE training (see Materials and Methods).    
+
+With these modifications to the FORCE method, we successfully trained networks of spiking theta neurons to mimic various types of oscillators.  Examples include sinusoids at different frequencies, sawtooth oscillations, Van der Pol oscillators, in addition to teaching signals with noise present (Figure \ref{FORCE2}B).  With a 20 ms decay time constant, the product of sines oscillator presented a challenge to the theta neuron to learn.  However, it could be resolved for network with larger decay time constants (see Supplementary Fig. 2 and Supplementary Table 1).  All the oscillators in Figure 2B were trained successfully for both the Izhikevich and LIF neuron models (Figure \ref{FORCE2}C, Supplementary Fig. 2 and Supplementary Table 1).    Furthermore, FORCE training was robust to the possible types of initial chaotic network states (see Supplementary Figure 3, \cite{OSTOJIC,Harish}.  Finally, a three parameter sweep over the $(G,Q,\tau_D)$ parameter space reveals that parameter regions for convergence are contiguous.  This parameter sweep was conducted for sinusoidal supervisors at different frequencies (1, 5, 10, 20, and 40 Hz).    Oscillators with higher (lower) frequencies are learned over larger $(G,Q)$ parameter regions in networks with faster (slower) synaptic decay time constants, $\tau_D$ (see Supplementary Fig. 4-6).  Finally, we compared how the eigenvalues of the trained weight matrices varied (Supplementary Material, Supplementary Fig. 7).  For spiking networks, we observe that in some cases, systems without dominant eigenvalues performed better than systems with dominant eigenvalues while in other cases the opposite was true.
+
+For the dynamics under consideration, the Izhikevich model had the greatest accuracy and fastest training times (Supplementary Fig. 4-6, Supplementary Table 2).  This is partially due to the fact that the Izhikevich neuron has spike frequency adaptation which operates on a longer time scale (i.e. 100 ms).  The long time scale affords the reservoir a greater capability for memory, allowing it to learn longer signals.    Additionally, the dimensionality of the reservoir is increased by having an adaptation variable for each neuron.
+
+We wondered how the convergence rates of these networks would vary as a function of the network size, $N$, for both FORCE trained spiking and rate networks  (see Supplementary Fig. 8).  For a 5 Hz sinusoidal supervisor, the spiking networks had a convergence rate of $\approx {N}^{-1/2}$ in the $L_2$ error.  Rate networks had a higher order convergence rate, of $\approx N^{-1}$ in the $L_2$ error.  
+
+%herefore, we trained networks of LIF neurons to mimic a 5 Hz sinusoidal oscillator in addition to networks of rate neurons with $\sqrt{x}$ and $\tanh{(x)}$ tuning curves These networks varied in size from $O(1)$ to $O(10^4)$.  
+
+%However,  the $\sqrt{x}$ rate network had an interesting bi-modal split in the distribution of the $L_2$ error for $O(10^3)$ neurons, prior to stabilizing for larger $N$.
+
+As oscillators are simple dynamical systems, we wanted to assess if FORCE can train a spiking neural network to perform more complicated tasks.   Thus, we considered two additional tasks: reproducing the dynamics for a low-dimensional chaotic system and statistically classifying inputs applied to a network of neurons.  We trained a network of theta neurons using the Lorenz system as a supervisor (Figure \ref{FORCE2}D).    The network could reproduce the butterfly attractor and Lorenz-like trajectories after learning.  As the supervisor was more complex, the training took longer and required more neurons (5000 neurons, 45 seconds of training) yet was still successful.  Furthermore, the Lorenz system could also be trained with a network of 5000 LIF neurons (Supplementary Fig. 9).     To quantify the error and compare it with a rate network, we developed an attractor density based metric (see Supplementary Materials) for the marginal density functions on the attractor.  The spiking network had comparable performance to the rate network (0.27,0.30,0.24 for rate and 0.52,0.38,0.3 for spiking). Further, the spiking and rate networks were both able to regenerate the stereotypical Lorenz tent map, albeit with superior performance in the rate network (Supplementary Fig. 9).    Finally, we showed that populations of neurons can be FORCE trained to statistically classify inputs, similar to a standard feed forward network (see Supplementary Note 2, and Supplementary Fig. 10-13.).  
+
+
+We wanted to determine if FORCE training could be adapted to generate weight matrices that respect Dales law, the constraint that a neuron can only be excitatory or inhibitory, not both.  Unlike previous work \cite{FORCE2}, we opted to enforce Dales law dynamically as the network was trained (see Supplementary Note 1, Supplementary Fig. S13).  The $\log(L_2)$ error over the test interval for this supervisor was $-1.34$, which is comparable to the values in Supplementary Fig. 6.  While Dales law can be implemented, for simplicity, we train all remaining examples with unconstrained weight matrices.   
+
+To summarize, for these three different neuron models, we have demonstrated that the FORCE method can be used to train a spiking network using a supervisor.  The supervisor can be oscillatory, noisy, chaotic and the training can occur in a manner that respects Dales law. 
+
+\subsubsection*{FORCE Training Spiking Networks to Produce Complex Signals}
+
+Neurons can encode complicated temporal sequences such as the mating songs that song birds learn, store, and replay \cite{Hanloser}.  We wondered whether FORCE could train spiking networks to encode similar types of naturally occurring spatiotemporal sequences.  We formulated this as very long oscillations that are repeatedly presented to the network.  
+
+The first pattern we considered was a sequence of pulses in a 5-dimensional supervisor.  These pulses correspond to the notes in the first bar of Beethoven's Ode to Joy.  A network of Izhikevich neurons was successfully FORCE trained to reproduce Ode to Joy (see Figure \ref{FORCE4}A, 82\% accuracy during testing).  The average firing rate of the network after training was 34 Hz, with variability in the neuronal responses from replay to replay, yet forming a stable peri-simulus time histogram (see Supplementary Fig. 14-16).    Furthermore, Ode to Joy could be learned by all neuron models at larger synaptic decay time constants ($\tau_d = 50, 100$ ms, see Supplementary Fig. 4-6).  
+
+While the network displayed some error in replaying the song, the errors were not random but stereotypical.  The errors are primarily located after the two non-unique E-note repetitions that occur in the first bar and the end of the third bar (Supplementary Fig. 14-15) in addition to the non-unique ED sequences that occur at the end of the second bar and beginning of the fourth bar.  
+
+%% might want to move this to the discussion,  
+%A similar effect is observed in songbird replay.  In particular, these non-unique sequence repetitions are referred to as high entropy in the songbird literature \cite{Bouchard}.  It has been previously found that the post-stimulus activity of neurons in the song generating HVC area of birds is not predictive of upcoming syllables if the previously played stimulus was a song with high entropy regions.   Here we find that the majority of the errors in recall occur during these high entropy transitions and can lead to incorrect replays of a wrong note sequence (see Supplementary Figures S16 and S17).  Additionally, even for recalls classified as correct, the variance in the network output increases after these high entropy transitions (Supplementary Figure S17).   This indicates that the neuronal activity after these high entropy regions is not necessarily predictive of the behavioral output, as in the songbird data.  
+
+\subsection*{FORCE Trained Networks Can Reproduce Songbird Singing} 
+
+While the Ode to Joy example was non-trivial to train, it pales in complexity to the singing of the zebra finch.  To that end, we constructed a circuit that could reproduce a bird song (in the form of a spectrogram) recorded from an adult zebra finch.   The learned singing behavior of these birds is owed to two primary nuclei: the HVC (proper name) and the Robust nucleus of the Arcopallium (RA).   The RA projecting neurons in HVC form a chain of spiking activity and each RA projecting neuron fires only once at a specific time in the song \cite{Fee3,Hanloser}.  This chain of firing is transmitted to and activates the RA circuit.   Each RA neuron bursts at multiple precisely defined times during song replay \cite{Fee2}.  RA neurons then project to the lower motor nuclei which stimulate vocal muscles to generate the bird song.
+
+To simplify matters, we will focus on a single network of RA neurons receiving a chain of inputs from area HVC (Figure \ref{FORCE5}A).   The HVC chain of inputs are modeled directly as a series of successive pulses and are not FORCE trained for simplicity.  These pulses feed into a network of Izhikevich neurons that was successfully FORCE trained to reproduce the spectrogram of a recorded song from an adult zebra finch (Figure \ref{FORCE5}B, see Supplementary Movie 1).  Additionally, by varying the $(G,Q)$ parameters and some Izhikevich model parameters, the spiking statistics of RA neurons are easily reproduced both qualitatively and quantitatively (Figure \ref{FORCE5}D,E inset, see Figure 2B, 2C in \cite{Fee2}, see Figure 1 in \cite{Fee2}).   The RA neurons burst regularly multiple times during song replay (Figure \ref{FORCE5}B,C).  Thus, we have trained our model network to match the song generation behavior of RA with spiking behavior that is consistent with experimental data.  
+
+We wondered how our network would respond to potential manipulations in the underlying weight matrices. In particular, we considered manipulations to the excitatory synapses which alter the balance between excitation and inhibition in the network (Figure \ref{FORCE5}F).  We found that the network is robust towards downscaling excitatory synaptic weights.  The network could still produce the song, albeit at a lower intensity.   This was possible even when the excitatory synapses were reduced by 90\% of their amplitude (Figure \ref{FORCE5}F,G).  However, upscaling excitatory synapses by as little as 15\% drastically reduced song performance.  The resulting song output had a very different spectral structure than the supervisor as opposed to downscaling excitation.  Finally, upscaling the excitatory weights by 20\% was sufficient to destroy singing, replacing it with high intensity seizure like activity.   Interestingly, a similar result was found experimentally through the injection of bicuculine in RA \cite{bic}.   Large doses of bicuculine resulted in strong bursting activity in RA accompanied by involuntary vocalizations.  Smaller doses resulted in song degradation with increased noisiness, duration, and the appearance of new syllables.  
+
+\subsection*{High-Dimensional Temporal Signals Improve FORCE Training}
+
+ We were surprised at how robust the performance of the songbird network was given the high dimensionality and complicated structure of the output.  We hypothesized that the performance of this network was strongly associated to the precise, clock-like inputs provided by HVC and that similar inputs could aid in the encoding and replay of other types of information.  To test this hypothesis, we removed the HVC input pattern and found that the replay of the learned song was destroyed (not shown), similar to experimental lesioning of this area in adult canaries \cite{nottebohm}.   Due to the temporal information that these high-dimensional signals provide, we will subsequently refer to them as High-Dimensional Temporal Signals (HDTS, See Materials and Methods for further details).   
+
+To further explore the benefits that an HDTS might provide, we FORCE trained a network of Izhikevich neurons to internally generate its own HDTS, while simultaneously also training it to reproduce the first bar of Ode to Joy.  The entire supervisor consisted of the 5 notes used in the first bar of the song, in addition to 16 other components.  These correspond to a sequence of 16 pulses that partition time.  The network learned both the HDTS and the song simultaneously, with less training time, and greater accuracy than without the HDTS.  As the HDTS helped in learning and replaying the first bar of a song, we wondered if these signals could help in encoding longer sequences.  To test this hypothesis, we FORCE trained a network to learn the first four bars of Ode to Joy, corresponding to a 16 second song in addition to its own, 64-dimensional HDTS.  The network successfully learned the song post-training, without any error in the sequence of notes in spite of the length and complexity of the sequence (see Supplementary Fig. 17, Supplementary Movie 2).  Thus, an internally generated HDTS can make FORCE training faster, more accurate, and more robust to learning longer signals.  We refer to these networks as having an internally generated HDTS.    
+
+
+%To further explore the benefits that an HDTS might provide, we FORCE trained a network of Izhikevich neurons to internally generate its own HDTS, while simultaneously also training it to reproduce the first bar of Ode to Joy.  The entire supervisor consisted of the 5 notes used in the first bar of the song, in addition to 16 other components that correspond to a sequence of 16 pulses that partition time.  The network learned both the HDTS signal and the song simultaneously, with less training time, and greater accuracy then without the HDTS signal (not shown).  As the HDTS helped in learning and replaying the first bar of a song, we wondered if these signals could help in encoding longer oscillators.  To test this hypothesis, we FORCE trained a network to learn the first four bars of Ode to Joy, corresponding to a 16 second song in addition to its own, 64-dimensional HDTS.  The network successfully learned the song post-training, without any error in the sequence of notes in spite of the length and complexity of the sequence (see Supplementary Figure S17, Supplementary Video S2).  Thus, a internally generated HDTS can make FORCE training faster, more accurate, and more robust to learning longer signals.  
+
+
+
+
+\subsection*{FORCE Trained Encoding and Replay of an Episodic Memory} 
+
+Given the improvements that an HDTS confers over supervisor duration, training time, and accuracy, we wanted to know if these input signals would help populations of neurons to learn natural high dimensional signals.  To test this, we trained a network of Izhikevich neurons to learn a 1920 dimensional supervisor that corresponds to the pixels of an 8 second scene from a movie (Figure \ref{FORCE6}).  Each component of the supervisor corresponds to the time evolution of a single pixel.  The HDTS's were either generated by a separate network or were fed directly as an input into an encoding and replay network, as in the songbird example (Figure \ref{FORCE6}A, C).   We refer to these two cases as the internally generated and the externally generated HDTS, respectively.   In the former case, we demonstrate that an HDTS can be easily learned by a network while in the latter case we can freely manipulate the HDTS.  As in the long Ode to Joy example, the HDTS could also be learned simultaneously to the movie scene, constituting a 1984 dimensional supervisor (1920 + 64 dimensional HDTS, Supplementary Fig. 18C-D).  Note that this can be thought of as spontaneous replay, as opposed to cued recall where the network reconstructs a partially presented stimulus.  
+
+We were able to successfully train the network to replay the movie scene in both cases (time averaged correlation coefficient of $r = 0.98$, Figure \ref{FORCE6}B, see Supplementary Movie 3).  Furthermore, we found that the HDTS inputs were necessary both for training ($r<0.44$, varies depending on parameters) and replay ($r=0.25$).  The network could still replay the individual frames from the movie scene without the HDTS, however the order of scenes was incorrect and appeared to be chaotic (see Supplementary Fig. 18A-B, 19, Supplementary Movie 3).  Thus, the HDTS input facilitates both learning and spontaneous replay of high dimensional signals.  
+
+We were surprised to see that despite the complexity and high dimensionality of the encoding signal, the histogram of spike times across the replay network displayed a strong 4 Hz modulation conferred by the HDTS.  This histogram can be interpreted as the mean network activity.    Unsurprisingly, reducing the HDTS amplitude yields a steady decrease in replay performance.   Initially, this is mirrored through a decrease in the amplitude of the 4 Hz oscillations in the mean population activity (See Supplementary Fig. 19).  Surprisingly however if we remove the HDTS, the mean activity displays a strong slower oscillation ($\approx 2 Hz$) (Figure \ref{FORCE6} G).  The emergence of these slower oscillations corresponds to a sharp decline in replay performance as the scenes are no longer replayed in chronological order (See Supplementary Movie 4).  The spikes were also non-uniformly distributed with respect to the mean-activity (see Supplementary Fig. 20).  
+
+%Thus, the theta oscillation in the local field potential is critical for encoding and replay of the movie scene, which can serve as a proxy for an episodic memory.  
+
+We wanted to determine how removing neurons in the replay network would affect both the mean population activity, and replay performance. We found that the replay performance decreased approximately linearly with the proportion of neurons that were lesioned, with the amplitude of the mean activity also decreasing (Figure \ref{FORCE6} F, G).  The HDTS network however was much more sensitive to neural lesioning.  We found lesioning 10\% of a random selection of neurons in the HDTS network was sufficient to stop the HDTS output.   Thus, the HDTS network is the critical element in this circuit that can drive accurate replay and is the most sensitive to damaging perturbations such as neural loss.   Finally, we wondered how the frequency and amplitude of the HDTS (and thus the mean activity) would alter the learning accuracy of a network (see Supplementary Fig. 18).   There was an optimal input frequency located in the 8-16 Hz range for large regions of parameter space.  This was robust to different neuronal parameters (see Supplementary Fig. 18).  
+
+
+It has been speculated that compressed or reversed replay of an event might be important for memory consolidation \cite{Euston,reversereplay}.  Thus we wondered if networks trained with an HDTS could replay the scene in accelerated time by compressing the HDTS post-training.  After training, we compressed the external HDTS in time (Figure \ref{FORCE6}D, Supplementary Movie 5).  The network was able to replay the movie in compressed time  (correlation of $r>0.8$) up to a compression factor of 16$\times$ with accuracy sharply dropping for further compression.  The effect of time compression on the mean activity was to introduce higher frequency oscillations (see Supplementary Fig. 21, Figure \ref{FORCE6}G).  The frequency of these oscillations scaled linearly with the amount of compression.  However, with increasing compression frequency, large waves of synchronized activity also emerged in the mean population activity (see Supplementary Fig. 21, Figure \ref{FORCE6}G).   Reverse replay was also was successfully achieved by reversing the order in which the HDTS components were presented to the network (accuracy of $r=0.90$, see Supplementary Movie 6).  This loss in accuracy is due to the fact that temporal dynamics of the network are not reversed within a segment of the HDTS.  Thus, the network can generalize to robustly compress or reverse replay, despite not being trained to do these tasks. 
+
+% Note that compression and reversal of the movie scene is a challenging problem with a spiking neural network.  In particular, the temporal basis cannot be compressed or reversed in time as the postsynaptic filters are always fixed.  Even if we compressed the spike times, the resulting basis generated by filtering the spike times would not be the compressed version of the original temporal basis.  
+
+
+Compression of a task dependent sequence of firing has been experimentally found in numerous sources (\cite{Euston,Mello,timecompression2}).  For example, in \cite{Euston}, the authors found that a recorded sequence of neuronal cross correlations in rats elicited during a spatial sequence task reappeared in compressed time during sleep.  The compression ratios between 5.4-8.1 and compressed sequences that were originally $\approx 10$ seconds down to $\approx 1.5$ seconds.  This is similar to the compression ratios we found for our networks without incurring appreciable error in replay (up to a compression factor of 8-16).   Time compression and dilation has also been experimentally found in the striatum \cite{B1,Mello}.  Here, the authors found that the neuronal firing sequences for striatal neurons were directly compressed in time (\cite{Mello}).  Indeed, we also found that accelerated replay of the movie scene compressed the spiking behavior for neurons in the replay network (see Supplementary Fig. 21).   
+
+To summarize, an HDTS is necessary for encoding and replay of high dimensional natural stimuli.  These movie clips can be thought of as proxies for episodic memories.   Compression and reversal of the HDTS allows compressed and reversed replay of the memory proxy.  At lower compression ratios, the mean population activity mirrors the HDTS while at higher compression ratios ($\geq 8\times$), large synchronized events in the mean activity emerge that repeat with each movie replay.  The optimal HDTS frequency mostly falls in the 8-16 Hz parameter range.   
+
+
+%These bear a similarity to hippocampal sharp waves, which also occur with compressed firing sequences of place cells for example \cite{SPWR}.   We should note however that the stereotypical ripple complex that simultaneously occurs with sharp waves is not present in our results.  This is likely due to a lack of a specific excitatory and inhibitory subpopulations.  
+
+
+\section*{Discussion} 
+
+  We have shown that FORCE training can take initially chaotic networks of spiking neurons and use them to mimic the natural tasks and functions demonstrated by populations of neurons.  For example, these networks were trained to learn low-dimensional dynamical systems such as oscillators which are at the heart of generating both rhythmic and non rhythmic motion \cite{CHURCHLAND1}.   We found FORCE training to be robust to the spiking model employed, initial network states, and synaptic connection types.   
+
+ Additionally, we showed that we could train spiking networks to display behaviors beyond low dimensional dynamics by altering the supervisor used to train the network.  For example, we trained a statistical classifier with a network of Izhikevich neurons that could discriminate its inputs.  Extending the notion of an oscillator even further allowed us to store a complicated sequence in the form of the notes of a song, reproduce the singing behavior of songbirds, and encode and replay a movie scene. These tasks are aided by the inclusion of a high-dimensional temporal signal (HDTS) that discretizes time by segregating the neurons into assemblies.  
+ 
+
+
+FORCE training is reminiscent of how songbirds learn their stereotypical learned songs \cite{konishi,Hanloser}.  Juvenile songbirds are typically presented with a species specific song or repertoire of songs from their parents or other members of their species.  These birds internalize the original template song and subsequently use it as an error signal for their own vocalization\cite{konishi,Mooney,Bouchard,Fee1,Fee2,Fee3,Hanloser,nottebohm}.  Our model reproduced the singing behavior of songbirds with FORCE training as the error correction mechanism.  Both the spiking statistics of area RA and the song spectrogram were accurately reproduced after FORCE training.  Furthermore, we demonstrated that altering the balance between excitation and inhibition post training degrades the singing behavior post-training.  A shift to excess excitation alters the spectrogram in a highly non-linear way while a shift to excess inhibition reduces the amplitude of all frequencies.
+
+%Currently, our FORCE trained spiking networks can replicate singing behavior and allow for perturbative analyses of network function.  While this in itself is a significant step forward in the literature, further work remains to be done.  For example, the HVC circuit can be modelled as an HDTS generator network.  Indeed, one of the primary functions of the HVC network is output a precise chain of spiking activity.  This observation inspired our HDTS  \cite{Hanloser,longtemperature,Fee3}.  However, recent evidence indicates the chain of activity might be regulated by a large distributed recurrent network consisting of HVC, RA, the thalamic song nucleus and the brain stem vocal respiratory group \cite{mooney2}.  
+%In either case, the predictive power of these models can be increased by constraining these networks both at the neuronal and connectivity level in future work for example by the biophysics of neurons in HVC and RA.  The post-trained connectivity matrix could be constrained by using measured connectivity statistics in these regions.    
+
+
+
+Inspired by the clock-like input pattern that song birds use for learning and replay \cite{Fee3,Hanloser} we used a similar high-dimensional temporal signal (HDTS) to encode a longer and more complex sequence of notes in addition to a scene from a movie.  We found that these signals made FORCE training faster and the subsequent replay more accurate.  Furthermore, by manipulating the HDTS frequency we found that we could speed up or reverse movie replay in a robust fashion. We found that compressing replay resulted in higher frequency oscillations in the mean population activity.  Attenuating the HDTS decreased replay performance while transitioning the mean activity from a 4-8 Hz oscillation to a slower ($\approx 2$ Hz) oscillation.  Finally, replay of the movie was robust to lesioning neurons in the replay network. 
+
+
+While our episodic memory network was not associated with any particular hippocampal region, it is tempting to conjecture on how our results might be interpreted within the context of the hippocampal literature.  In particular, we found that the HDTS conferred a slow oscillation in the mean population activity reminiscent of the slow theta oscillations observed in the hippocampus.  The theta oscillation is strongly associated to memory, however its computational role is not fully understood, with many theories proposed \cite{thetareview1,thetareview2,thetareview3,thetareview4}.  For example, the theta oscillation has been proposed to serve as a clock for memory formation \cite{travellingwave,thetareview1}.    
+
+Here, we show a concrete example that natural stimuli that serve as proxies for memories can be bound to an underlying oscillation in a population of neurons.  The oscillation forces the neurons to fire in discrete temporal assemblies.  
+The oscillation (via the HDTS) can be sped up, or even reversed resulting in an identical manipulation of the memory.  Additionally, we found that reducing the HDTS input severely disrupted replay and the underlying mean population oscillation.  This mirrors experimental results that showed that theta power was predictive of correct replay \cite{thetapower1}.  Furthermore, blocking the HDTS prevents learning and prevents accurate replay with networks trained with an HDTS present.  Blocking the hippocampal theta oscillation pharmacologically (\cite{blocktheta}) or optogenetically (\cite{Adamantidis}) has also been found to disrupt learning.  
+
+The role of the HDTS is reminiscent of the recent discovery of time cells, which also serve to partition themselves across a time interval in episodic memory tasks \cite{TC1,TC2,TC3}.   How time cells are formed is ongoing research however they are dependent on the medial septum, and thus the hippocampal theta oscillation \cite{TC7}.  Time cells have been found in CA1 \cite{TC1}, CA3 \cite{TC5} and temporally selective cells occur in the entorhinal cortex \cite{TC6}.  
+
+
+%Other potential unexplored FORCE applications include using synaptic models of short term plasticity as in earlier liquid state implementations \cite{Nmaass1,Nmaass2} using the synaptic model from \cite{tsodyks}.  
+
+
+In a broader context, FORCE trained networks could be used in the future to elucidate hippocampal functions.  For example, future FORCE trained networks can make use of biological constraints such as Dale's law in an effort to reproduce verified spike distributions for different neuron types with regards to the phase of the theta oscillation \cite{mizu}.  These networks can also be explicitly constructed to represent the different components of the well studied hippocampal circuit.  
+
+
+% This demonstrates the necessity of the theta oscillation for consolidating a memory trace, mirroring our results where successive presentations of the movie signal were necessary to consolidate our movie into memory during FORCE training.  
+%
+%The potential existence for a subset of neurons whose sequential firing can serve as a backbone for learning has recently been observed in a subset of hippocampal CA1 pyramidal neurons \cite{grosmark}.    These neurons had low spatial specificity but still took part in sequential firing during sharp-wave ripples in the hippocampus.  They displayed very limited changes in their sequential firing after sleep while a remaining plastic set of neurons displayed a higher resulting place specificity after sleep.  Thus, \cite{grosmark} conclude that sequence replay during sharpwave ripples occurs due to a subset of plastic neurons being added to a rigid backbone sequence.  While the exact details may differ between our episodic memory example, the core idea of using sequential firing of a population of neurons as a backbone for the encoding of new information is precisely the mechanism found in \cite{grosmark}.  
+
+
+FORCE training is a very powerful tool that allows one to use any sufficiently complicated dynamical system as a basis for universal computation.   The primary difficulty in implementing the technique in spiking networks appears to be controlling the orders of magnitude between the chaos inducing weight matrix and the feedback weight matrix.  If the chaotic weight matrix is too large in magnitude (via the $G$ parameter), the chaos can no longer be controlled by the feedback weight matrix \cite{FORCE1}.  However, if the chaos inducing matrix is too weak, the chaotic system no longer functions as a suitable reservoir.   To resolve this, we derived a scaling argument for how $Q$ should scale with $G$ for successful training based on network behaviors observed in \cite{FORCE1}.  Interestingly, the balance between these fluctuations could be related to the fading memory property, a necessary criterion for the convergence of FORCE trained rate networks \cite{rivkind}.
+
+Furthermore, while we succeeded in implementing the technique in other neuron types, the Izhikevich model was the most accurate in terms of learning arbitrary tasks or dynamics.  This is due to the presence of spike frequency adaptation variables that operate on a much slower time scale than the neuronal equations.  There may be other biologically relevant forces that can increase the capacity of the network to act as a reservoir through longer time scale dynamics, such as synaptic depression and NMDA mediated currents for example \cite{tsodyks,Nmaass1,Nmaass2}. 
+
+Furthermore, we found that the inclusion of a high-dimensional temporal signal increased the accuracy and capability of a spiking network to reproduce long signals.  In \cite{FORCE2}, another type of high-dimensional supervisor is used to train initially chaotic spiking networks.  Here, the authors use a supervisor consisting of $O(N^2)$ components (see \cite{FORCE2} for more details).  This is different from our approach involving the construction of an HDTS, which serves to partition the neurons into assemblies and is of lower dimensionality than $O(N^2)$.  However from \cite{FORCE2} and our work here, increasing the dimensionality of the supervisor does aid FORCE training accuracy and capability.  Finally, it is possible that an HDTS would facilitate faster and more accurate learning in networks of rate equations and more general reservoir methods as well.  
+
+Although FORCE trained networks have dynamics that are starting to resemble those of populations of neurons, at present all top-down procedures used to construct any functional spiking neural network need further work to become biologically plausible learning rules \cite{FORCE1,Deneve1,Chris1}.  For example, FORCE trained networks require non-local information in the form of the correlation matrix $\bm P(t)$.    However, we should not dismiss the final weight matrices generated by these techniques as biologically implausible simply because the techniques are themselves biologically implausible.  
+
+% More work should be done in implementing either FORCE, NEF, or spike-based coding networks using a biologically plausible learning mechanism based on synaptic plasticity or homeostasis \cite{BiPoo,Pfister,Claudia,Brunel,AbbottSTDP1,Vogels}.  This has been resolved for spike-based coding networks and linear dynamical systems for example \cite{Deneve4}
+
+%The versatility of FORCE learning is due to the fact that the technique is an implementation of reservoir computing from the machine learning field.  In reservoir computing, a recurrently coupled dynamical reservoir takes some dynamically varying input and transforms it into a much higher dimensional dynamical system.  As these techniques make minimal assumptions about the reservoir, they can be applied to a wide variety of spiking neural networks.  Reservoir techniques work by finding a set of readout weights on the reservoir to yield the target dynamics.  This approach vastly simplifies the training of recurrently coupled spiking networks as only the readout weights have to be learned, as opposed to the recurrent weights.  In the FORCE method and other implementations of reservoir computing, the  approximant is fed back into the network to stabilize dynamics.   The general approach to reservoir computing has many origins \cite{dominey1,maass1,jaeger4}.  What constitutes a reservoir and more importantly what constitutes a good reservoir is currently an active field of research \cite{PSM,chaoticreservoir1,maass2,maass3,HHLSM}.  The FORCE method uses a balanced, chaotic network as a reservoir, with similar ideas for general chaotic reservoirs appearing previously in \cite{chaoticreservoir1}, in addition to chaotic spiking networks of excitatory and inhibitory neurons in \cite{EIbalance}.  A spiking reservoir network was previously implemented by \cite{B2}.   
+
+ 
+Aside from the original rate formulation in \cite{FORCE1}, FORCE trained rate equations have been recently applied to analyzing and reproducing experimental data.  For example, in \cite{Rajan2}, the authors used a variant of FORCE training (referred to as Partial In-Network Training, PINning) to train a rate network to reproduce a temporal sequence of activity from mouse calcium imaging data.  PINning uses
+ minimal changes from a balanced weight matrix architecture to form neuronal sequences.   In \cite{DRUCK}, the authors combine experimental manipulations with FORCE trained networks to demonstrate that preparatory activity prior to motor behavior is resistant to unilateral perturbations both experimentally, and in their FORCE trained rate models.   In \cite{Enel}, the authors demonstrate the dynamics of reservoirs can explain the emergence of mixed selectivity in primate dorsal Anterior Cingulate Cortex (dACC).  The authors use a modified version of FORCE training to implement an exploration/exploitation task that was also experimentally performed on primates.  The authors found that the FORCE trained neurons had a similar dynamic form of mixed selective as experimentally recorded neurons in the dACC.  Finally, in \cite{B3}, the authors train a network of rate neurons to encode time on the scale of seconds.  This network is subsequently used to learn different spatio-temporal tasks, such as a cursive writing task.  These FORCE trained networks were able to account for psychophysical results such as Weber's law, where the variance of a response scales like the square of the time since the start of the response.  In all cases, FORCE trained rate networks were able to account for and predict experimental findings.  Thus, FORCE trained spiking networks can prove to be invaluable for generating novel predictions using voltage traces, spike times, and neuronal parameters.  
+
+Top-down network training techniques have different strengths and uses.   For example, the Neural Engineering Framework (NEF) and spike-based coding approaches solve for the underlying weight matrices immediately without training \cite{Deneve1,Deneve2,Ali,Chris1,Chris2}.  The solutions can be analytical as in the spike based coding approach, or numerical, as in the NEF approach.  Furthermore, the weight matrix solutions are valid over entire regions of the phase space, where as FORCE training uses individual trajectories as supervisors.  Multiple trajectories have to be FORCE trained into a single network to yield a comparable level of global performance over a region.   Both sets of solutions yield different insights into the structure, dynamics, and functions of spiking neural networks.  For example, brain scale functional models can be constructed with NEF networks \cite{Chris1}.  Spike-based coding networks demonstrate how higher order error scaling is possible by utilizing spiking sparsely and efficiently through balanced network solutions.  While the NEF and spike based coding approaches provide immediate weight matrix solutions, both techniques are difficult to generalize to other types of networks or other types of tasks.  Both the NEF and spike based coding approach require a system of closed form differential equations to determine the static weight matrix that yields the target dynamics.  
+
+In summary, we showed that FORCE can be used to train spiking neural networks to reproduce complex spatio-temporal dynamics. This method could be used in the future to mechanically link neural activity to the complex behaviors of animals.
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+ This work was funded by a Canadian National Sciences and Engineering Research Council (NSERC) Post-doctoral Fellowship, by the Wellcome Trust (200790/Z/16/Z), the Leverhulme Trust (RPG-2015-171) and the BBSRC (BB/N013956/1 and BB/N019008/1).  We would like to thank Frances Skinner, Chris Eliasmith, Larry Abbott, Raoul-Martin Memmesheimer, Brian DePasquale and Dean Buonomano for their comments.  Finally, we would like to especially thank the anonymous referees.  Their comments and suggestions greatly improved this manuscript. 
+\end{abstract}
+
+\renewcommand{\abstractname}{Conflict of Interest} 
+\begin{abstract}
+There is no conflict of interest to declare.   
+\end{abstract}
+
+\renewcommand{\abstractname}{Author Contributions}
+\begin{abstract}
+WN performed wrote software and performed simualtions.  Investigation and analysis was performend by WN and CC.  WN and CC wrote the manuscript.   
+\end{abstract}
+
+
+\renewcommand{\abstractname}{Data Availability Statement}
+\begin{abstract}
+The code used for this paper can be found on modelDB (\cite{modeldb}), under accession number 190565.
+\end{abstract}
+
+\section*{Methods} 
+\subsection*{Rate Equations} 
+
+The network of rate equations is given by the following:
+\begin{eqnarray}
+\tau_s\dot{s}_i &=& -s_i + G\sum_{j=1}^N \omega^0_{ij} r_j + Q\eta_i \hat{x}\\
+r_j &=& \begin{cases} F \sqrt{s_j} & s_j\geq 0 \\ 0 & s_j <0   \end{cases} \\
+\hat{x}(t) &=& \sum_{j=1}^N \phi_j r_j(t) 
+\end{eqnarray} 
+where $\omega^0_{ij} $ is the sparse and static weight matrix that induces chaos in the network by having $\omega^0_{ij}$ drawn from a normal distribution with mean 0 and variance $(Np)^{-1}$, where $p$ is the degree of sparsity in the network.  The variables $s$ can be thought of as neuronal currents with a postsynaptic filtering time constant of $\tau_s$.   The encoding variables $\eta_i$ are drawn from a uniform distribution over $[-1,1]$ and set the neurons encoding preference over the phase space of $x(t)$, the target dynamics.  The quantities $G$ and $Q$ are constants that scale the static weight matrix and feedback term, respectively.   The firing rates are given by $r_j$ and correspond to the Type-I normal form for firing.  The variable $F$ scales the firing rates.    The decoders, $\phi_j$ are determined by the Recursive Least Mean Squares (RLS) technique, iteratively \cite{haykin,bishop}.  RLS is described in greater detail in the next section.  For Supplementary Fig. 8 and Supplementary Fig. 9, we also implemented the $tanh(x)$ continuous variable equations from \cite{FORCE1} for comparison purposes.  These equations are described in greater detail in \cite{FORCE1}.  
+ 
+
+
+
+\subsection*{Integrate-and-Fire Networks} 
+Our networks consist of coupled integrate-and-fire neurons, that are one of the following three forms: 
+\begin{eqnarray}
+\dot{\theta}_i &=& (1-\cos(\theta_i)) +\pi^2 (1+\cos(\theta_i))( I)  \quad \text{(Theta neuron)}\\
+\tau_m\dot{v}_i &=& -v_i + I  \quad \text{(LIF Neuron)} \\
+C\dot{v}_i &=& k(v_i-v_r)(v_i-v_t) - u_i +I  \quad \text{(Izhikevich Neuron)} \\
+\dot{u}_i &=& a(b(v_i -v_r) - u_i) 
+\end{eqnarray}
+The currents, $I$ are given by $I=I_{Bias}+ s_i$ where $I_{Bias}$ is a constant background current set near or at the rheobase (threshold to spiking) value.   The currents are dimensionless in the case of the theta neuron while dimensional for the LIF and Izhikevich models.  Note that we have absorbed a unit resistance into the current for the LIF model.   The quantities $\theta_i$, or $v_i$ are the voltage variables while $u_i$ is the adaptation current for the Izhikevich model.  These voltage variables are instantly set to a reset potential ($v_{reset}$) when a neurons membrane potential reaches a threshold ($v_{thr}$,LIF) or voltage peak ($v_{peak}$, theta model, Izhikevich model).  The parameters for the neuron models can be found in Table \ref{Table1}.  The parameters from the Izhikevich model are from \cite{ahmad} with a slight modification to the $k$ parameter.  The LIF model has a refractory time period, $\tau_{ref}$ where the neuron cannot spike.      The adaptation current, $u_i$ for the Izhikevich model increases by a discrete amount $d$ every time neuron $i$ fires a spike and serves to slow down the firing rate.  The membrane time constant for the LIF model is given by $\tau_m$.  The variables for the Izhikevich model include $C$ (membrane capacitance), $v_r$ (resting membrane potential), $v_t$ (membrane threshold potential), $a$ (reciprocal of the adaptation time constant), $k$ (controls action potential half-width) and $b$ (controls resonance properties of the model).  
+
+The spikes are filtered by specific synapse types.  For example, the single exponential synaptic filter is given by the following:
+\begin{eqnarray}
+\dot{r}_j = -\frac{r_j}{\tau_s} + \frac{1}{\tau_s}\sum_{t_{jk}<t}\delta(t-t_{jk})  \label{fr11}
+\end{eqnarray}
+where $\tau_s$ is the synaptic time constant for the filter and $t_{jk}$ is the $k$th spike fired by the $j$th neuron.  The double exponential filter is given by 
+\begin{eqnarray}
+\dot{r}_j &=& -\frac{r_j}{\tau_d} + h_j \\
+\dot{h}_j&=& -\frac{h_j}{\tau_r} + \frac{1}{\tau_r\tau_d} \sum_{t_{jk}<t}\delta(t-t_{jk})  \label{fr12}
+\end{eqnarray}
+where $\tau_r$ is the synaptic rise time, and $\tau_d$ is the synaptic decay time.    The filters can be of the simple exponential type, double exponential, or alpha synapse type ($\tau_r = \tau_d$).   However, we will primarily consider the double exponential filter with a rise time of 2 ms and a decay time of 20 ms.  Longer and shorter filters are considered in the Supplementary Materials.   
+
+The synaptic currents, $s_i(t)$, are given by the equation 
+\begin{eqnarray}
+s_i = \sum_{j=1}^N  \omega_{ij}r_j 
+\end{eqnarray} 
+The matrix $\omega_{ij}$ is the matrix of synaptic connections and controls the magnitude of the postsynaptic currents arriving at neuron $i$ from neuron $j$.  
+
+ The primary goal of the network is to approximate the dynamics of an $m$-dimensional teaching signal, $\bm x(t)$, with the following approximant:
+\begin{eqnarray}
+\hat{\bm{x}}(t) = \sum_{j=1}^N \bm \phi_j r_j
+\end{eqnarray}
+where $\bm \phi_j$ is a quantity that is commonly referred to as the linear decoder for the firing rate.   
+The FORCE method decomposes the weight matrix into a static component, and a learned decoder $ \bm{\phi}$:
+\begin{eqnarray}
+\omega_{ij} = G \omega^0_{ij} + Q \bm{\eta}_i \cdot \bm{\phi}_j  ^T
+\end{eqnarray}
+The sparse matrix $\omega_{ij}^0$ is the static weight matrix that induces chaos.  It is drawn from a normal distribution with mean $0$, and variance $(Np^2)^{-1}$, where $p$ is the sparsity of the matrix.  Additionally, the sample mean for these weight matrices was explicitly set to $0$ for the LIF and theta neuron models to counterbalance the resulting firing rate heterogeneity.  This was not necessary with the Izhikevich model.   The variable $G$ controls the chaotic behavior and its value varies from neuron model to neuron model.   The encoding variables, $\bm \eta_i$ are drawn randomly and uniformly from $[-1,1]^k$, where $k$ is the dimensionality of the teaching signal.  The encoders, $\bm \eta_i$, contribute to the tuning preferences of the neurons in the network.  The variable $Q$ is increased to better allow the desired recurrent dynamics to tame the chaos present in the reservoir.    The weights are determined dynamically through time by minimizing the squared error between the approximant and intended dynamics, $\bm{e}(t) = \hat{\bm{x}}(t) -\bm{x}(t)$.  The Recursive Least Squares (RLS) technique updates the decoders accordingly:
+\begin{eqnarray}
+\bm{\phi}(t) &=& \bm{\phi}(t-\Delta t) - \bm{e}(t)\bm{P}(t)\bm{r}(t) \label{eq14} \\
+\bm{P}(t) &=& \bm{P}(t-\Delta t) -\frac{ \bm{P}(t-\Delta t) \bm{r}(t)\bm{r}(t)^T \bm{P}(t-\Delta t)}{1 + \bm{r}(t)^T \bm{P}(t-\Delta t) \bm{r}(t)} \label{eq15}
+\end{eqnarray} 
+where $\bm{P}(t)$ is the network estimate for the inverse of the correlation matrix:
+\begin{eqnarray}
+\bm{P}(t)^{-1} = \int_{0}^t \bm r(t) \bm r(t)^T \,dt + \lambda I_N .
+\end{eqnarray}
+The parameter $\lambda$ acts both as a regularization parameter \cite{haykin} and controls the rate of the error reduction while $I_N$ is an $N\times N$ identity matrix.  The RLS technique can be seen to minimize the squared error between the target dynamics and the network approximant:
+\begin{eqnarray}
+C = \int_0^T(\hat{x}(t)-x(t))^2\,dt + \lambda \bm{\phi}^T \bm{\phi}  
+\end{eqnarray}
+and uses network generated correlations optimally by using the correlation matrix $P(t)$.  
+The network is initialized with $\bm{\phi}(0) = \bm 0$, $\bm P(0) = I_N\lambda^{-1}$, where $I_N$ is an $N$-dimensional identity matrix.  Note that in the original implementation of \cite{FORCE1}, equation (\ref{eq14}) contains the term $1+\bm r(t)^T \bm P(t-\Delta t) \bm r(t)$ in the denominator.  This term adds a slight increase in accuracy and stability, but does not change the overall order of convergence of RLS.  For comparison purposes, this modification was applied to Supplementary Fig. 8.  All other implementations used equations (\ref{eq14})-(\ref{eq15}).   
+
+\subsubsection*{$G$ and $Q$ parameters}  
+
+In \cite{FORCE1}, the learned recurrent component and the static feedback term were both of the same order of magnitude, $O(1)$.  Furthermore, if the input stimulus had an amplitude that was too small (see Figure 2K, \cite{FORCE1}), the chaotic dynamics could not be tamed.  Operating on the hypothesis that the static term and the learned term require fluctuations of the same order of magnitude, one can derive the following equations using standard arguments about balanced networks \cite{sompo1}:
+\begin{eqnarray}
+s_i(t)&=&\sum_{j=1}^N G\omega_{ij}^0 r_j(t) \\
+\langle s_i(t) \rangle &\sim& 0, \quad N\rightarrow \infty\\
+\langle s_i(t)^2\rangle & \sim & G^2 E((\bar{\omega}_{ij}^0)^2) \langle r_i(t)^2\rangle 
+\end{eqnarray}
+where $\bar{\omega_{ij}}^0 = \sqrt{N} \omega_{ij}^0$
+The second term can be derived as follows:
+\begin{eqnarray}
+s_i(t)^2 &=&\frac{ G^2}{N}\left( \sum_{j=1}^N (\bar{\omega}_{ij}^0)^2 r_j(t)^2 + \sum_{j\neq k}b\bar{\omega_{ij}^0}\bar{\omega_{ik}^0} r_j(t)r_k(t)   \right)\\
+&\sim & {G^2} E((\bar{\omega}^0_{ij})^2)\langle r_{j}(t)^2\rangle \quad N\rightarrow \infty  
+\end{eqnarray}
+where the last step is justified as we can ignore interneuronal correlations $r_i(t)r_j(t)$ in addition to correlations between a weight matrix component and a firing rate, $r_j(t)$ in the large network limit.   If the term $\bm \eta \cdot x(t)$ is $O(1)$, this implies that $Q = O({G} \sigma_{\omega} \sqrt{\langle r_{j}(t)^2\rangle})$ where $\sigma_\omega$ is the standard deviation of the zero mean, static weight matrix distribution. 
+
+\subsection*{High Dimensional Temporal Signals} 
+
+The High-Dimensional Temporal Signals (HDTS) serves to stabilize network dynamics by organizing the neurons into assemblies.  These assemblies fire at precise intervals of time.   To elaborate further, these signals are constructed as a discretization of time, $T$ into $m$ sub-intervals.   Each subinterval generates an extra component (dimension) in the supervisor and within the subinterval, a pulse or upward deflection of the supervisor is generated.  For example, if we consider the interval from $[0,T]$ with $m$ subintervals of width $I_n = [T\left(\frac{n-1}{m}\right),T\left(\frac{n}{m}\right)]$, $n=1,2,\ldots m$.  The supervisor is constructed as a series of pulses centered in the intervals $I_n$.  This can be done in multiple ways.  For example, Gaussian pulses can be used to construct the HDTS:
+\begin{eqnarray}
+x_n(t) = \exp\left(-\frac{\left(t - T\left(\frac{2n-1}{2m} \right)\right)^2}{\sigma^2} \right)
+\end{eqnarray}
+where $\sigma$ controls the width.  Alternatively, one can also use piecewise defined functions such as
+\begin{eqnarray}
+x_n(t) = \begin{cases} |\sin(\frac{m\pi t}{T})| & t\in I_n\\ 0 & \text{otherwise}. \end{cases}
+\end{eqnarray}
+The end effect of these signals is to divide the network into a series of assemblies.  A neurons participation in the $n$th assembly is a function of the static weight matrix, in addition to $\bm \eta_{in}$.  Each assembly is activated by the preceding assemblies to propagate a long signal through the network.  The assemblies are activated at a specific frequency in the network, dictated by the width of the pulses in the HDTS.  Sinusoidal HDTS were used for the all figures with the exception of Supplementary Fig. 18C, where a Gaussian HDTS was used.    
+
+
+
+\subsection*{The FORCE Method with Rate Networks (Figure 1) }
+A network of rate equations is used to learn the dynamics of a teaching signal, $x(t)$, a 5 Hz sinusoidal oscillation.  The network consists of 1000 rate neurons with $F = 10$, $\tau_s = 10$ ms, $G=1$, and $Q=1.5$, $p=0.1$.    The network is run for 1 second initially, with RLS run for the next 4 seconds, and shut off at the 5 second mark.  The network is subsequently run for another 5 seconds to ensure learning occurs.   The smooth firing rates of the network were less than 30 Hz.  The RLS parameters were taken to be $\Delta t = 2$ ms and $\lambda^{-1} =  0.5$ ms.  
+
+\subsection*{Using Spiking Neural Networks to Mimic Dynamics Using FORCE training (Figure 2)} 
+
+Networks of theta neurons were trained to reproduce different oscillators.  The parameters were: $N=2000$, $G=10$ (sinusoid, sawtooth), $G = 15$ (Van der Pol), $G=25$ (product of sinusoids), $G=15$ (product of sinusoids with noise), $Q = 10^4$, $\Delta t = 0.5$ ms, with an integration time step of $0.01$ ms.   The resulting average firing rates for the network were 26.1 Hz (sinusoid) 29.0 Hz (sawtooth), 15.0 Hz (Van der Pol relaxation), 18.8 Hz (Van der Pol Harmonic), 23.0 Hz (product of sinusoids), 21.1 Hz (product of sines with noise). The Van der Pol oscillator is given by: $\ddot{x}  = \mu(1-x^2)\dot{x} - x$ for $\mu = 0.3$ (harmonic) and $\mu = 5$ (relaxation)  and was rescaled in space to lie within $[-1,1]^2$  and sped up in time by a factor of 20.    The networks were initialized with the static matrix with 10\% connectivity.  This induces chaotic spiking in the network.  We allow the network to settle onto the chaotic attractor for a period of 5 seconds.  After this initial period,  RLS is activated to turn on FORCE training for a duration of 5 seconds.  After this period of time, RLS was deactivated for the remainder 5 seconds of simulation time for all teaching signals except signals that were the product of sinusoids.  These signals required 50 seconds of training time and were tested for a longer duration post training to determine convergence.   The $\lambda^{-1}$ parameter used for RLS was taken to be the integration time step, $0.01$ ms for all implementations of the theta model in Figure 2.  The integration time step used in all cases of the theta model was $0.01$ ms.  
+
+The theta neuron parameters were as in Figure 2B for the 5Hz sinusoidal oscillator.  The LIF network consisted of 2000 neurons with $G=0.04$, $Q = 10$, with 10\% connectivity in the static weight matrix and $\Delta t = 2.5$ ms with an integration time step of 0.5 ms.  The average firing rate was 22.9 Hz.   The Izhikevich network consisted of 2000 neurons with $G =5*10^3 $, $Q = 5*10^3$, with 10\% connectivity in the static weight matrix and $\Delta t =  0.8 $ ms and an average firing rate of 36.7 Hz.  The $\lambda^{-1}$ parameter used for RLS was taken to be a small fraction of the integration time step, $\lambda^{-1} = 0.0025$ ms for Figure 2 while the Izhikevich model had $\lambda^{-1} = 1$ ms and an integration time step of $0.04$ ms.    The training time for all networks considered was 4 seconds, followed by 5 seconds of testing.  
+
+The Lorenz system with the parameter $\rho = 28$, $\sigma = 10$, and $B=8/3$ was used to train a network of 5000 theta neurons and is given by the equations:
+\begin{eqnarray*}
+\dot{x} &=& \sigma(y-x)\\
+\dot{y} &=& x(\rho - z) -y \\
+\dot{z} &=& xy -B z.
+\end{eqnarray*}
+The connectivity parameters were $G=14$, and $Q=10^4$.  The average firing rate was 22.21 Hz.  The network was trained for 45 seconds, and reproduced Lorenz-like trajectories and the attractor for the remaining 50 seconds. 
+
+
+
+
+\subsection*{Using Spiking Neural Networks for Pattern Storage and Replay with the FORCE Method (Figure 3)}
+
+The teaching signal was constructed using the positive component for a sinusoid with a frequency of 2 Hz for quarter notes and 1 Hz for half notes.  Each pulse corresponds to the presence of a note and they can also be used as the amplitude/envelope of the harmonics corresponding to each note to generate an audio-signal from the network (see Supplementary Audio File 1).  The network consisted of 5000 Izhikevich neurons with identical parameters as before, $G=1*10^4$, $Q = 4*10^3$, and $\Delta t = 4$ ms and an integration time step of $0.04$ ms.  The teaching signal was continually fed into the network for 900 seconds, corresponding to 225 repetitions of the signal.  After training, the network was simulated with RLS off for a period of 1000 seconds.  In this interval, correct replay of the song corresponded to 82\% of the duration with 205 distinct, correct replays of the song within the signal.   Correct replays were automatically classified by constructing a moving average error function:
+\begin{eqnarray}
+E(t) = \sum_{i=1}^5\int_{t}^{t+T}(\hat{x}_i(t')-x_i(t'))^2\,dt' 
+\end{eqnarray} 
+where $T=4$ seconds is the length of the song.  As we vary $t$, the teaching signal $x(t')$ comes into alignment with correct playbacks in the network output, $\hat{x}(t')$.  This reduces the error creating local minima of $E(t)$ that correspond to correct replays at times $t=t^*$.  These are automatically classified as correct if $E(t^*)$ is under a critical value.   The average firing rate for the network was 34 Hz.   $\lambda^{-1} =2$ ms was used for RLS training.
+
+\subsection*{Using Spiking Neural Networks for Pattern Storage and Replay with the FORCE Method: Song Bird Example (Figure 4)}
+
+The teaching signal consisted of the spectrogram for a 5 second long recording of the singing behavior of a male zebra finch that was generated with a 22.7 ms window.  This data was obtained from the CRCNS data repository \cite{songbirddata}.  The RA network consisted of 1000 neurons that was FORCE trained for 50 seconds with $G=1.3*10^4$, $Q = 1*10^3$, $\lambda^{-1} =  2$ ms, $\Delta t = 4$ ms and an integration time step of $0.04$ ms.   The average firing rate for the network was 52.93 Hz.   The HVC input was modeled as a sequence of 500 pulses that were constructed from the positive component of a sinusoidal oscillation with a period of 20 ms.  The pulses fired in a chain starting with the first component.  This chain was multiplied by a static, $N\times 500$ feedforward weight matrix, $W^{in}$ where each weight was drawn uniformly from the $[-8*10^3,8*10^3]$.  The network was tested for another 50 s after RLS was turned off to test if learning was successful.  We note that for this songbird example, the network could also learn the output with only the static, chaos inducing weight matrix and the feedforward HVC inputs ($Q=0$).  However when $Q=0$, the network behavior is similar to the more classic liquid state regime.   
+
+To manipulate the weight matrix post training, we introduced a parameter $\alpha$ that allowed us to control the balance between excitation and inhibition: 
+\begin{eqnarray}
+\omega_{ij} = \alpha \left(G\omega_{ij}^0 + Q\eta_i\cdot \phi_j \right)_+   +  \left(G\omega_{ij}^0 + Q\eta_i\cdot \phi_j\right)_-   
+\end{eqnarray}
+where $(x)_\pm$ denotes:
+$$ (x)_\pm = \begin{cases} x & x >(<) 0  \\ 0  & x\leq (\geq) 0  \end{cases}$$ 
+The values $\alpha = 1$ yield the original weight matrix, while $\alpha > 1$ amplifies the excitatory connections and $\alpha < 1$ diminishes the excitatory connections.  
+
+
+
+
+
+
+\subsection*{Using Spiking Neural Networks for Pattern Storage and Replay with the FORCE Method: Movie Replay (Figure 5)}
+
+The teaching signal consisted of an 8 second movie clip from the movie Predator.  The frames were smoothed and interpolated so that RLS could be applied at any time point, instead of just the fixed times corresponding to the native frames per second of the original movie clip.  The movie was downsampled to 1920 pixels ($30\times 64$) which formed the supervisor.  For both implementations (external and internal HDTS), the replay network consisted of 1000 neurons with $G=5*10^3$, $Q = 4*10^2$, $\lambda^{-1} =  2$ ms, $\Delta t = 4$ ms and an integration time step of $0.04$ ms.  For the external HDTS network, an HDTS was generated with 32 pulses that were 250 ms in duration.  The HDTS was multiplied by a static, $N\times 32$ feedforward weight matrix, $W^{in}$ where each weight was drawn uniformly from $[-4*10^3,4*10^3]$ and 74 seconds of FORCE training was used.  The network was simulated for another 370 s after RLS was turned off to test if learning was successful.  For the internal HDTS case, a separate HDTS network was trained with 2000 neurons.  The supervisor for this network consisted of a 64-dimensional HDTS with pulses that were 125 ms in duration.  The HDTS was fed into an identical replay network as in the external HDTS case.  The replay network was trained simultaneously to the HDTS network and had $G = 1*10^4$, $Q = 4*10^3$.  The HDTS was fed into the replay network in an identical manner to the external HDTS case.  RLS was applied to train the HDTS and replay network with identical parameters as in the external HDTS case, only with a longer training time (290 s).   We note that for this movie example, the network could also learn the output with only the static, chaos inducing weight matrix and the feedforward HDTS inputs ($Q=0$).  However when $Q=0$, the network behavior is similar to the more classic liquid state regime.  
+
+\newpage
+
+\begin{figure}[htp!]
+\centering 
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.8]{FFIG1}
+\caption{}\label{FORCE1}
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIG2}
+\caption{}\label{FORCE2}
+\end{figure}
+ 
+
+
+
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIG3}
+\caption{}\label{FORCE4}
+\end{figure}
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.88]{FFIG4}
+\caption{}\label{FORCE5}
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.87]{FFIG5}
+\caption{}\label{FORCE6}
+\end{figure}
+
+
+
+
+\begin{table}[htp!]
+\center
+\begin{tabular}{|l|l|l|}
+\hline 
+Neuron Model & Parameter & Value \\
+\hline
+Izhikevich & $C$ & 250 $\mu$ F  \\ 
+\hline
+& $v_r$ & -60 mV \\ 
+\hline
+& $v_{t}$ & -20 mV( -40 mV songbird example, -19.2 mV Supplementary Oscillator Panel) \\ 
+\hline
+& $b$ & 0  (-2 nS in Supplementary Oscillator Panel)\\ 
+\hline
+& $v_{peak}$ & 30 mV \\ 
+\hline
+& $v_{reset}$ & -65 mV \\ 
+\hline
+& $a$ & 0.01 ms$^{-1}$ (0.002 ms$^{-1}$, songbird example) \\ 
+\hline
+& $d$ & 200 pA (100 pA, songbird example) \\ 
+\hline
+& $I_{Bias}$ & 1000 pA \\
+\hline
+& $k$ & 2.5 nS  \\
+\hline
+& $\tau_R$ & 2 ms\\
+\hline
+&  $\tau_D$ & 20 ms \\
+\hline 
+Theta Model & $I_{Bias}$ & 0 \\
+\hline
+ & $\tau_R$  & 2 ms \\
+\hline 
+& $\tau_D $  & 20 ms\\
+\hline 
+LIF Model &$\tau_m$ & 10 ms  \\
+\hline 
+& $\tau_{ref}$ & 2 ms  \\ 
+\hline 
+&$v_{reset}$ & -65 mV  \\
+\hline 
+& $v_{t}$ & -40 mV \\ 
+\hline 
+& $I_{Bias}$& -40 pA (-39 pA, Lorenz Example) \\
+\hline 
+\end{tabular}
+\caption{The parameters used for the Izhikevich, theta, and LIF neuron models, unless otherwise stated} \label{Table1} 
+\end{table}
+
+
+
+\newpage 
+\section*{Figure Captions} 
+
+
+
+\subsection*{Figure \ref{FORCE1}:  The FORCE Method Explained  }
+(A) In the FORCE method, a spiking neural network contains a backbone of static and strong synaptic weights that scale like $1/\sqrt{N}$ to induce network level chaos (blue).  A secondary set of weights are added to the weight matrix with the decoders determined through a time optimization procedure (red).  The Recursive Least Squares technique (RLS) is used in all subsequent simulations.  FORCE training requires a supervisor $x(t)$ to estimate with $\hat{x}(t)$. (B) Prior to learning, the firing rates for 5 random neurons from a network of 1000  rate equations are in the chaotic regime.  The chaos is controlled and converted to steady state oscillations. (C)  This allows the network to represent a 5 Hz sinusoidal input (black). After learning, the network (blue) still displays the 5 Hz sinusoidal oscillation as its macroscopic dynamics and the training is successful. The total training time is 5 seconds.  (D) The decoders for 20 randomly selected neurons in the network, before ($t<5$), during ( $5\leq t<10$) and after ($t\geq 10$) FORCE training.   (E) The eigenvalue spectrum for the effective weight matrix before (red) and after (black) FORCE training.  Note the lack of dominant eigenvalues in the weight matrix.  
+
+\subsection*{Figure \ref{FORCE2}: Using Spiking Neural Networks to Mimic Dynamics with FORCE Training }
+(A) The voltage trace for 5 randomly selected neurons in networks of 2000 integrate-and-fire spiking neurons.      The models under consideration are the theta neuron (left), the leaky integrate-and-fire neuron (middle), and the Izhikevich model with spike frequency adaptation (right).    For all networks under consideration, a spike was deleted (black arrow) from one of the neurons.  This caused the spike train to diverge post-deletion, a clear indication of chaotic behavior.  (B) A network of 2000 theta neurons (blue) was initialized in the chaotic regime and trained to mimic different oscillators (black) with FORCE training.    The oscillators included the sinusoid, Van der Pol in harmonic and relaxation regimes, a non-smooth sawtooth oscillator, the oscillator formed from  taking the product of a pair of sinusoids with 4 Hz and 6 Hz frequencies, and the same product of sinusoids with a Gaussian additive white noise distortion with a standard deviation of 0.05.  (C) Three networks of different integrate-and-fire neurons were initialized in the chaotic regime (left), and trained using the FORCE method (center) to mimic a 5 Hz sinusoidal oscillator (right).   (D) A network of 5000 theta neurons was trained with the FORCE method to mimic the Lorenz system.  RLS was used to learn the decoders using a 45 second long trajectory of the Lorenz system as a supervisor.  RLS was turned off after 50 seconds with the resulting trajectory and chaotic attractor bearing a strong resemblance to the Lorenz system.  The network attractor is shown in three different viewing planes for 50 seconds post training.  
+
+
+\subsection*{Figure \ref{FORCE4}: Using Spiking Neural Networks for Pattern Storage and Replay with FORCE Training} 
+(A) The notes in the song Ode to Joy by Beethoven are converted into a continuous 5-component teaching signal.  The presence of a note is designated by an upward pulse in the signal.  Quarter notes are the positive portion of a 2 Hz sine wave form while half notes are represented with the positive part of a 1 Hz sine wave.   Each component in the teaching signal corresponds to the musical notes C,D,E,F and G.  The teaching signal is presented to a network of 5000 Izhikevich neurons continuously from start to finish until the network learns to reproduce the sequence through FORCE training.  The network output in (A) is after 900 seconds of FORCE training, or 225 applications of the target signal.  For 1000 seconds of simulation time after training, the song was played correctly 205 times comprising 820 seconds of the signal (see Supplementary Fig. 15-S16).    (B) 5 randomly selected neurons in the network and their resulting dynamics after FORCE training.  The voltage traces are taken at the same time as the approximant in (A).  (C) The decoders before ($1<t<900$) and after ($t>900$) FORCE training.   (D) The resulting eigenvalues for the weight matrix $G\omega_{ij}^0 + Q\bm \eta_i \bm \phi_j$ before (black) and after (red) learning.   Note that the onset to chaos occurs at $G \approx 10^3$ for the Izhikevich network with the parameters we have considered.  
+
+\subsection*{Figure \ref{FORCE5}: Using Spiking Neural Networks for Pattern Storage and Replay:  Songbird Singing}
+
+(A) A series of pulses constructed from the positive portion of a sinusoidal oscillator with a period of 20 ms are used to model the chain of firing output from RA projection neurons in HVC.  These neurons connect to neurons in RA and trigger singing behavior.   FORCE training was used to train a network of 1000 Izhikevich neurons to reproduce the spectrogram of a 5 second audio recording from an adult zebra finch.  (B) The syllables in the song output for the teaching signal (top) and the network (bottom). (C) Spike raster plot for 30 neurons over 5 repetitions of the song.  The spike raster plot is aligned with the syllables in (B).  (D) The distribution of instantaneous firing rates for the RA network post training.  The $\alpha$ parameter corresponds to the up/down regulation factor of the excitatory synapses and to the different colours in the graphs of (D) and (E).  For $\alpha > 1$, excitation dominates over inhibition while the reverse is true for $\alpha < 1$ .    The inset of (D) and (E) is reproduced from \cite{Fee2}.  Note that the y-axis of the model and data differ, this is due to normalization of the density functions.    (E) The log of the interspike interval histogram.  (F) The correlation between the network output and the teaching signal as the excitatory synapses are upscaled (negative x-axis) or downscaled (positive x-axis).    (G) The spectrogram for the teaching signal, and the network output under different scaling factors for the excitatory synaptic weights.   The panels in (G) correspond to the plots in (D), (E) and the performance measure in (F).  
+
+\subsection*{Figure \ref{FORCE6}: Using Spiking Neural Networks for Pattern Storage and Replay:  Movie Replay} 
+(A) Two types of networks were trained to replay an 8 second clip from a movie.  In the internally generated HDTS case, both an HDTS and a replay network are simultaneously trained.  The HDTS projects onto the replay network similar to how HVC neurons project onto RA neurons in the birdsong circuit. The HDTS confers an 8 Hz oscillation in the mean population activity.  In the externally generated HDTS case, the network receives an HDTS supervisor that has not been trained, but is simple to manipulate and confers a 4 Hz oscillation in the mean population activity.  (B) The teaching signal is displayed in addition to the network output at 4 separate times that correspond to distinct scenes in the movie.  (C) The HDTS consists of 64 pulses generated from the positive component of a sinusoidal oscillator with a period of 250 ms.  The colour of the pulses denotes its order in the temporal chain or equivalently, its dimension in the HDTS. (D) The external HDTS is compressed in time which results in speeding up the replay of the movie clip.  The time-averaged correlation coefficient between the teaching signal and network output is used to measure performance.  (E) The HDTS amplitude for the network with an internal HDTS was reduced.  The network was robust to decreasing the amplitude of the HDTS.  (F) Neurons in the replay network were removed and replay performance was measured.  The replay performance decreases in an approximately linear fashion with the proportion of the replay network that is removed.  (G) The mean population activity for the replay networks under HDTS compression, removal, and replay network lesioning.  
+
+
+\newpage
+\bibliographystyle{apalike}	% or "unsrt", "alpha", "abbrv", etc.
+\bibliography{thesisbib2}
+
+
+\clearpage
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIGS2}
+\caption*{Supplementary Figure S1:  The connectivity parameters $G$ are varied over a discrete mesh to determine the spiking behavior for a network of Leaky integrate and fire (A), Izhikevich neurons (B), Theta neuron (C) and Theta neurons over a larger parameter range (D).  The firing rate is shown in the top left corner as a function of $G$, with increasing values of $G$ being indicated on a red-blue colour scale for each neuron model.  The distribution of interspike intervals (top right) and coefficients of variation (bottom left), in addition to the probability $P(\epsilon)$ of a perturbation of size $\epsilon$ destabilizing the network is plotted (bottom right).  All networks consisted of 2000 neurons, with statistics computed after an initial 5 (Izhikevich and LIF) or 10 second (Theta neuron) transient. The Izhikevich and theta neurons immediately transition to chaotic spiking from quiescence ($G\approx 0.02$, $G\approx 1000$, respectively), as their bias currents are set to the rheobase.  The LIF network transitions from tonic spiking at a constant rate to chaotic spiking ($G=0.04$).  All networks exhibit a possible transition to rate chaos for high enough $G$, as indicated by bimodal interspike-interval distributions for sufficiently high $G$.  The probability of divergence, $P(\epsilon)$ was measured by following a reference trajectory and perturbing off of it every 300 ms. The reference trajectory is followed after the initial transient network behavior.   The $N$-dimensional perturbations had a magnitude of $\epsilon$ in a randomly generated, unbiased direction and were applied to the postsynaptic filters, $r_i(t)$.  The perturbations off the reference trajectory were recorded and classified as either divergent or convergent back to the reference trajectory.}  
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | c | }
+    \hline
+    Neuron Model & Example & $\lambda^{-1}$  & $G$ & $Q$ & Training & Firing  \\  
+ & & & & & Time & Rate \\
+\hline
+\hline 
+Izhikevich Model  & & & & & & \\
+($\tau_D = 20$ ms )  & & & & & & \\
+\hline
+ & 5 Hz sine wave & 2 ms &  $5*10^3$ & $5*10^3$  & 5 s &  35.7 Hz  \\  
+\hline 
+ & 5 Hz sawtooth wave & 2 ms  & $5*10^3$ & $4*10^3$ & 5 s & 36.8 Hz \\  
+\hline 
+ & Van der Pol (Harmonic) & 2 ms & $1*10^4$ & $9*10^3$ & 5 s & 43.4 Hz \\  
+\hline 
+& Van der Pol (Relaxation) & 2 ms & $1*10^4$ & $2*10^4$ & 5 s & 41.9 Hz \\  
+\hline 
+& $sin(8\pi t)sin(12\pi t)$ & 2 ms & $1*10^4$ & $9*10^3$ & 5 s & 47.1 Hz \\  
+\hline 
+  & $sin(8\pi t)sin(12\pi t) + 0.05 \zeta_i$ & 2 ms & $1*10^4$ & $8*10^3$ & 5 s & 47.9 Hz \\  
+\hline 
+(Oscillator 1)& $\frac{1}{2}sin(8\pi t)+\frac{1}{6}sin(12\pi t) +\frac{1}{4}sin(28\pi t)  $ & 2 ms & $1*10^4$ & $1*10^4$ & 25 
+s & 52.3 Hz \\  
+\hline 
+(Oscillator 2)& $sin(4\pi t)sin(6\pi t)sin(14\pi t)$  & 2 ms & $1*10^4$ & $1*10^4$ & 25 s & 41.6 Hz \\
+
+\hline 
+\hline
+Theta Model  & & & & & & \\
+($\tau_D = 50$ ms )  & & & & & & \\
+\hline
+ & 5 Hz sine wave & 0.1 ms &  $50$ & $2*10^4$  & 5 s &  47.53 Hz  \\  
+\hline   & 5 Hz sawtooth wave & 0.1 ms  & $50$ & $2*10^4$ & 5 s & 57.65 Hz \\  
+\hline 
+  & Van der Pol (Harmonic) & 0.02 ms & $10$ & $10^4$ & 5 s & 18.6 Hz \\  
+\hline 
+   & Van der Pol (Relaxation) & 0.02 ms & $10 $ & $10^4$ & 5 s & 13.7 Hz \\  
+\hline 
+ & $sin(8\pi t)sin(12\pi t)$ & 0.1 ms & $50$ & $2*10^4$ & 50 s & 47.1 Hz \\  
+\hline 
+ & $sin(8\pi t)sin(12\pi t) + 0.05 \zeta_i$ & 0.1 ms & $50$ & $2*10^4$ & 50 s & 47.9 Hz \\
+\hline 
+\hline
+Theta Model  & & & & & & \\
+($\tau_D = 20$ ms )  & & & & & & \\
+\hline
+ & $sin(8\pi t)sin(12\pi t)$ & 0.01 ms & $25$ & $10^4$ & 50 s & 47.1 Hz \\  
+\hline  
+ & $sin(8\pi t)sin(12\pi t) + 0.05 \zeta_i$ & 0.01 ms & $15$ & $10^4$ & 50 s & 47.9 Hz \\
+\hline 
+\hline
+LIF Model  & & & & & & \\
+($\tau_D = 30$ ms )  & & & & & & \\
+\hline
+    & 5 Hz sine wave & 0.0025 ms &  $0.05$ & $10$  & 5 s &  47.53 Hz  \\  
+\hline 
+ & 5 Hz sawtooth wave & 0.0025 ms  & $0.1$ & $20$ & 5 s & 57.65 Hz \\  
+\hline 
+   & Van der Pol (Harmonic) & 0.0025 ms & $0.05$ & $30$ & 5 s & 18.6 Hz \\  
+\hline 
+  & Van der Pol (Relaxation) & 0.0025 ms & $0.05 $ & $30$ & 5 s & 21.7 Hz \\  
+\hline 
+  & $sin(8\pi t)sin(12\pi t)$ & 0.0025 ms & $0.1$ & $30$ & 25 s & 38.2 Hz \\  
+\hline   & $sin(8\pi t)sin(12\pi t) + 0.5 \zeta_i$ & 0.0025 ms & $0.1$ & $30 $ & 25 s & 33.9 Hz \\
+\hline 
+\hline
+LIF Model  & & & & & & \\
+($\tau_D = 20$ ms )  & & & & & & \\
+\hline
+  & 5 Hz sine wave & 0.0025 ms &  $0.1$ & $30$  & 5 s &  38.7 Hz  \\  
+\hline 
+& 5 Hz sawtooth wave & 0.0025 ms  & $0.1$ & $30$ & 5 s & 41.9 Hz \\  
+\hline 
+ & Van der Pol (Harmonic) & 0.0025 ms & $0.05$ & $30$ & 5 s & 25.8 Hz \\  
+\hline 
+   & Van der Pol (Relaxation) & 0.0025 ms & $0.05 $ & $30$ & 5 s & 22.3 Hz \\  
+\hline 
+ & $sin(8\pi t)sin(12\pi t)$ & 0.0025 ms & $0.1$ & $30$ & 25 s & 34.3 Hz \\  
+\hline 
+ & $sin(8\pi t)sin(12\pi t) + 0.05 \zeta_i$ & 0.0025 ms & $0.1$ & $30 $ & 25 s & 34.7 Hz \\
+\hline 
+\hline
+LIF Model  & & & & & & \\
+($\tau_D = 10$ ms )  & & & & & & \\
+\hline 
+ & $sin(8\pi t)sin(12\pi t)$ & 0.0025 ms & $0.1$ & $30$ & 25 s & 35.0 Hz \\  
+\hline  & $sin(8\pi t)sin(12\pi t) + 0.05 \zeta_i$ & 0.0025 ms & $0.1$ & $30 $ & 25 s & 35.0 Hz \\ 
+\hline 
+\hline
+  \end{tabular}
+\end{center}
+\caption*{Supplementary Table 1:  Parameter table corresponding to figure S3.  The quantity $\zeta_i$ is an additive white noise signal with mean 0 and standard deviation 1.  The integration time step was taken to be $0.01$ ms, $0.05$ ms and $0.04$ ms for the Theta, LIF, and Izhikevich neuron models, respectively. The $\Delta_t$ parameter in all cases was $0.5 $ ms, $2.5$ ms, and $0.8$ ms for the Theta, LIF, and Izhikevich models, respectively.   
+The code to reproduce each panel can be found on the code repository modelDB \cite{modeldb} under accession number 190565. } 
+\end{table} 
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.94]{FFIGS4}
+\caption*{Supplementary Figure S2:  FORCE Trained Oscillators for networks of theta, LIF, and Izhikevich neurons at various time constants.  The parameters for each panel can be found in Table S1.  The code to reproduce each panel can be found on the code repository modelDB \cite{modeldb} under accession number 190565.   }
+\end{figure}
+
+\newpage 
+%\section*{Spiking Network Statistics Before and After FORCE Training} 
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIGS5}
+\caption*{Supplementary Figure S3:  (A) Networks of 2000 theta neurons (top), leaky integrate-and-fire neurons (middle), and Izhikevich models were trained to approximate a 5 Hz sinusoidal oscillator.  The parameters for (A) are identical to Figure 2C in the main text.  The CV distributions for these networks were centered around non-zero values for the theta and Izhikevich models.  This is indicative of Poisson like random-spiking.  The LIF model had a CV distribution with a mean greater than one, which corresponded to random bursting.  After learning, the CV distribution increases due to the regular bursting behavior required to approximate the sinusoidal oscillation for the Theta and Izhikevich networks.  If the network has strong rate fluctuations, the CV distribution decreases post-training, as in the LIF network.     The average firing rates also increase after learning. (B)  The LIF network is trained with the FORCE method for increasing values of $G$. The coefficients of variation increase with increasing $G$ prior to training (top).  The coefficients of variation increase for low $G$ after training and decrease for large $G$.  The voltage traces of 5 randomly selected neurons are shown for increasing $G$ (bottom).   For large $G$, the network has strong rate-fluctuations pre-training.    }
+\end{figure}
+
+
+
+
+\clearpage
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.80]{FFIGS6}
+\newpage
+\caption*{Supplementary Figure S4: (A)  Networks of 2000 LIF neurons were run over $16\times17$ point mesh in the $(G,Q)$ parameter space for 5 sets of sinusoidal oscillators at different frequencies, in addition to the Ode to Joy oscillator example (horizontal rows).   The maximal values of $(G,Q)$ were $(2*10^{-1},3*10^1)$.  The synaptic decay time constants were also varied (vertical columns).  The synaptic rise time was also removed ($\tau_R =0$ ms) for the third column.  The colour indicates the magnitude of the $L_2$ error with darker schemes indicating greater accuracy.  For the sinusoidal oscillators, 5 seconds of FORCE training with 5 seconds of testing was used while for the Ode to Joy oscillator, 85 seconds of training and 35 seconds of testing was used.  Faster supervisors require faster time constants while slower supervisors require slower time constants, as indicated by the relative sizes of the convergent parameter regions. Additional parameters can be found in Table S2. (B)  Four discrete simulations points are plotted in the bottom panel.  These networks had the best performance in their indicated panel. The numerical value can be found in Table S2. } 
+\end{figure}
+
+\clearpage
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.8]{FFIGS7}
+\caption*{Supplementary Figure S5:  (A) Networks of 2000 Theta neurons were run over $16\times17$ point mesh in the $(G,Q)$ parameter space for 5 sets of sinusoidal oscillators at different frequencies, in addition to the Ode to Joy oscillator example (horizontal rows).  The maximal values of $(G,Q)$ were $(1*10^2,5*10^4)$.  The synaptic decay time constants were also varied (vertical columns).  The synaptic rise time was also removed ($\tau_R =0$ ms) for the third column.  The colour indicates the magnitude of the $L_2$ error with darker schemes indicating greater accuracy.  For the sinusoidal oscillators, 5 seconds of FORCE training with 5 seconds of testing was used while for the Ode to Joy oscillator, 85 seconds of training and 35 seconds of testing was used.  Faster supervisors require faster time constants while slower supervisors require slower time constants, as indicated by the relative sizes of the convergent parameter regions.  Additional parameters can be found in Table S2.  (B)  Four discrete simulations points are plotted in the bottom panel.  These networks had the best performance in their indicated panel. The numerical value can be found in Table S2.}   
+\end{figure}
+
+\clearpage
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.80]{FFIGS8}
+\caption*{Supplementary Figure S6: (A)  Networks of Izhikevich neurons were run over $16\times17$ point mesh in the $(G,Q)$ parameter space for 5 sets of sinusoidal oscillators at different frequencies, in addition to the Ode to Joy oscillator example (horizontal rows).  The maximal values of $(G,Q)$ were $(3*10^4,3*10^4)$.  The synaptic decay time constants were also varied (vertical columns).   The synaptic rise time was also removed ($\tau_R =0$ ms) for the third column.  The colour indicates the magnitude of the $L_2$ error with darker schemes indicating greater accuracy.   For the sinusoidal oscillators, 5 seconds of FORCE training with 5 seconds of testing was used while for the Ode to Joy oscillator, 85 seconds of training and 35 seconds of testing was used. As in the LIF and theta models, faster supervisors require faster time constants while slower supervisors require slower time constants, as indicated by the relative sizes of the convergent parameter regions.  Note that the Izhikevich model is the most robust for training as there are convergent parameter regimes that violate this trend. Additional parameters can be found in Table S2.  (B) Four discrete simulations points are plotted in the bottom panel.  These networks had the best performance in their indicated panel. The numerical value can be found in Table S2. Note that the Ode to Joy panels are over a smaller region in the $G$ parameter space, from $[0,1.5*10^4]$ than the sinusoidal supervisors.} 
+\end{figure}
+\clearpage
+
+\newpage
+
+\begin{table}
+\begin{center}
+  \begin{tabular}{ |c | c  c  c  c  c |  }
+
+\hline 
+\multicolumn{6}{ |c| }{Leaky Integrate and Fire Network }\\
+\hline 
+RLS Parameters & \multicolumn{5}{c|}{$dt = 0.05$ ms, $\lambda^{-1} =0.0025$ ms, $\Delta t = 2.5$ ms}  \\
+\hline 
+Time Constants (ms)  & $\tau_R = 2$  & $\tau_R = 2$    & $\tau_R = 2$  & $\tau_R = 2$ & $\tau_R = 2$  \\  & $\tau_D = 10$  & $\tau_D = 20$ &  $\tau_D = 20$    &  $\tau_D = 50$  & $\tau_D = 100$  \\
+\hline
+Sine (1 Hz)  & \cellcolor{green} -1.4346   & \cellcolor{green} -3.0605  &\cellcolor{green} -2.6322 &  -4.7398 &  -5.1394\\
+Sine (5 Hz) &   -2.9684  & -3.6486  & -3.4463  & -3.7996  & -2.7361\\
+Sine (10 Hz)  &  -3.1256  & -3.3566  & -3.0229  & -2.5567 &  -1.2777\\
+Sine (20 Hz)  &  -3.6797   &-2.4788  & -2.2132  & -1.4055 &  -0.8501\\
+Sine (40 Hz) &   -1.5925  & -1.2403  & -1.0395  & -1.0609  & -0.6208\\
+Ode to Joy  & \cellcolor{green} -1.2165  & -1.1529 &  -1.1869  & -3.4849  & -3.5075\\
+\hline
+
+\hline 
+  \end{tabular}\\
+
+  \begin{tabular}{ |c | c  c  c  c  c |  }
+
+\hline 
+\multicolumn{6}{ |c| }{Theta Neuron Network}\\
+\hline 
+RLS Parameters & \multicolumn{5}{c|}{ $dt = 0.1$ ms, $\lambda^{-1} =0.01$ ms, $\Delta t = 0.5$ ms}  \\
+\hline 
+Time Constants (ms)  & $\tau_R = 2$  & $\tau_R = 2$    & $\tau_R = 2$  & $\tau_R = 2$ & $\tau_R = 2$  \\  & $\tau_D = 10$  & $\tau_D = 20$ &  $\tau_D = 20$    &  $\tau_D = 50$  & $\tau_D = 100$  \\
+\hline
+Sine (1 Hz) &  -0.8146 &  -2.4401 &  -2.1191  & -4.3523 &  -4.9608 \\
+Sine (5 Hz)  & -2.7301 &  -3.3235 &  -3.1148  & -3.5641  & -3.1941\\
+Sine (10 Hz)   &-2.0599  & -2.0242 &  -1.4525  & -1.5445  & -1.6085\\
+Sine (20 Hz)   &-1.3038  & -0.8452 &  -0.4153  & -1.3551 &  -1.4876\\
+Sine (40 Hz)  & -0.6151 &  -0.3796&   -0.3466  & -0.4114  & -0.3543\\
+Ode to Joy &  -1.1527 &  -1.1527  & -1.1527 &  -1.9532 &  -3.2607\\
+\hline
+  \end{tabular}
+
+  \begin{tabular}{ |c | c  c  c  c  c |  }
+
+\hline 
+\multicolumn{6}{ |c| }{Izhikevich Network }\\
+\hline 
+RLS  Parameters & \multicolumn{5}{c|}{$dt = 0.04$ ms, $\lambda^{-1} = 2 $ ms, $\Delta t = 0.8$ ms}  \\
+\hline 
+Time Constants (ms)  & $\tau_R = 2$  & $\tau_R = 2$    & $\tau_R = 2$  & $\tau_R = 2$ & $\tau_R = 2$  \\  & $\tau_D = 10$  & $\tau_D = 20$ &  $\tau_D = 20$    &  $\tau_D = 50$  & $\tau_D = 100$  \\
+\hline
+Sine (1 Hz)  &  -0.6236  & -2.9896  & -2.0770  &\cellcolor{green} -5.3432 & \cellcolor{green} -6.1244\\
+Sine (5 Hz)  & \cellcolor{green} -3.5554  &\cellcolor{green} -4.6956  &\cellcolor{green}-4.6090 & \cellcolor{green} -5.1753 &  \cellcolor{green}-5.5939\\
+Sine (10 Hz)  & \cellcolor{green} -3.7014   &\cellcolor{green}-4.5510  &\cellcolor{green} -4.1015  &\cellcolor{green} -4.5915 & \cellcolor{green} -4.7949\\
+Sine (20 Hz)   &\cellcolor{green} -3.3458  & \cellcolor{green}-3.4526  &\cellcolor{green}-3.5222  &\cellcolor{green} -3.8267 & \cellcolor{green} -2.3370\\
+Sine (40 Hz)  & \cellcolor{green} -2.3023  & \cellcolor{green}-2.3983 & \cellcolor{green} -2.3765  &\cellcolor{green} -1.5221 &  \cellcolor{green}-1.1282\\
+Ode to Joy &  -1.1774   &\cellcolor{green}-4.1295 &\cellcolor{green}  -3.6252  &\cellcolor{green}-4.5536  &\cellcolor{green}  -4.5384\\
+\hline
+
+\hline 
+  \end{tabular}
+
+
+\end{center}
+\caption*{Supplementary Table 2:  Parameter table corresponding to supplementary Figures S5-S7.  The quantity listed is the minimal $\log(L_2)$ run over the parameter mesh.  Green colouring of a cell indicates optimality over the three neuronal models for a given time constant and supervisor.  For the majority of cases, the Izhikevich had the greatest accuracy.} 
+\end{table} 
+
+
+\clearpage
+
+
+
+
+
+
+%\section*{FORCE Trained Weight Matrices and Network Performance} 
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.91]{FFIGS3}
+\caption*{Supplementary Figure S7:  (A) Networks of 2000 Izhikevich neurons were run over a $90\times 10$ uniform mesh over the $(Q,G)$ parameter space.  Each network was tasked to learn the dynamics of a 5 Hz sinusoidal oscillation using FORCE training.  4 seconds of FORCE training were used, and the $L_2$ error was computed for the last 4 seconds where RLS is turned off.  The colors denote the $\log(L_2)$ error with bluer colours indicating less error.  The RLS parameters used here were identical to Figure 2C.  (B) The average firing rate for the networks of neurons simulated over the parameter mesh in the test phase.  The majority of these networks have low average firing rates ($<50$ Hz).  (C)  The target dynamics (black) and the network approximant (blue) for three points in the mesh of simulations corresponding to networks with weight matrices heavily dominant eigenvalues (left), dominant eigenvalues (middle), and no dominant eigenvalues (right).  The intermediate region has the lowest $L_2$ error where there are dominant eigenvalues that are near the circular cloud.  Red dots denote the eigenvalues after training while black dots correspond to eigenvalues before training.  Note that the transition to chaotic spiking occurs at $G\approx 10^3$ for the Izhikevich network at these parameters.}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIGS10}
+
+    \caption*{Supplementary Figure S8.  Networks of rate neurons and spiking neurons were simulated for different network sizes to determine the  convergence rate for FORCE training.  The rate networks were either $ \sqrt{x}$ (A) or $\tanh(x)$ (C) firing rates while a LIF spiking network (B) was used.  The networks ranged from $O(1)$ to $O(10^4)$ with a 5 Hz sinusoidal oscillator as a supervisor and 5 seconds of FORCE training.   The networks were repeatedly simulated 20 times at each network size for accurate estimates of the mean behavior.  The slope of the lines of best fit to the mean $\log(L_2)$ error were $-0.952$ and $-0.65$ for the $\tanh(x)$ and LIF networks, respectively.   The square root network exhibited a bimodal distribution of errors for intermediate $N$ values.  For small $N$ values, the slope was calculated as $-0.498$ and stabilized to $-1.385$ for larger $N$.   As $N \rightarrow \infty$, the rate networks scale faster ( $\approx N^{-1}$) than the spiking network ( $\approx N^{-1/2}$).  The latter convergence rate is strongly indicative of a rate coding scheme.   }
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+  \includegraphics[scale=0.78]{FFIGS9}
+\caption*{Supplementary Figure S9:  Networks of $\tanh(x)$ rate neurons (left column), and networks of leaky integrate-and-fire (LIF) spiking neurons were FORCE trained on the Lorenz system in the chaotic regime.   (A) Both networks can mimic the butterfly attractor (top, $x$ vs $z$ view).   (B) The rate network (black dots) can also reproduce the stereotypical tent map, $z_{n-1}$ vs $z_n$ that the Lorenz system produces (red dots).  The spiking network has some difficulty in producing the tent map.  This is indicative of errors in the short time scale dynamics.  (C) On longer time scales, both rate and spiking networks mimic the dynamics on the attractor properly as indicated by the marginal densities of the three dynamical variables.  These were generated by randomly sampling 5000 points on the Lorenz system, the rate network, and the spiking network post-training.  The samples were used to construct marginal density estimates in the $(x,y,z)$ variables for comparison with the $L_2$ norm.  The estimated Lorenz density served as the reference density.    The $L_2$ errors were 0.27,0.30,0.24 for the rate network in the $(x,y,z)$ variables respectively, while they were 0.52,0.38,0.30 for the spiking network.  This indicates comparable levels of performance in reproducing the attractor geometry.  Both rate networks and spiking networks consisted of 5000 neurons each with default parameters used in the LIF implementation (with $W = 30$, $G=0.1$, $\lambda^{-1} = 0.0025 ms$, $\Delta_t = 0.5 ms$, $125$ seconds of FORCE training) and the default parameters used in the tanh network (272 seconds of FORCE training, see \cite{FORCE1} for more details and code).  A $Q$ parameter was also needed in the FORCE implementation of the tanh network ($Q=3$) to ensure convergence. } 
+\end{figure}
+
+
+\clearpage
+
+
+
+\subsection*{Supplementary Note 1: The FORCE Method can Train Spiking Neural Networks to Classify Inputs} 
+
+As populations of neurons encode more than just dynamical systems, we sought to determine what other potential behaviors or functions a simulated network could learn using FORCE training.  For instance, human beings can naturally classify different objects as belonging to different categories or learn a particular sequence associated with the notes in a song.  
+
+To test whether a network of spiking neurons can function as a statistical classifier, we trained networks of Izhikevich neurons to classify inputs into two classes separated by either linear or nonlinear boundaries (Figure S12).  The target dynamics are defined as an upward pulse when the input belongs to class 1 or a downward pulse when the input belongs to class 2.  The inputs are fed in sequentially to the network via feedforward weights.  Nonlinear classification in a spiking neural network is similar in complexity to the XOR task studied in \cite{FORCE2}.   Each input is followed by a short break period where the network is trained to go to a rest state.  Not only can the network perform the classification task, but it can generalize.  Indeed, the network learns to classify new inputs after successive presentations of training data with FORCE training, albeit with some error.  In both the linear and nonlinear cases, the classification test error rate was less than 7\% on test data sets.
+
+As the majority of classifiers constructed with artificial neural networks are feedforward, we wanted to determine how the recurrent nature of the spiking network classifier influences the accuracy of the classification task.  To investigate how the the network misclassifies potential inputs, we constructed peri-stimulus time histograms.  The histograms were formed by repeatedly presenting the same input that were either far away from the true classification boundary or near the boundary (see Supplementary Figure S12).  Unlike a feedforward neural network, the recurrent neural network used here can classify the same input as either as either class.  This depends on the initial condition of the network.  Thus, some of the points near the boundary are misclassified in some cases, but correctly classified at later presentations (Supplementary Figure S12).   Furthermore, when the network consistently classifies points as belonging to one class or another, the variance of the voltage traces decreases across the network (Figure S11D, Supplementary Figure S13).  This result is consistent with the intracellular recordings from the primary visual cortex of cats \cite{ChurchlandVariance,catV1}.  Indeed, the authors find a reduction in the voltage variance for stimuli that are both preferred and nonpreferred by neurons.  
+
+Both the linear and nonlinear classification problems were resolved with a network of 2000 Izhikevich neurons with the same synaptic and neuronal parameters as in Table 1.  The remaining parameters were $G =6*10^3$, $Q=5*10^3$, and $\Delta t = 0.8$ ms and an integration time step of $0.04$ ms.   The teaching signal was constructed using the positive component of a sinusoid with a frequency of 2 Hz.  The input data was uniformly distributed inside $[0,1]^2$, with the classification boundary being $y=x$ in the linear case, and $y= \sin(2\pi x)$ in the nonlinear case.  The inputs were multiplied by an $N\times 2$ input weight matrix  $W^{in}$ to yield the input current where each row of $W^{in}$ is drawn uniformly from the circle with radius $500$.  The average rate for these networks was 12.5 Hz.  $\lambda^{-1} =30$ ms was used for RLS training.  A total of 800 seconds of training time was used corresponding to 1600 inputs.
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.8]{FFIGS12}
+\caption*{Supplementary Figure S10:  (A) A binary classification task can be performed by a network of 2000 Izhikevich neurons.  Positive pulses correspond to one class, and negative pulses correspond to another class.  The network (blue) is trained with target data (black) using the FORCE method for 800 seconds with an input frequency of 2 Hz on a training set of inputs.  The pulses are formed from the positive and negative components of a 2 Hz sinusoidal function (B) The voltage trace for 5 randomly selected neurons in the network at an identical time to (A).  (C) The network correctly classifies data with linear (left) and nonlinear (right) boundaries.  The network classifies points as class 1 (open red circle) or class 2 (closed black circle).  The $x$ and $y$ axes correspond to the two dimensional input vector.   The linear classification task has an accuracy of 0.93 (training time of 800 seconds, 1600 inputs) while the nonlinear task has an accuracy of 0.94 (training time of 800 seconds, 1600 inputs) on a pair of test data sets.  (D)  The network average voltage variance is (black, standard deviation bars in red) computed for repeated presentations of a point away from the boundary that can be consistently classified (left) and a point near the boundary that is inconsistently classified for the linear test data (right).  The voltage variance only decreases for inputs that the network can consistently classify.      }\label{FORCE3}
+\end{figure}
+ 
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.85]{FFIGS13}
+\caption*{Supplementary Figure S11:  (A) The inputs are classified into binary categories by the FORCE trained network.  Upward pulses correspond to one class (open red circles) while downward pulses  correspond to another class (closed black circles).  The boundary between classes is given by $y=x$.  (B)  The three inputs corresponding to the three points from figure (A) are repeatedly displayed for the network to classify 50 times.  A peri-stimulus time histogram is generated for the same 5-neurons in each three cases using the raster plots.  The network misclassifies points near the boundary (blue line) by displaying an incorrect pulse.  The misclassification depends on the initial condition of the network.   Points closer to the boundary are more likely to be misclassified. }
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.9]{FFIGS14}
+\caption*{Supplementary Figure S12: The network of neurons is presented with an identical input 250 times periodically that is either consistently classified (far from the classification boundary, left column) or is inconsistently classified (near the classification boundary, right column).  The voltage for a pair of neurons is box filtered with a filter of 80 ms to remove spikes.  During input presentation, the voltage variance decreases regardless of whether or not the mean voltage increases (bottom) or decreases (top) for consistent classifications while the voltage variance increases with input presentation when the network inconsistently classifies a point. }
+\end{figure}
+\clearpage 
+
+
+
+\section*{Supplementary Note 2: FORCE Trained Weight Matrices that Respect Dales Law with Synaptic Boundaries} 
+
+
+
+
+One potential solution to generate FORCE trained weight matrices that respect Dales law is through synaptic boundaries.  Consider a network of $N$ neurons with the first $N_E$ excitatory neurons and $N_I = N - N_E$ inhibitory neurons.  We start with static weight matrices $\omega_{ij}^0$ given by the following:
+\begin{eqnarray}
+\omega_{ij}^0 = \begin{cases} \frac{G}{\sqrt{N}p}& \text{with probability $p$ if $i\leq N_E$}\\ -\frac{G\kappa_i}{\sqrt{N}p}& \text{with probability $p$ if $i>N_E$} \\ 0&\text{otherwise}     \end{cases} 
+\end{eqnarray}
+where $\kappa_i$ is a term used to set $\sum_{j=1}^N \omega_{ij}^0 = 0$ to initialize chaotic spiking in the reservoir.  These static weight matrices immediately respect Dales law.  It is sufficient (but not necessary) for the low rank RLS trained weight matrix to also respect Dales law independently.  This can be achieved by setting boundaries on synaptic weights when they do not respect Dales law: 
+\begin{eqnarray}
+\omega_{ij} = \begin{cases} Q \bm \eta_i \bm \phi_j & \text{if} \quad  0\leq \bm \eta_i \bm \phi_j,\quad  i\leq N_E   \\
+Q\bm \eta_i \bm \phi_j & \text{if} \quad  0\geq \bm \eta_i \bm \phi_j,\quad  i> N_E   \\
+0 & \text{otherwise}   \end{cases} 
+\end{eqnarray}
+This is done dynamically as the decoders $\bm \phi_j$ are determined through RLS.  In this way, the decoders and the approximant are determined in precisely the same way as before.   The only difference is that the approximant interacts with the reservoir in a manner which obeys Dales law.  The results of this procedure are shown in Figure S4 for a network of 2000 Izhikevich neurons with identical parameters to Figure 2, learning a 5 Hz sinusoidal oscillator. 
+
+
+\clearpage
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.74]{FFIGS11}
+\caption*{Supplementary Figure S13:  (A) A network of 2000 Izhikevich neurons is trained to mimic a 5 Hz sinusoidal oscillation with weights that respect Dale's law.  The first 1000 neurons are excitatory while the next 1000 are inhibitory.  The weight matrices are determined such that both the static weight matrix and the learned weight matrices independently respect Dale's law.  (B) The decoders for the network are learned with 3 seconds of FORCE training after a 2 second transient, and are not constrained by signs.  (C) The time varying component of the weight matrix is given by $\omega_{ij} =Q \bm \eta_i \bm \phi_j$ when the weight respects Dale's law, and 0 otherwise.  (D) The static weight matrix forms a backbone of strong connections that respect Dales law.  The learned weight matrix forms a set of weaker connection weights used to stabilize the intended dynamics.  The final weight matrix is the sum of these two and also respects Dale's law.   The resulting matrix had a 0.45 degree of sparseness.   (E) The spiking statistics for both excitatory and inhibitory neurons are largely identical to prior work with weight matrices that did not respect Dales law.  The spiking prior to FORCE learning is near Poissonian with a coefficient of variation distribution that centers near 1 and increases post-training.  The firing rates also increase post-training with an average of 50 Hz for both populations.}
+\end{figure}
+
+
+
+%\newpage 
+%\section*{Classification Example Peri-Stimulus Time Histogram} 
+\clearpage
+
+
+
+
+
+%\section*{Pattern Recall:  Incorrect Repetitions}
+ 
+\begin{figure}[htp!]
+    \centering
+\includegraphics[scale=0.86]{FFIGS15}
+    \caption*{Supplementary Figure S14:  A pair of incorrect repetitions of Ode  to Joy after RLS is turned off (middle, bottom) in addition to a correct repetition (top). The corresponding voltage traces for 5 randomly selected neurons are shown. In both cases, the network fails to elicit the correct note in the repetition, and instead replays an alternate part of the song.  The note prior to the mistake heavily influences which part of the song is replayed.  In the middle replay, the error is due to the EE repeat, while in the bottom replay, the error is due to the ED repeat}\label{fig1}
+\end{figure}
+
+%\begin{figure}[htp!]
+%    \centering
+%    \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{A1} 
+%        \caption{}\label{BF1} 
+%    \end{subfigure}\quad
+%     \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{A2}
+%        \caption{ }\label{BF2} 
+%\end{subfigure}
+%\\
+%    \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{A3} 
+%        \caption{}\label{BF1} 
+%    \end{subfigure}\quad
+%     \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{A4}
+%        \caption{ }\label{BF2} 
+%\end{subfigure}
+%\\
+%    \caption{ (a),(c) contain a pait of correct repetitions of the song after RLS is turned off.  The corresponding voltage traces for 5 randomly selected neurons are shown in (b), (d). The song is replayed correctly in both cases, howwever the voltage trace has a degree of trial to trial variability. }\label{fig1}
+%\end{figure}
+
+
+
+
+\begin{figure}[htp!]
+\centering 
+\includegraphics[scale=0.85]{FFIGS16}
+\caption*{Supplementary Figure S15:   Shown above is 100 seconds of the network output after RLS learning is turned off for the song example.  Complete repetitions are highlighted in red. }  
+\end{figure}
+
+
+%
+%\newpage
+%\section*{Pattern Recall: Peri-Stimulus Time Histogram of Correct Repititions} 
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.95]{FFIGS17}
+\caption*{Supplementary Figure S16:  (A) The network continuously replays the song for 1000 seconds after FORCE training is turned off.    Correct replays are automatically classified using the $L_2$ error with the teaching signal and 205 correct repetitions (shown in blue) are found in 1000 seconds.  This corresponds to 82\% of the decoded signal.  The mean of these repetitions is shown in black.  (B) The peri-stimulus time histogram is constructed from the raster plots of 5 neurons.  As shown in the raster plot, there is considerable trial-to-trial variability even for repetitions automatically classified as correct.} 
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.83]{FFIGS18}
+\caption*{Supplementary Figure S17:  (A)  A network of 5000 Izhikevich neurons correctly learns the 64 note sequence to the song Ode to Joy in addition to a 64 dimensional HDTS.  The HDTS corresponds to the 6th-69th components of the supervisor presented to the network. The red blue colour spectrum indicates the position of the HDTS pulse in the sequence  (B) The voltage traces for 5 neurons are shown.  Unlike the previous implementation we considered, the neurons in this network encode information about time through the final 64 components (the HDTS) and note through the first 5 components of the encoders and decoders.    (C)  The network was trained with FORCE for a period of 379 seconds, after which RLS was deactivated.  The network performed the correct 64 note sequence for the remaining 321 seconds of the simulation.  Unlike our previous implementation, replay of the entire song was flawless for the remainder of the simulation.  (D) The eigenvalue spectrum of the weight matrix after learning shows a cloud of eigenvalues (red) near the static weight matrices original circle of eigenvalues (black) after learning this high dimensional supervisor.  Note that the transition to chaos for the Izhikevich model occurs at $G\approx 10^3$  } 
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{FFIGS19}
+    \caption*{Supplementary Figure S18:  The HDTS was used to train a network of 1000 Izhikevich neurons to replay the movie scene with different HDTS frequencies and HDTS input amplitudes over a 10 by 10 mesh over the parameter space.    The training consisted of 74 seconds of FORCE training followed by 45 seconds of testing.  (A) The HDTS amplitudes were fixed at $0.4$ for three Izhikevich model parameter sets ($C= 250,\,\tau_D = 20$ ms, $C= 150,\,\tau_D = 20$, $C= 250,\, \tau_D = 50$ ms).  There is a clear optimum in the 8-16 Hz range.  (B) The simulated mesh for different HDTS amplitudes and frequencies for $C=250$, $\tau_D = 20$ ms.  The performance is robust for different parameters, but optimal in the 8-16 Hz range, depending on the HDTS amplitude.  Similar results were found with the other parameter sets, however the $\tau_D =50$ ms parameter set also contained global optima at $16-32$ Hz, depending on the frequency.    
+ (C) A network can be trained to simultaneously create its own internal HDTS and replay the movie scene.  Both sets of weights (for the HDTS and the movie replay) are stored recurrently with a weighting parameter.  The amount of recurrenece in the movie or in the HDTS is controlled by the $\lambda_1$ and $\lambda_2$ parameters, respectively.    The networks were 2000 Izhikevich neurons with the default parameter sets (see Table 1).  (D) The optimal region of convergence is in the low movie amplitude, high HDTS amplitude.  Note that the movie consists of 1920 dimensions while the HDTS consists of a 64 dimensions, hence the difference in magnitude of the weighting parameters.  The $(G,Q)$ parameters for (A)-(B) and (C)-(D) were $(5*10^3,4*10^3)$ and  $(6*10^3,6*10^3)$, respectively.  Sinusoidal HDTS' were used for (A)-(B) while Gaussian signals were used for (C)-(D).  All other RLS parameters were the same as in Figure 5 for both implementations.    }
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.83]{FFIGS20}
+\caption*{Supplementary Figure S19:  (A) The movie is replayed by the network and displayed at different time points after training for decreasing levels of HDTS amplitude.  As the amplitude of the HDTS is decreased, the replay performance decreases.  (B)  As the HDTS amplitude decreases, the power of the 8 Hz oscillation in the mean population activity decreases, eventually transitioning to a slower oscillation $(<2 Hz)$.  This is the internally generated HDTS case.   } 
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.85]{FFIGS21}
+\caption*{Supplementary Figure S20:  The distribution of spikes is computed as a function of the phase of the HDTS input.  The distribution is computed during 3 repetitions of movie replay (shown in top, 1 replay segment).  The distribution is unimodal, strongly non-uniform, with a peak off the center of the input phase.  This is qualitatively similar to empirically measured spike-phase distributions such as in \cite{mizu}.  This is the externally generated HDTS case. } 
+\end{figure}
+
+
+\begin{figure}[htp!]
+\centering
+\includegraphics[scale=0.86]{FFIGS22}
+\caption*{Supplementary Figure S21:  (A) The spike-time histogram for the entire network is computed for different levels of HDTS compression for the external HDTS case.  As the compression factor increases, the histogram has higher frequency components.  The histogram is computed with 5 ms time bins.  (B) The voltage traces for 5 randomly selected neurons for a single replay of the movie scene at different compression ratios.  The traces are compressed by a similar ratio as the mean population activity, and the movie replay, however the relative firing rate decreases with increasing compression.} 
+\end{figure}
+
+
+\end{document}

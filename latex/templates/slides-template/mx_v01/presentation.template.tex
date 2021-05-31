@@ -1,0 +1,201 @@
+\documentclass[compress]{beamer}
+
+%--------------------------------------------------------------------------
+% Common packages
+%--------------------------------------------------------------------------
+\usepackage[english]{babel}
+\usepackage{pgfpages} % required for notes on second screen
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+
+\usepackage{tabularx,ragged2e}
+\usepackage{booktabs}
+\usepackage{marvosym}
+
+\usepackage{fontawesome}
+
+
+
+\usepackage{fontawesome}
+% \usepackage[tt=false, type1=true]{libertine}
+% \usepackage[T1]{fontenc}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes,shadows}
+\usetikzlibrary{fadings}
+
+
+
+%--------------------------------------------------------------------------
+% Load theme
+%--------------------------------------------------------------------------
+\usetheme{mx}
+
+
+
+
+\graphicspath{{figs/}}
+
+
+
+
+%--------------------------------------------------------------------------
+% General presentation settings
+%--------------------------------------------------------------------------
+\title{Towards the Analysis of Movement Variability for Facial Expressions  \\ 
+	with Nonlinear Dynamics} 
+\subtitle{CERE 2018}
+\date{Glasgow, Scotland, 4-5 April 2018}
+
+\author{Miguel P Xochicale and Chris Baber}
+\institute{School of Engineering \\{\bf University of Birmingham}}
+
+
+
+
+%--------------------------------------------------------------------------
+% Notes settings
+%--------------------------------------------------------------------------
+%\setbeameroption{show notes on second screen}
+%\setbeameroption{hide notes}
+
+
+
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\licenseframe{https://github.com/mxochicale/reponame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+
+
+%\begin{frame}{Overview}
+%\tableofcontents
+%\end{frame}
+%
+
+%--------------------------------------------------------------------------
+% Content
+%--------------------------------------------------------------------------
+%
+\section{Movement Variability}
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+
+%\paper{Newell K M, Corcos D M, {\bf Variability and Motor Control}, 1993}
+\paper{Lockhart T, Stergiou N, {\bf New Perspectives in Human Movement Variability}, 2013}
+
+\begin{frame}{What is Movement Variabily?}
+
+\LARGE
+MOVEMENT VARIABILITY is defined as the variations that occur in motor
+performance across multiple repetitions of a task and such behaviour is 
+an inherent feature within and between each person's movement.
+\end{frame}
+
+
+
+}
+
+
+
+%\section{State Space Reconstruction}
+%
+%%\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\imageframe[caption=Uniform Time-Delay Embedding]{utde/utde}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Images 1/2}
+\begin{frame}{Picture with credit line}
+    \begin{figure}
+        \centering
+        \includegraphicscopyright[width=\linewidth]{utde/utde}{Copyright EPFL 2014}
+	\caption{Reconstructed State Space} 
+   \end{figure}
+	
+\end{frame}
+
+
+
+\section{Conclusions and Future Work}
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\begin{frame}{Conclusions Future Work}
+
+\begin{itemize}
+	\item (+) Quantification for Arm Movement and Head Pose Estimation Variability with Nonlinear Dynamics is possible. However,
+	\item (-) the timeseries from the landmarks are mounted on the pose location of the head. 
+\end{itemize}
+
+\begin{itemize}
+	\item Test other techniques of Nonlinear Dynamics, e.g. Lyapunov Exponents, Recurrent Quantification Analysis
+	\item Use of Convolutional Neural Networks for automatic identification of Movement Variability
+\end{itemize}
+
+
+
+\badge{/badge/badge_v00}
+\end{frame}
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Bibliography}
+    \begin{thebibliography}{10}
+
+\beamertemplatearticlebibitems
+
+
+  \bibitem{lockhart2013}
+      Lockhart T, Stergiou N 
+      \newblock \doublequoted{New Perspectives in Human Movement Variability}
+	\newblock Ann Biomed Eng. 2013.
+
+  \bibitem{cao1997}
+      Cao Liangyue
+      \newblock \doublequoted{Practical method for determining the minimum embedding dimension of a scalar time series.}
+      \newblock Physica D, 110, 43-50, 1997.  
+
+  \bibitem{xochicale2018}
+      Xochicale M P
+      \newblock \doublequoted{Emotion and Movement Variability: a pilot study}
+      \newblock GitHub repo (2018), https:// github.com/mxochicale/emmov-pilotstudy [\href{https:// github.com/mxochicale/emmov-pilotstudy}{\faGithub}]
+
+
+    \end{thebibliography}
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\closingtitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\licenseframe{https://github.com/mxochicale/reponame}
+
+
+
+\end{document}
