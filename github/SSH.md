@@ -1,5 +1,7 @@
 # ssh config
 
+# GNU/Linux
+Open a terminal in your GNU/Linux OS
 ## Using RSA 4096
 1. generate key using RSA
 ```
@@ -18,6 +20,7 @@ ssh-add ~/.ssh/id_rsa
 ```
 sudo apt-get install xclip
 xclip -selection clipboard < ~/.ssh/id_rsa.pub
+#in_windows clip id_rsa.pub
 ```
 
 New SSH and GPG keys
@@ -73,8 +76,10 @@ ssh -T git@github.com
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-## Using Ubuntu terminal in windows
-There is an error with `Host key verification failed` to which if you are in windows, you use GitBash!
+
+# Windows
+Open a terminal which is based on Gitbash
+## GitBash!
 Also in windows use cat instead of xclip for copying keys
 ``` 
 cat ~/.ssh/id_rsa.pub
