@@ -1,3 +1,54 @@
+# Sun  6 Jun 00:54:42 BST 2021
+
+* on machine with ubuntu 18.04x64
+
+
+```
+
+...
+
+
+
+mktexlsr: Done.
+writing fmtutil.cnf to /usr/local/texlive/2021/texmf-dist/web2c/fmtutil.cnf
+writing updmap.cfg to /usr/local/texlive/2021/texmf-dist/web2c/updmap.cfg
+writing language.dat to /usr/local/texlive/2021/texmf-var/tex/generic/config/language.dat
+writing language.def to /usr/local/texlive/2021/texmf-var/tex/generic/config/language.def
+writing language.dat.lua to /usr/local/texlive/2021/texmf-var/tex/generic/config/language.dat.lua
+running mktexlsr /usr/local/texlive/2021/texmf-var /usr/local/texlive/2021/texmf-config /usr/local/texlive/2021/texmf-dist ...
+mktexlsr: Updating /usr/local/texlive/2021/texmf-config/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2021/texmf-dist/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2021/texmf-var/ls-R... 
+mktexlsr: Done.
+running updmap-sys --nohash ...done
+re-running mktexlsr /usr/local/texlive/2021/texmf-var /usr/local/texlive/2021/texmf-config ...
+mktexlsr: Updating /usr/local/texlive/2021/texmf-config/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2021/texmf-var/ls-R... 
+mktexlsr: Done.
+setting up ConTeXt cache: running mtxrun --generate ...done
+pre-generating all format files, be patient...
+running fmtutil-sys --no-error-if-no-engine=luajithbtex,luajittex,mfluajit --no-strict --all ...done
+running package-specific postactions
+finished with package-specific postactions
+
+
+Welcome to TeX Live!
+
+
+See /usr/local/texlive/2021/index.html for links to documentation.
+The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best for you. The list of groups is available on the web at https://tug.org/usergroups.html.
+
+
+Add /usr/local/texlive/2021/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2021/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2021/bin/x86_64-linux
+to your PATH for current and future sessions.
+Logfile: /usr/local/texlive/2021/install-tl.log
+
+
+```
+
+
 # Mon 31 May 21:26:14 BST 2021
 * on machine with ubuntu 18.04x64
 
