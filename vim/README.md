@@ -22,7 +22,12 @@ sudo apt install vim vim-gtk
 cd
 wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/.vimrc
 ```
-
+or 
+```
+cd 
+wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/setup-deps-vimrc.bash
+bash setup-deps-vimrc.bash
+```
 
 ## Manual installation 
 ### Set up the spellcheck
