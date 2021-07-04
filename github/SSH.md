@@ -1,8 +1,8 @@
-# ssh config
+# Setting up SSH keys
 
-# GNU/Linux
+## GNU/Linux
 Open a terminal in your GNU/Linux OS
-## Using RSA 4096
+### Using RSA 4096
 1. generate key using RSA
 ```
 ssh-keygen -m PEM -t rsa -b 4096 -C "perez.xochicale@gmail.com"
@@ -23,18 +23,28 @@ xclip -selection clipboard < ~/.ssh/id_rsa.pub
 #in_windows clip id_rsa.pub
 ```
 
-New SSH and GPG keys
-https://github.com/settings/keys
+Add a new SSH key by going to https://github.com/settings/keys and pasting the key with a new title:
+```
+Title: New Key
+
+Key:
+ssh-rsa A............................== perez.xochicale@gmail.com
+```
 
 
 4. Testing your SSH connection
 
+When copying and pasting `ssh -T git@github.com` type `yes` to authorise the connection: 
 ```
 ssh -T git@github.com
+The authenticity of host 'github.com (000.00.000.0)' can't be established.
+RSA key fingerprint is ....:.....
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,000.00.000.0' (RSA) to the list of known hosts.
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-## adding a DEPLOY KEY
+### adding a DEPLOY KEY
 
 Create a new secret variable called DEPLOY_KEY in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
 where the value looks like the below lines and is taken from id_rsa with 
@@ -46,7 +56,7 @@ xclip -selection clipboard < ~/.ssh/id_rsa
 ```
 
 
-## Using ed25519 
+### Using ed25519 
 1. generate key using ed25519
 ```
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "perez.xochicale@gmail.com"
@@ -77,9 +87,9 @@ Hi mxochicale! You've successfully authenticated, but GitHub does not provide sh
 ```
 
 
-# Windows
+## Windows
 Open a terminal which is based on Gitbash
-## GitBash!
+### GitBash!
 Also in windows use cat instead of xclip for copying keys
 ``` 
 cat ~/.ssh/id_rsa.pub
