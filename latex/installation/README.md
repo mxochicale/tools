@@ -3,13 +3,13 @@
 ## Download, install and append of LaTeX
 * [A_download_texlive.bash](A_download_texlive.bash)
 ```
-sh A_download_texlive.bash
+bash A_download_texlive.bash
 ```
 
 
 * [B_install_texlive.bash](B_install_texlive.bash)
 ```
-sh B_install_texlive.bash
+bash B_install_texlive.bash
 ```
 and press `I` to install it in hard disk.
 
