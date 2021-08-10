@@ -14,22 +14,6 @@ sudo apt --yes install inkscape
 sudo add-apt-repository --remove ppa:inkscape.dev/stable
 ```
 
-* using appimage [:link:](https://inkscape.org/release/inkscape-1.0.2/gnulinux/appimage/dl/)
-```
-wget https://inkscape.org/gallery/item/23849/Inkscape-e86c870-x86_64.AppImage
-chmod u+x Inkscape-e86c870-x86_64.AppImage
-./Inkscape-e86c870-x86_64.AppImage
-```
-
-* using snap
-```
-#sudo apt install snapd
-sudo snap install inkscape
-#sudo snap remove inkscape
-#rm -r inkscape
-```
-
-
 
 ## TRICKS in Ubuntu
 
