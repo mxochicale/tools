@@ -10,7 +10,11 @@ bash install.bash
 ## Customisation
 Open terminator and go to preferences to change:
 * [Profiles]  `Ubuntu Mono Regular 15` 
-* [Background ] set it to transparency `0.75`
+* [Background ] set it to transparency `0.90`
+
+## Keybinding
+* Split Horizontal: CTRL SHIFT  E 
+* Split Vertical: CTRL SHIFT O
 
 ## References
 https://www.tecrobust.com/install-terminator-linux-ubuntu-fedora/  
