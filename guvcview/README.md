@@ -8,11 +8,17 @@ sudo apt-get install guvcview
 ```
 
 ## Usage 
+* Using device video2 and press I to capture photo 
 ```
 guvcview -d /dev/video2
 ```
-more:
 
+* For `n` photos at taken at `t` separed time, use:
+```
+guvcview -d /dev/video2 -n 10 -t 2
+```
+
+* more:
 ```
 guvcview -h
 ```
@@ -24,7 +30,9 @@ sudo apt-get remove --autoremove guvcview
 ```
 
 ## Refererences
-* https://www.youtube.com/watch?v=j73i-ckyBPI
+https://www.youtube.com/watch?v=j73i-ckyBPI   
+http://guvcview.sourceforge.net/    
+https://sourceforge.net/p/guvcview/git-master/ci/master/tree/   
 
 
 ## Extras
