@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install xsel
+
 cd
 {
 echo ''

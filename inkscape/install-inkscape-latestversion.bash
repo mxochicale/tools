@@ -8,4 +8,3 @@ sudo apt --yes update
 sudo apt --yes install inkscape
 sudo add-apt-repository --remove ppa:inkscape.dev/stable
 
-

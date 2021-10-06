@@ -10,7 +10,9 @@ bash install.bash
 ## Customisation
 Open terminator and go to preferences to change:
 * [Profiles]  `Ubuntu Mono Regular 15` 
-* [Background ] set it to transparency `0.90`
+* [Colours]  Green on black, [Patette] tango  
+* [Background] set it to transparency `0.90`
+* [Scrolling] -Scroll on keystroke, -Infite Scrollback
 
 ## Keybinding
 * Split Horizontal: CTRL SHIFT  E 

@@ -1,5 +1,5 @@
 # Inkscape
-Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linux. It's free and open source [:link:](https://inkscape.org/en/).
+Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linux. It's free and open source [:books:](https://inkscape.org/en/).
 
 ## Installation
 * Using repository
