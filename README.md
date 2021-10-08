@@ -1,10 +1,10 @@
-# My Collection Of Scientific/Engineering Tools
+# My Collection Of Scientific/Engineering Tools :wrench: :nut_and_bolt: :books:
 In this repository, I register various tools that I have been using in this journey of becoming not only a better scientist but also I guess a better engineer. One quote that summarises this repo is:
 ## _The tools we use have profound (and devious!) influence on our thinking habits, and therefore, on our thinking abilities_
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
 ## Clone repository
-After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [here](/github/SSH.md) with few personal notes.
+After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [here](https://github.com/mxochicale/tools/blob/main/github/SSH.md) with few extra notes.
 You can then clone the repository by typing (or copying) the following line in a terminal at your selected path in your machine:
 ```
 git clone git@github.com:mxochicale/tools.git
