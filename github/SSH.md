@@ -1,11 +1,11 @@
 # Setting up SSH keys
 
-## GNU/Linux
+## 1. GNU/Linux
 Open a terminal in your GNU/Linux OS
-### Using RSA 4096
+### 1.1 Using RSA 4096
 1. generate key using RSA
 ```
-ssh-keygen -m PEM -t rsa -b 4096 -C "perez.xochicale@gmail.com"
+ssh-keygen -m PEM -t rsa -b 4096 -C "your-email@domain.com"
 ```
 
 2. Adding your SSH key to the ssh-agent
@@ -28,9 +28,8 @@ Add a new SSH key by going to https://github.com/settings/keys and pasting the k
 Title: New Key
 
 Key:
-ssh-rsa A............................== perez.xochicale@gmail.com
+ssh-rsa A............................== your-email@domain.com
 ```
-
 
 4. Testing your SSH connection
 
@@ -44,7 +43,7 @@ Warning: Permanently added 'github.com,000.00.000.0' (RSA) to the list of known 
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-### adding a DEPLOY KEY
+5. Extra: adding a DEPLOY KEY
 
 Create a new secret variable called DEPLOY_KEY in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
 where the value looks like the below lines and is taken from id_rsa with 
@@ -56,7 +55,7 @@ xclip -selection clipboard < ~/.ssh/id_rsa
 ```
 
 
-### Using ed25519 
+### 1.2 Using ed25519 
 1. generate key using ed25519
 ```
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "perez.xochicale@gmail.com"
@@ -87,7 +86,7 @@ Hi mxochicale! You've successfully authenticated, but GitHub does not provide sh
 ```
 
 
-## Windows
+## 2. Windows
 Open a terminal which is based on Gitbash
 ### GitBash!
 Also in windows use cat instead of xclip for copying keys
