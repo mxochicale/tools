@@ -3,8 +3,8 @@ Guvcview (GTK+ UVC Viewer) is a webcam application, i.e. software to handle UVC 
 
 ## Installation (in Ubuntu 20.04)
 ```
-sudo apt-get update -y 
-sudo apt-get install guvcview
+sudo echo
+bash apt-get-install-guvcview.bash 
 ```
 
 ## Usage 
