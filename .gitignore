@@ -1,2 +1,5 @@
 ## pycharm project path
 .idea
+
+## temporal vim files
+*.sw*
