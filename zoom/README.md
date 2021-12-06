@@ -3,7 +3,8 @@
 
 
 ## Installation in Ubuntu 20.04
-Download the version for Ubuntu 64-bits 16.04 from https://zoom.us/download
+Download the version for Ubuntu 64-bits 16.04 from 
+https://zoom.us/download
 
 ```
 sudo apt install ./zoom_amd64.deb

@@ -4,7 +4,7 @@
 
 ## Installing Slack as a Deb Package #
 
-Visit the Slack for Linux download page and download the latest Slack .deb package.
+Visit the Slack for Linux download page and download the latest Slack .deb (64-bit) package.
 https://slack.com/intl/en-gb/downloads/linux
 
 ```

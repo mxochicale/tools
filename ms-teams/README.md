@@ -5,7 +5,7 @@ https://www.microsoft.com/en-gb/microsoft-teams/download-app#desktopAppDownloadr
 
 ## Installation in Ubuntu 18.04x64
 ```
-sudo apt install ./teams_1*.deb 
+sudo apt install ./teams_*.deb 
 ```
 ## References 
 https://docs.microsoft.com/answers/questions/3033/installing-microsoft-teams-in-linux.html
