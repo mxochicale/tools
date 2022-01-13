@@ -6,41 +6,63 @@ Free and open source software for video recording and live streaming.
 
 ## Installation
 
-###   Building and installing OBS with browser [ref](https://github.com/obsproject/obs-studio/wiki/install-instructions#debian-based-build-directions)
+### (1/2) Using ppa (easy way) but not tried
+```
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt-get update
+sudo apt-get install obs-studio
+##REMOVE PPA 
+sudo add-apt-repository --remove ppa:obsproject/obs-studio
+#
+```
+
+If you installed OBS using their PPA or Linux .deb file from their PPA, 
+then the application's folder and the plugins folder would be:
+```
+/usr/share/obs/obs-plugins/
+```
+[ref](https://forums.linuxmint.com/viewtopic.php?t=278509).
+
+* Uninstall 
+
+How To Uninstall obs-studio On Ubuntu 16.10 [ref](https://installlion.com/ubuntu/yakkety/universe/o/obs-studio/uninstall/index.html)
+
+```
+sudo apt-get remove --auto-remove obs-studio
+sudo apt-get purge --auto-remove obs-studio
+```
+
+
+### (2/2) Building and installing OBS with browser [ref](https://github.com/obsproject/obs-studio/wiki/install-instructions#debian-based-build-directions)
 
 * Install required packages:
 ```
 sudo su
 apt update 
 bash  install-dependencies.bash 
-```
-
-* Issue:
-``` 
-E: Unable to locate package libpipewire-0.3-dev
+exit
 ```
 
 * Building and installing OBS:
 
 ```
 conda deactivate ## and comment bashrc  for conda launch
-sudo apt-get remove libobs0
-sudo apt-get autoremove
-cd ~/Downloads/obs
-apt install libnss3-dev
+sudo apt install libnss3-dev
+mkdir -p $HOME/Downloads/obs && cd $HOME/Downloads/obs
 
 wget https://cdn-fastly.obsproject.com/downloads/cef_binary_4280_linux64.tar.bz2
 tar -xjf ./cef_binary_4280_linux64.tar.bz2
 
 git clone --recursive https://github.com/obsproject/obs-studio.git
-cd obs-studio
-mkdir build && cd build
+cd obs-studio && mkdir build && cd build
 
 # Note Ubuntu 20.04/Debian 10 must set ENABLE_PIPEWIRE=OFF and do not support wayland capture.
 # Modern platforms can use the default/enable pipewire for wayland capture support.
 cmake -DUNIX_STRUCTURE=1 -DENABLE_PIPEWIRE=OFF -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_BROWSER=ON -DCEF_ROOT_DIR="../../cef_binary_4280_linux64" ..
-make -j4 # add option --enable-shared
-sudo checkinstall --default --pkgname=obs-studio --fstrans=no --backup=no --pkgversion="$(date +%Y%m%d)-git" --deldoc=yes
+
+make -j$(nproc)
+sudo make install
+#sudo checkinstall --default --pkgname=obs-studio --fstrans=no --backup=no --pkgversion="$(date +%Y%m%d)-git" --deldoc=yes
 ```
 
 * Log output:
@@ -58,31 +80,6 @@ $HOME/Downloads/obs/obs-studio/build/obs-studio_20210521-git-1_amd64.deb
       dpkg -r obs-studio
 
 **********************************************************************
-```
-
-
-
-### Using ppa (easy way) but not tried
-```
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt-get update
-sudo apt-get install obs-studio
-```
-
-If you installed OBS using their PPA or Linux .deb file from their PPA, 
-then the application's folder and the plugins folder would be:
-```
-/usr/share/obs/obs-plugins/
-```
-[ref](https://forums.linuxmint.com/viewtopic.php?t=278509).
-
-* Uninstall 
-
-How To Uninstall obs-studio On Ubuntu 16.10 [ref](https://installlion.com/ubuntu/yakkety/universe/o/obs-studio/uninstall/index.html)
-
-```
-sudo apt-get remove --auto-remove obs-studio
-sudo apt-get purge --auto-remove obs-studio
 ```
 
 
@@ -181,4 +178,23 @@ sudo modprobe v4l2loopback devices=4
 
 
 
+## issues
 
+### builing obs in ubuntu20.04x64
+on Wed 12 Jan 23:55:29 GMT 2022
+
+```
+make 
+
+
+...
+
+
+
+collect2: error: ld returned 1 exit status
+make[2]: *** [plugins/obs-ffmpeg/ffmpeg-mux/CMakeFiles/obs-ffmpeg-mux.dir/build.make:88: plugins/obs-ffmpeg/ffmpeg-mux/obs-ffmpeg-mux] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1826: plugins/obs-ffmpeg/ffmpeg-mux/CMakeFiles/obs-ffmpeg-mux.dir/all] Error 2
+make: *** [Makefile:152: all] Error 2
+
+```
+potential solution: https://obsproject.com/forum/threads/cant-build-obs-using-custom-ffmpeg-build.106216/

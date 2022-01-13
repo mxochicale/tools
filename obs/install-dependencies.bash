@@ -1,6 +1,5 @@
 sudo apt-get install \
         build-essential \
-        checkinstall \
         cmake \
         git \
         libmbedtls-dev \
@@ -44,5 +43,7 @@ sudo apt-get install \
         libx11-xcb-dev \
         libxcb1-dev \
         libxss-dev \
-       #libpipewire-0.3-dev \
-        qtwayland5
+        qtwayland5 \
+        libgles2-mesa \
+        libgles2-mesa-dev \
+        libpci-dev
