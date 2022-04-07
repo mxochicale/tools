@@ -1,5 +1,101 @@
 
 
+#  Thu  7 Apr 12:52:15 BST 2022
+
+```
+
+:~/repositories/tools/brave$ bash installating-brave.bash 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+apt-transport-https is already the newest version (2.0.6).
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libgstreamer-plugins-bad1.0-0
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed
+  curl
+0 to upgrade, 1 to newly install, 0 to remove and 89 not to upgrade.
+Need to get 161 kB of archives.
+After this operation, 412 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.7 [161 kB]
+Fetched 161 kB in 0s (1,905 kB/s)
+debconf: Unable to initialise frontend: Dialog
+debconf: (Dialogue frontend requires a screen at least 13 lines tall and 31 columns wide.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package curl.
+(Reading database ... 297219 files and directories currently installed.)
+Preparing to unpack .../curl_7.68.0-1ubuntu2.7_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.7) ...
+Setting up curl (7.68.0-1ubuntu2.7) ...
+Processing triggers for man-db (2.9.1-1) ...
+deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+Get:1 file:/var/cuda-repo-ubuntu2004-11-4-local  InRelease
+Ign:1 file:/var/cuda-repo-ubuntu2004-11-4-local  InRelease
+Get:2 file:/var/cuda-repo-ubuntu2004-11-4-local  Release [564 B]
+Get:2 file:/var/cuda-repo-ubuntu2004-11-4-local  Release [564 B]
+Hit:3 http://gb.archive.ubuntu.com/ubuntu focal InRelease           
+Get:4 http://gb.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]                                                                                                                   
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                                                                    
+Get:6 https://brave-browser-apt-release.s3.brave.com stable InRelease [4,316 B]                                                                                                              
+Get:8 http://gb.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]                                                                                                                 
+Hit:9 https://packages.microsoft.com/repos/vscode stable InRelease                                                                                               
+Hit:10 https://packages.microsoft.com/repos/ms-teams stable InRelease                                                            
+Get:11 https://brave-browser-apt-release.s3.brave.com stable/main amd64 Packages [4,852 B]       
+Get:12 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [278 kB]                  
+Get:13 http://gb.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [391 kB]                  
+Get:14 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40.8 kB]                                                       
+Get:15 http://gb.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]                                                                                           
+Get:16 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [66.3 kB]                                                      
+Get:17 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]                                                 
+Get:18 http://gb.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7,980 B]                                                                            
+Get:19 http://gb.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30.8 kB]                                                 
+Hit:20 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease                                                                      
+Fetched 1,163 kB in 1s (793 kB/s)
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+89 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libgstreamer-plugins-bad1.0-0
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  brave-keyring
+The following NEW packages will be installed
+  brave-browser brave-keyring
+0 to upgrade, 2 to newly install, 0 to remove and 89 not to upgrade.
+Need to get 96.2 MB of archives.
+After this operation, 289 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://brave-browser-apt-release.s3.brave.com stable/main amd64 brave-keyring all 1.12 [4,236 B]
+Get:2 https://brave-browser-apt-release.s3.brave.com stable/main amd64 brave-browser amd64 1.37.111 [96.2 MB]
+Fetched 96.2 MB in 11s (8,395 kB/s)                                                                                                                                                          
+debconf: Unable to initialise frontend: Dialog
+debconf: (Dialogue frontend requires a screen at least 13 lines tall and 31 columns wide.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package brave-keyring.
+(Reading database ... 297226 files and directories currently installed.)
+Preparing to unpack .../brave-keyring_1.12_all.deb ...
+Unpacking brave-keyring (1.12) ...
+Selecting previously unselected package brave-browser.
+Preparing to unpack .../brave-browser_1.37.111_amd64.deb ...
+Unpacking brave-browser (1.37.111) ...
+Setting up brave-keyring (1.12) ...
+Setting up brave-browser (1.37.111) ...
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/brave-browser (brave-browser) in auto mode
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+
+
+```
+
 # Sat 23 Oct 14:05:02 BST 2021
 
 

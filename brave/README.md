@@ -6,19 +6,20 @@ Learn more at [brave.com](https://brave.com/) and [github.com/brave](https://git
 ## Installation
 In the terminal to be used for the below commands, prime the sudo command (enter your password once).
 ```
+cd $HOME/repositories/tools/brave
 sudo echo
-```
-then run the bash for installation
-```
 bash installing-brave.bash
+# Delete A Repository In Ubuntu
+sudo vim /etc/apt/sources.list
+sudo rm /etc/apt/sources.list.d/*
+sudo apt update
 ```
 
 ## Logs 
 See logs for [installed versions](LOGS.md).
 
-## Tutorials
+## References 
 * [Brave Browser Shortcuts](https://github.com/brave/browser-laptop/wiki/Brave-Browser-Shortcuts)
 * [Can Brave Webtorrent Integration Decentralizes Video](https://www.youtube.com/watch?v=t5T-Ci7ddRU)
 * [Linux install instructions](https://github.com/brave/browser-laptop/blob/master/docs/linuxInstall.md)
-
-
+* https://brave.com/linux/
