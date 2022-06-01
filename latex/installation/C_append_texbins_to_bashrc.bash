@@ -8,7 +8,7 @@ echo ''
 echo '#============================================================'
 echo '#'
 echo '# Setting PATH of the TeX Live binaries'
-echo 'export PATH=/usr/local/texlive/2021/bin/x86_64-linux/:$PATH'
+echo 'export PATH=/usr/local/texlive/2022/bin/x86_64-linux/:$PATH'
 echo ''
 echo ''
 } >> .bashrc

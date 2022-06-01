@@ -3,7 +3,7 @@
 ![latex](https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/LaTeX_cover.svg/300px-LaTeX_cover.svg.png)
 
 ## Content
-* See instructions to a new installation [here](installation/README.md).
+* See instructions to a new installation [here](installation/).
 * See various templates for latex documents [here](templates/).
 * See makefiles for quick build of text files [here](makefiles/)
 

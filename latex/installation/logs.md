@@ -1,3 +1,71 @@
+# Wed  1 Jun 10:47:02 BST 2022
+
+* Machine OS
+$lsb_release -a: Description:	Ubuntu 20.04.3 LTS
+$uname -m: x86_64
+
+* Logs
+```
+...
+
+Installing [4363/4369, time/total: 23:27/23:27]: zwgetfdate [242k]
+Installing [4364/4369, time/total: 23:27/23:27]: zwpagelayout [641k]
+Installing [4365/4369, time/total: 23:27/23:27]: zx-calculus [636k]
+Installing [4366/4369, time/total: 23:28/23:28]: zxjafbfont [3k]
+Installing [4367/4369, time/total: 23:28/23:28]: zxjafont [173k]
+Installing [4368/4369, time/total: 23:28/23:28]: zxjatype [144k]
+Installing [4369/4369, time/total: 23:28/23:28]: zztex [147k]
+Time used for installing the packages: 23:28
+running mktexlsr /usr/local/texlive/2022/texmf-dist ...
+mktexlsr: Updating /usr/local/texlive/2022/texmf-dist/ls-R... 
+mktexlsr: Done.
+writing fmtutil.cnf to /usr/local/texlive/2022/texmf-dist/web2c/fmtutil.cnf
+writing updmap.cfg to /usr/local/texlive/2022/texmf-dist/web2c/updmap.cfg
+writing language.dat to /usr/local/texlive/2022/texmf-var/tex/generic/config/language.dat
+writing language.def to /usr/local/texlive/2022/texmf-var/tex/generic/config/language.def
+writing language.dat.lua to /usr/local/texlive/2022/texmf-var/tex/generic/config/language.dat.lua
+running mktexlsr /usr/local/texlive/2022/texmf-var /usr/local/texlive/2022/texmf-config /usr/local/texlive/2022/texmf-dist ...
+mktexlsr: Updating /usr/local/texlive/2022/texmf-config/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2022/texmf-dist/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2022/texmf-var/ls-R... 
+mktexlsr: Done.
+running updmap-sys --nohash ...done
+re-running mktexlsr /usr/local/texlive/2022/texmf-var /usr/local/texlive/2022/texmf-config ...
+mktexlsr: Updating /usr/local/texlive/2022/texmf-config/ls-R... 
+mktexlsr: Updating /usr/local/texlive/2022/texmf-var/ls-R... 
+mktexlsr: Done.
+setting up ConTeXt cache: running mtxrun --generate ...done
+pre-generating all format files, be patient...
+running fmtutil-sys --no-error-if-no-engine=luajithbtex,luajittex,mfluajit --no-strict --all ...^[[Bdone
+running package-specific postactions
+finished with package-specific postactions
+
+ ----------------------------------------------------------------------
+ The following environment variables contain the string "tex"
+ (case-independent).  If you're doing anything but adding personal
+ directories to the system paths, they may well cause trouble somewhere
+ while running TeX.  If you encounter problems, try unsetting them.
+ Please ignore spurious matches unrelated to TeX.
+
+    TEXLIVE_INSTALL_NO_DISKCHECK=1
+ ----------------------------------------------------------------------
+
+
+Welcome to TeX Live!
+
+
+See /usr/local/texlive/2022/index.html for links to documentation.
+The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best for you. The list of groups is available on the web at https://tug.org/usergroups.html.
+
+
+Add /usr/local/texlive/2022/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2022/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2022/bin/x86_64-linux
+to your PATH for current and future sessions.
+Logfile: /usr/local/texlive/2022/install-tl.log
+```
+
+
 # Sun  6 Jun 00:54:42 BST 2021
 
 * on machine with ubuntu 18.04x64
