@@ -43,7 +43,15 @@ Warning: Permanently added 'github.com,000.00.000.0' (RSA) to the list of known 
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-5. Extra: adding a DEPLOY KEY
+
+5. Set Up Git
+
+```
+git config --global user.name "mxochicale"
+git config --global user.email "miguel.xochicale@$.ac.uk"
+```
+
+6. Extra: adding a DEPLOY KEY
 
 Create a new secret variable called DEPLOY_KEY in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
 where the value looks like the below lines and is taken from id_rsa with 
