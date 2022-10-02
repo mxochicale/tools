@@ -30,6 +30,7 @@ rm google-chrome-stable_current_amd64.deb #delete deb file
 ## Logs
 * Version 88.0.4324.182 (Official Build) (64-bit) on Jan 2021
 * Version 97.0.4692.71 (Official Build) (64-bit) on Wed  5 Jan 11:17:54 GMT 2022
+* Version 106.0.5249.91 (Official Build) (64-bit) on Sun  2 Oct 19:45:23 BST 2022
 
 ## References
 * https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04
