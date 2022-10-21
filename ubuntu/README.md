@@ -18,7 +18,7 @@
 		* ubuntu-20.04.1-desktop-amd64.iso	2020-07-31 16:52 	2.6G  
 	* [Ubuntu 22.04.1 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/jammy/)
 		* 	ubuntu-22.04.1-desktop-amd64.iso	2022-08-10 16:21	3.6G	Desktop image for 64-bit PC (AMD64) computers (standard download)
-	* [Ubuntu 22.04.1 LTS (Kinetic Kudu)](https://releases.ubuntu.com/kinetic/)
+	* [Ubuntu 22.10 LTS (Kinetic Kudu)](https://releases.ubuntu.com/kinetic/)
 		* 	ubuntu-22.10-desktop-amd64.iso	2022-10-20 07:22	3.8G	Desktop image for 64-bit PC (AMD64) computers (standard download)
 
 
@@ -86,24 +86,24 @@ You’ll also get the option to download updates etc.
 ## (2) Install [basics.sh](basics.sh) tools which also update and upgrade OS
 Download basics.sh
 ```
-wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.sh
+wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
 ```
 and run
 ```
 sudo echo
-sh basics.sh
-rm basics.sh 
+bash basics.bash
+rm basics.bash 
 ```
 
 ### Add aliases and functions to .bashrc file 
 ```
 cd 
-wget https://raw.githubusercontent.com/mxochicale/tools/master/bashrc/append_aliases_to_bashrc.sh
+wget https://raw.githubusercontent.com/mxochicale/tools/main/bashrc/append_aliases_to_bashrc.bash
 ```
 
 append lines to bashrc:
 ```
-sh append_aliases_to_bashrc.sh
+bash append_aliases_to_bashrc.bash
 ```
 
 Reload bashrc file
@@ -113,7 +113,7 @@ source ~/.bashrc
 
 ```
 cd
-rm append_aliases_to_bashrc.sh
+rm append_aliases_to_bashrc.bash
 ```
 
 ### Setup .vimrc
