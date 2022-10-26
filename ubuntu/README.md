@@ -26,7 +26,7 @@
 * Insert your USB stick (select ‘Do nothing' if prompted by Ubuntu)  
 * On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'  
 * In older versions of Ubuntu, use the top left icon to open the dash  
-* Use the search field to look for Startup Disk Creator  
+* Use the search field to look for **Startup Disk Creator**   
 * Select Startup Disk Creator from the results to launch the application. 
  If you don't have it, install it from the terminal with`sudo apt install usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 
@@ -36,7 +36,7 @@ detected and set as ‘Source disc image' and ‘Disk to use' in the application
 If not, use the ‘Other' button to locate your ISO file and select the exact USB 
 device you want to use from the list of devices.
 
-Click Make Startup Disk to start the process.  
+Click **Make Startup Disk** to start the process.  
 [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#3)
 
 #### Confirm USB device
@@ -58,6 +58,7 @@ Most computers will boot from USB automatically. Simply insert the
 USB flash drive and either power on your computer or restart it [:link:](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#3). 
 At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F10 as alternatives) and make sure that you have set Boot from Removable Devices/USB option at the top. Save and exit BIOS. This will allow you to boot into live USB [:link:](https://itsfoss.com/reinstall-ubuntu/).
 
+### (1.3) Setting up options for new installation
 Once you are in the live USB, choose to install Ubuntu. 
 You should see the same welcome window we saw in the previous 
 Install from DVD step, prompting you to choose your language 
@@ -66,12 +67,24 @@ You’ll get the usual option for choosing your language and keyboard layout.
 You’ll also get the option to download updates etc.
 **NOTE** Go ahead with regular installation option as wireless will slowdown your regular installation).
 
-### (1.3) Setting up options for new installation
+
+* I don't want to connect to a WiFi network right now  
 * Updates and other software
   * Minimal installation with web browser and basic utilities
-  * no Download updates while installing Ubuntu
+  * **NO** Download updates while installing Ubuntu
+  * **NO** Install third-party software for graphics and WiFi hardware and additional format media formats
 * Install Ubuntu alongside Windows Boot Manager
+  * Erase Ubuntu version and reinstall 
+* Who are you?
+  * Your name: **mxochicale**
+  * Your computer's name: **machine-version**
+  * Pick a username: **mxochicale**
+  * Choose Password:
+  * Confirm Password:
+    * Require my password to login
 
+
+Complete installation and remove the installation medium then prese ENTER!!!
 
 
 ### (1.3) References
