@@ -7,6 +7,8 @@ Open a terminal in your GNU/Linux OS
 ```
 ssh-keygen -m PEM -t rsa -b 4096 -C "your-email@domain.com"
 ```
+Press only enter twice until you see a graphical code
+
 
 2. Adding your SSH key to the ssh-agent
 

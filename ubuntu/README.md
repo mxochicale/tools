@@ -143,6 +143,9 @@ See [here](https://github.com/mxochicale/tools/tree/master/vim) for more about v
 git config --global user.name "mxochicale"
 git config --global user.email "@sth.com"
 ```
+* Setting up SSH keys
+See further details [here](../github/SSH.md)
+
 
 ### Install google chrome
 * see installations [tools/chrome](../chrome)
