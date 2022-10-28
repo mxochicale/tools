@@ -1,6 +1,118 @@
 
+# Fri 28 Oct 13:34:54 BST 2022
 
-#  Thu  7 Apr 12:52:15 BST 2022
+* OS
+
+```
+lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.1 LTS
+Release:	22.04
+Codename:	jammy
+
+```
+
+* logs 
+
+```
+~/repositories/mxochicale/tools/brave$ bash installating-brave.bash 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libcurl4
+The following NEW packages will be installed
+  apt-transport-https curl
+The following packages will be upgraded:
+  libcurl4
+1 to upgrade, 2 to newly install, 0 to remove and 15 not to upgrade.
+Need to get 196 kB/485 kB of archives.
+After this operation, 622 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.8 [1,506 B]
+Get:2 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.6 [194 kB]
+Fetched 196 kB in 0s (586 kB/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 176817 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.4.8_all.deb ...
+Unpacking apt-transport-https (2.4.8) ...
+Preparing to unpack .../libcurl4_7.81.0-1ubuntu1.6_amd64.deb ...
+Unpacking libcurl4:amd64 (7.81.0-1ubuntu1.6) over (7.81.0-1ubuntu1.4) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.81.0-1ubuntu1.6_amd64.deb ...
+Unpacking curl (7.81.0-1ubuntu1.6) ...
+Setting up apt-transport-https (2.4.8) ...
+Setting up libcurl4:amd64 (7.81.0-1ubuntu1.6) ...
+Setting up curl (7.81.0-1ubuntu1.6) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+Hit:1 http://gb.archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://gb.archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]                                                      
+Get:3 https://brave-browser-apt-release.s3.brave.com stable InRelease [4,317 B]                                                                                 
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                                        
+Get:5 http://gb.archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB] 
+Get:6 https://brave-browser-apt-release.s3.brave.com stable/main amd64 Packages [4,859 B]
+Get:7 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [695 kB]                  
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [20.1 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [13.2 kB]
+Get:10 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [371 kB]
+Get:11 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [159 kB]
+Get:12 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [95.1 kB]
+Get:13 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [10.8 kB]
+Get:14 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [743 kB]
+Get:15 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [546 kB]
+Get:16 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [122 kB]
+Get:17 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [254 kB]
+Get:18 http://gb.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Get:19 http://gb.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [12.5 kB]
+Fetched 3,376 kB in 2s (1,691 kB/s)                                          
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+15 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  brave-keyring
+The following NEW packages will be installed
+  brave-browser brave-keyring
+0 to upgrade, 2 to newly install, 0 to remove and 15 not to upgrade.
+Need to get 105 MB of archives.
+After this operation, 331 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://brave-browser-apt-release.s3.brave.com stable/main amd64 brave-keyring all 1.13 [4,168 B]
+Get:2 https://brave-browser-apt-release.s3.brave.com stable/main amd64 brave-browser amd64 1.45.114 [105 MB]
+Fetched 105 MB in 55s (1,923 kB/s)                                                                                                                                                                                
+Selecting previously unselected package brave-keyring.
+(Reading database ... 176828 files and directories currently installed.)
+Preparing to unpack .../brave-keyring_1.13_all.deb ...
+Unpacking brave-keyring (1.13) ...
+Selecting previously unselected package brave-browser.
+Preparing to unpack .../brave-browser_1.45.114_amd64.deb ...
+Unpacking brave-browser (1.45.114) ...
+Setting up brave-keyring (1.13) ...
+Setting up brave-browser (1.45.114) ...
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/brave-browser (brave-browser) in auto mode
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+
+```
+
+
+# Thu  7 Apr 12:52:15 BST 2022
 
 ```
 
