@@ -17,6 +17,12 @@ sudo rm /etc/apt/sources.list.d/brave-browser-*
 sudo apt update
 ```
 
+## Remove
+```
+sudo apt remove brave-browser brave-keyring apt-transport-https
+```
+
+
 ## Logs 
 See logs for [installed versions](logs.md).
 
