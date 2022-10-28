@@ -35,7 +35,7 @@ rm google-chrome-stable_current_amd64.deb #delete deb file
 	Version 90.0.4430.72 (Official Build) (64-bit) on Sun  2 Oct 20:03:44 BST 2022 #works
 * 104.0.5112.102	80.78 MB	2022-05-31
 	Version 104.0.5112.101 (Official Build) (64-bit) on Sun  2 Oct 20:06:35 BST 2022 # works
-
+* Version 107.0.5304.87 (Official Build) (64-bit) on Fri 28 Oct 14:46:28 BST 2022
 
 ## Mirrors with older versions
 https://www.slimjet.com/chrome/google-chrome-old-version.php
@@ -45,4 +45,4 @@ http://orion.lcg.ufrj.br/RPMS/myrpms/google/
 ## References
 * https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04
 * https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=hl=en
-
+* Linux Chromium Packages: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/chromium_packages.md 
