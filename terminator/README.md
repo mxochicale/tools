@@ -1,7 +1,7 @@
 # Terminator
 > Terminator is an open-source terminal emulator programmed in Java [:books:](https://en.wikipedia.org/wiki/Terminator_(terminal_emulator)).
 
-## installing on Ubuntu 18.04/20.04
+## installing on Ubuntu 18.04/20.04/22.04
 Open the terminal to run [install.bash](install.bash)
 ```
 bash install.bash
