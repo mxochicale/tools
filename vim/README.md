@@ -3,8 +3,8 @@ VIM is a highly configurable text editor built to enable efficient text editing.
 ![General Overview of VIM](https://vim.sourceforge.io/images/0xbabaf000l.png)
 
 
-## Installing Vim0.8
-* In Ubuntu 18.04
+## Installing Vim
+* In Ubuntu 18.04/22.04
 ```
 sudo apt update
 sudo apt install vim vim-gtk
@@ -109,3 +109,19 @@ For latex comments, the whole command then looks like:
 :'<,'>s/^/% #comment
 :'<,'>s/^%/ #uncomment
 ```
+
+
+### Logs
+
+* Fri  4 Nov 14:26:33 GMT 2022 on Ubuntu22.04 x64: 
+```
+vim --version
+VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Sep 13 2022 09:35:02)
+Included patches: 1-3995, 4563, 4646, 4774, 4895, 4899, 4901, 4919
+Modified by team+vim@tracker.debian.org
+Compiled by team+vim@tracker.debian.org
+Huge version with GTK3 GUI.  Features included (+) or not (-):
+...
+
+```
+
