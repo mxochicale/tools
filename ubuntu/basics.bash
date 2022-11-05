@@ -13,4 +13,5 @@ sudo apt-get install vim-gtk
 sudo apt-get install xsel
 sudo apt-get install xclip
 sudo apt-get install tree
+sudo apt-get install terminator
 sudo apt install make 

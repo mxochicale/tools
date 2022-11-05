@@ -70,9 +70,9 @@ You’ll also get the option to download updates etc.
 
 * I don't want to connect to a WiFi network right now  
 * Updates and other software
-  * Minimal installation with web browser and basic utilities
-  * **NO** Download updates while installing Ubuntu
-  * **NO** Install third-party software for graphics and WiFi hardware and additional format media formats
+  * **Minimal installation** with web browser and basic utilities
+  	* **NO** Download updates while installing Ubuntu
+  	* **NO** Install third-party software for graphics and WiFi hardware and additional format media formats
 * Install Ubuntu alongside Windows Boot Manager
   * Erase Ubuntu version and reinstall 
 * Who are you?
