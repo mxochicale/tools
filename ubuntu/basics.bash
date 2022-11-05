@@ -1,4 +1,4 @@
-vim-gtk#!/bin/bash
+#!/bin/bash
 # Usage: Open the terminal and type:
 # sudo echo
 # sh basics.sh

@@ -95,9 +95,8 @@ Complete installation and remove the installation medium then prese ENTER!!!
 * https://www.youtube.com/watch?v=2mFeoiExeX0 
 
 
-
-## (2) Install [basics.sh](basics.sh) tools which also update and upgrade OS
-Download basics.sh
+## Setting up new installation
+### (2.1) Install [basics.sh](basics.sh) tools which also update and upgrade OS
 ```
 wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
 ```
@@ -108,9 +107,8 @@ bash basics.bash
 rm basics.bash 
 ```
 
-### Add aliases and functions to .bashrc file 
+### (2.2) Add aliases and functions to .bashrc file 
 ```
-cd 
 wget https://raw.githubusercontent.com/mxochicale/tools/main/bashrc/append_aliases_to_bashrc.bash
 ```
 
@@ -129,7 +127,7 @@ cd
 rm append_aliases_to_bashrc.bash
 ```
 
-### Setup .vimrc
+### (2.3) Setup .vimrc
 ```
 cd
 wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/.vimrc
@@ -137,35 +135,38 @@ wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/.vimrc
 See [here](https://github.com/mxochicale/tools/tree/master/vim) for more about vim configuration 
 
 
-### Github Setting up
+### (2.4) Github Setting up
 * set up
 ```
-git config --global user.name "mxochicale"
-git config --global user.email "@sth.com"
+git config --global user.name "Miguel Xochicale"
+git config --global user.email "email@sth.com"
 ```
 * Setting up SSH keys
 See further details [here](../github/SSH.md)
 
 
-### Install google chrome
-* see installations [tools/chrome](../chrome)
-
-### Setting left-handed mouse
-  Go to Setting Manager to configure the left-handed mouse
+### Settings of the terminal 
+	preferences
+		General: Use the system fixed width font > Ubuntu Mono Regular 13
+		Colors: Green on black
+		Background > Transparent background 0.9  
+	[close]
 
 ### File Manager Preferences
 	1. Open Files
 	2. Edit > Preferences> Behaviour
 	3. [CLICK] Single click to open items
 
+
+### Setting left-handed mouse
+  Go to Setting Manager to configure the left-handed mouse
+
 ### Unlock libre office launchers and others from the desktop
 by removing from favorites with a right-click!
 
-### (optional) Settings of the terminal 
-	preferences
-		profiles > colors: Green on black
-		Background > Transparent background 0.9  
-		text > Monospace Regular 13
+### Install google chrome
+* see installations [tools/chrome](../chrome)
+
 
 
 ## (3) Tricks for Ubuntu
