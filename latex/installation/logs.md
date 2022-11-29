@@ -1,3 +1,73 @@
+# Mon 28 Nov 14:15:37 GMT 2022
+
+* Machine
+```
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.1 LTS
+
+$uname -m
+x86_64
+
+
+```
+
+* Logs
+
+```
+...
+Installing [4458/4464, time/total: 09:47:00/10:23:01]: zwgetfdate [242k]
+Installing [4459/4464, time/total: 09:47:01/10:23:00]: zwpagelayout [641k]
+Installing [4460/4464, time/total: 09:47:01/10:22:54]: zx-calculus [636k]
+Installing [4461/4464, time/total: 09:47:02/10:22:48]: zxjafbfont [3k]
+Installing [4462/4464, time/total: 09:47:03/10:22:49]: zxjafont [173k]
+Installing [4463/4464, time/total: 09:47:03/10:22:47]: zxjatype [144k]
+Installing [4464/4464, time/total: 09:47:04/10:22:47]: zztex [147k]
+Retrying to install: bidi [4232k]
+Retrying to install: doc-pictex [2k]
+Retrying to install: docbytex [1299k]
+Retrying to install: doclicense [468k]
+Retrying to install: docmfp [155k]
+Retrying to install: docmute [149k]
+Retrying to install: docshots [339k]
+...
+
+
+TLPDB::_install_data: downloading did not succeed (download_file failed) for https://www-uxsup.csx.cam.ac.uk/pub/tex-archive/systems/texlive/tlnet/archive/fileinfo.tar.xz
+TLUtils::install_packages: Failed to install fileinfo
+                           fileinfo will be retried later.
+
+ ----------------------------------------------------------------------
+ The following environment variables contain the string "tex"
+ (case-independent).  If you're doing anything but adding personal
+ directories to the system paths, they may well cause trouble somewhere
+ while running TeX.  If you encounter problems, try unsetting them.
+ 
+ Please ignore spurious matches unrelated to TeX. (To omit this check,
+ set the environment variable TEXLIVE_INSTALL_ENV_NOCHECK.)
+
+    TEXLIVE_INSTALL_NO_DISKCHECK=1
+ ----------------------------------------------------------------------
+
+
+Welcome to TeX Live!
+
+
+See /usr/local/texlive/2022/index.html for links to documentation.
+The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best for you. The list of groups is available on the web at https://tug.org/usergroups.html.
+
+
+Add /usr/local/texlive/2022/texmf-dist/doc/man to MANPATH.
+Add /usr/local/texlive/2022/texmf-dist/doc/info to INFOPATH.
+Most importantly, add /usr/local/texlive/2022/bin/x86_64-linux
+to your PATH for current and future sessions.
+Logfile: /usr/local/texlive/2022/install-tl.log
+
+```
+
+
+
 # Wed  1 Jun 10:47:02 BST 2022
 
 * Machine OS
