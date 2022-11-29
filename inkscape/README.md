@@ -14,11 +14,11 @@ sudo apt --yes install inkscape
 sudo add-apt-repository --remove ppa:inkscape.dev/stable
 ```
 
+* Logs and versions
+See logs and installed versions [here](logBOOK.md).
 
 ## TRICKS in Ubuntu
-
 ### Convert the figure: svg to png
-
 ```
 inkscape --export-png fileimagename.png drawing.svg
 ```
