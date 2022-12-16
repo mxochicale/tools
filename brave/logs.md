@@ -1,3 +1,20 @@
+# Fri 16 Dec 00:50:03 GMT 2022
+
+```
+Version 1.46.144 Chromium: 108.0.5359.128 (Official Build) (64-bit)
+```
+on
+
+````
+hostnamectl
+
+Operating System: Ubuntu 22.04.1 LTS              
+          Kernel: Linux 5.15.0-56-generic
+    Architecture: x86-64
+```
+
+
+
 
 # Fri 28 Oct 13:34:54 BST 2022
 
