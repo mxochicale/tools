@@ -22,6 +22,11 @@ sudo apt update
 sudo apt remove brave-browser brave-keyring apt-transport-https
 ```
 
+## Tips and tricks
+* “Continue where you left off” 
+"Go to Menu --> History --> Clear browsing data --> On exit an ensure that none of these boxes are checked and/or report any that are."
+https://community.brave.com/t/continue-where-you-left-off-again-not-working/216866/2 
+
 
 ## Logs 
 See logs for [installed versions](logs.md).
