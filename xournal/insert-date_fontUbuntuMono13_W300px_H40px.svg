@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300"
+   height="40"
+   viewBox="0 0 79.374998 10.583334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (1:1.2.1+202210291243+9c6d41e410)"
+   sodipodi:docname="insert-date_W350px_H40px.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="2.3095183"
+     inkscape:cx="192.68087"
+     inkscape:cy="77.93833"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="120"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.175px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Light';text-align:center;text-anchor:middle;fill:none;stroke:#000000;stroke-width:0.264583"
+       x="37.926571"
+       y="6.8341184"
+       id="text2968"><tspan
+         sodipodi:role="line"
+         id="tspan2966"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';fill:#000000;fill-opacity:1;stroke-width:0.264583"
+         x="37.926567"
+         y="6.8341184">Fri 23 Dec 17:56:42 GMT 2022</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="37.926571"
+         y="11.24999"
+         id="tspan2970" /></text>
+  </g>
+</svg>
