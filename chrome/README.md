@@ -27,6 +27,15 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb #delete deb file
 ```
 
+## Remove 
+```
+sudo apt purge google-chrome-stable
+sudo dpkg -r google-chrome-stable
+rm -rf ~/.config/google-chrome
+rm -rf  ~/.cache/google-chrome
+```
+
+
 ## Logs
 * Version 88.0.4324.182 (Official Build) (64-bit) on Jan 2021
 * Version 97.0.4692.71 (Official Build) (64-bit) on Wed  5 Jan 11:17:54 GMT 2022
@@ -46,3 +55,5 @@ http://orion.lcg.ufrj.br/RPMS/myrpms/google/
 * https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04
 * https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=hl=en
 * Linux Chromium Packages: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/chromium_packages.md 
+* Remove chrome in linux: https://support.google.com/chrome/answer/95319?hl=en-GB&co=GENIE.Platform%3DDesktop#zippy=%2Clinux
+* Remove configs and cache paths: https://itsfoss.com/uninstall-chrome-from-ubuntu/
