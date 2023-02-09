@@ -3,6 +3,8 @@
 
 ## References 
 * https://www.onshape.com/en/ 
+* https://www.youtube.com/@OnshapeInc/videos
 * https://twitter.com/Onshape 
 * Awesome FeatureScripts for Onshape: https://github.com/dcowden/featurescript
+
 
