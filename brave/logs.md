@@ -1,3 +1,20 @@
+# Sun 12 Feb 14:07:46 GMT 2023
+
+* `Version 1.48.158 Chromium: 110.0.5481.77 (Official Build) (64-bit)`
+on 
+```
+ hostnamectl
+   Static hostname: -
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: -
+           Boot ID: -
+  Operating System: Ubuntu 20.04.1 LTS
+            Kernel: Linux 5.15.0-60-generic
+      Architecture: x86-64
+```
+
+
 # Fri 16 Dec 00:50:03 GMT 2022
 
 ```
@@ -5,7 +22,7 @@ Version 1.46.144 Chromium: 108.0.5359.128 (Official Build) (64-bit)
 ```
 on
 
-````
+```
 hostnamectl
 
 Operating System: Ubuntu 22.04.1 LTS              
@@ -331,11 +348,6 @@ Do you want to continue? [Y/n] y
 
 # Mon 12 Aug 23:12:28 BST 2019
 
-
-
-
-
-
 ```
 $ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 OK
@@ -423,15 +435,6 @@ Setting up brave-browser (0.67.125) ...
 update-alternatives: using /usr/bin/brave-browser-stable to provide /usr/bin/brave-browser (brave-browser) in auto mode
 xima@blue:~/github/tools/brave$ 
 ```
-
-
-
-
-
-
-
-
-
 
 
 
@@ -608,9 +611,6 @@ E: Unable to locate package brave
 mapx@N55SL:~/github/scientificTOOLS/brave$ w
 
 ```
-
-
-
 
 
 

@@ -3,7 +3,7 @@
 Learn more at [brave.com](https://brave.com/) and [github.com/brave](https://github.com/brave)
 
 ## Installation
-* In the terminal to be used for the below commands, prime the sudo command (enter your password once).
+* In the terminal prime the sudo command (enter your password once) and run [installating-brave.bash](installating-brave.bash):
 ```
 cd $HOME/repositories/mxochicale/tools/brave
 sudo echo
