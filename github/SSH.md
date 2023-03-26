@@ -25,11 +25,11 @@ xclip -selection clipboard < ~/.ssh/id_rsa.pub
 #in_windows clip id_rsa.pub
 ```
 
-Add a new SSH key by going to https://github.com/settings/keys and pasting the key with a new title:
+Add a new SSH key by going to https://github.com/settings/keys and pasting the key with a descriptive new title:
 ```
 Title: New Key
 
-Key:
+Key type (Authentication Key or Siging Key):
 ssh-rsa A............................== your-email@domain.com
 ```
 
@@ -50,14 +50,16 @@ Hi mxochicale! You've successfully authenticated, but GitHub does not provide sh
 
 ```
 git config --global user.name "mxochicale"
-git config --global user.email "miguel.xochicale@$.ac.uk"
+git config --global user.email "...@gmail.com"
 ```
 
-6. Extra: adding a DEPLOY KEY
+#### 1.1.1 Extra: adding a DEPLOY KEY
 
-Create a new secret variable called DEPLOY_KEY in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
-where the value looks like the below lines and is taken from id_rsa with 
-xclip -selection clipboard < ~/.ssh/id_rsa  
+Create a new secret variable called `DEPLOY_KEY` in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
+where the value looks like the below lines and is taken from id_rsa with     
+
+xclip -selection clipboard < ~/.ssh/id_rsa     
+
 ```
 -----BEGIN RSA PRIVATE KEY-----
 ...
@@ -68,7 +70,7 @@ xclip -selection clipboard < ~/.ssh/id_rsa
 ### 1.2 Using ed25519 
 1. generate key using ed25519
 ```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "perez.xochicale@gmail.com"
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "...@gmail.com"
 ```
 
 2. Adding your SSH key to the ssh-agent
