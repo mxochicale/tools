@@ -1,3 +1,28 @@
+# Sat  8 Apr 17:44:54 BST 2023
+* Version
+
+```
+brave-browser --version
+Brave Browser 112.1.50.114 
+
+Version 1.50.114 Chromium: 112.0.5615.49 (Official Build) (64-bit)
+```
+
+* machine 
+```
+ hostnamectl
+   Static hostname: -
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: -
+           Boot ID: -
+  Operating System: Ubuntu 20.04.1 LTS
+            Kernel: Linux 5.15.0-60-generic
+      Architecture: x86-64
+```
+
+
+
 # Sun 12 Feb 14:07:46 GMT 2023
 
 * `Version 1.48.158 Chromium: 110.0.5481.77 (Official Build) (64-bit)`
