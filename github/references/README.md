@@ -2,6 +2,15 @@
 
 ## Tutorials
 
+### An Intro to Git and GitHub for Beginners
+Great tutotorial, just don't forget to setup your SSH keys and use the following for cloning your repo
+```
+git clone git@github.com:<myGitHubAccountName>/<repoName>.git
+```
+
+https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
+
+
 ### git -- simple guide
 [git -- simple guide](http://rogerdudler.github.io/git-guide/)  
 just a simple guide for getting started with git. no deep shit ;)
@@ -16,6 +25,7 @@ just a simple guide for getting started with git. no deep shit ;)
 * log
 * replace local changes
 * useful hints
+
 
 
 ### Branching
