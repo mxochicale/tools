@@ -107,6 +107,13 @@ cat ~/.ssh/id_rsa.pub
 ```
 
 
+## Warnings
+To solve  "Warning: the ECDSA host key for 'github.com' differs from the key for the IP address", you need to remove old keys for GitHub from your `know_host` file
+
+```
+ssh-keygen -R github.com
+```
+
 ## refererences
 * https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 * https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
