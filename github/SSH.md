@@ -1,4 +1,6 @@
 # Setting up SSH keys
+The following are few instructions to setup your SSH keys mainly for GNU/Linux OS but should also work for windows.
+Remember to use your `$USERNAME` and email credentials when necessary.
 
 ## 1. GNU/Linux
 Open a terminal in your GNU/Linux OS
@@ -16,7 +18,6 @@ Press only enter twice until you see a graphical code
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
-
 
 3. Adding a new SSH key to your GitHub account
 ```
@@ -113,7 +114,7 @@ To solve  "Warning: the ECDSA host key for 'github.com' differs from the key for
 ```
 ssh-keygen -R github.com
 ```
-If you are stil getting the warning you need to delete the records from the IP, as the following example 
+If you are still getting the warning you need to delete the records from the IP, as the following example 
 ```
 ssh-keygen -R 140.82.114.3
 ```
