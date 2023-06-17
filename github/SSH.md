@@ -1,8 +1,46 @@
 # Setting up SSH keys
+The following are few instructions to setup your SSH keys mainly for GNU/Linux OS but should also work for windows.
+Remember to use your `$USERNAME` and email credentials when necessary.
 
 ## 1. GNU/Linux
-Open a terminal in your GNU/Linux OS
-### 1.1 Using RSA 4096
+To create your `SSH` keys you can do either with ed25519 or RSA 4096 
+
+### 1.1 Using ed25519 
+Open a terminal in your GNU/Linux OS and follow this instructions:
+NB. ed25519 is from a branch of cryptography called "elliptic curve cryptography (ECC).
+
+1. generate key using ed25519
+```
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "...@gmail.com"
+```
+
+2. Adding your SSH key to the ssh-agent
+
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+3. Adding a new SSH key to your GitHub account
+```
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_ed25519.pub
+```
+New SSH and GPG keys
+https://github.com/settings/keys
+
+
+4. Testing your SSH connection
+
+```
+ssh -T git@github.com
+Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+
+### 1.2 Using RSA 4096
+Open a terminal in your GNU/Linux OS and follow this instructions:
+
 1. generate key using RSA
 ```
 ssh-keygen -m PEM -t rsa -b 4096 -C "your-email@domain.com"
@@ -16,7 +54,6 @@ Press only enter twice until you see a graphical code
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
-
 
 3. Adding a new SSH key to your GitHub account
 ```
@@ -67,39 +104,9 @@ xclip -selection clipboard < ~/.ssh/id_rsa
 ```
 
 
-### 1.2 Using ed25519 
-1. generate key using ed25519
-```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "...@gmail.com"
-```
-
-2. Adding your SSH key to the ssh-agent
-
-```
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-```
-
-
-3. Adding a new SSH key to your GitHub account
-```
-sudo apt-get install xclip
-xclip -sel clip < ~/.ssh/id_ed25519.pub
-```
-New SSH and GPG keys
-https://github.com/settings/keys
-
-
-4. Testing your SSH connection
-
-```
-ssh -T git@github.com
-Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
-
 ## 2. Windows
 Open a terminal which is based on Gitbash
+
 ### GitBash!
 Also in windows use cat instead of xclip for copying keys
 ``` 
@@ -107,8 +114,27 @@ cat ~/.ssh/id_rsa.pub
 ```
 
 
+## 3. Warnings
+To solve  "Warning: the ECDSA host key for 'github.com' differs from the key for the IP address", you need to remove old keys for GitHub from your `know_host` file
+
+```
+ssh-keygen -R github.com
+```
+If you are still getting the warning you need to delete the records from the IP, as the following example 
+```
+ssh-keygen -R 140.82.114.3
+```
+
+## 4. Reasons to chose ed over RSA
+> Security: people tend to like ECC over RSA because the keys are smaller and the computations are faster for the same security level. Below is a table showing the security level comparison of RSA (labeled as Integer Factorization, or IF) vs ECC [source]. You can see that ECC keys really do get the same job done with a smaller key.
+
+* https://security.stackexchange.com/questions/143083/ssh-key-strength-factor-besides-key-length-say-ed25519-vs-rsa-4096 
+* https://news.ycombinator.com/item?id=12575358 
+
+
 ## refererences
 * https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 * https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 * https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
 * https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
+* https://github.com/orgs/community/discussions/54604

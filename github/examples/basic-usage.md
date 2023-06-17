@@ -1,14 +1,10 @@
-Useful Commands for [GitHub](https://en.wikipedia.org/wiki/GitHub)(2008)
----
-
-
+# Useful Commands for [GitHub](https://en.wikipedia.org/wiki/GitHub)(2008)
 
 
 # git clone
-
-
 ```
-git clone https://github.com/...
+git clone git@github.com:mxochicale/tools.git
+
 ```
 
 
@@ -33,7 +29,7 @@ git pull
 
 ## Clone your fork to your local machine [ref](https://gist.github.com/Chaser324/ce0505fbed06b947d962#creating-a-fork)
 ```
-git clone https://github.com/<myGitHubAccountName>/<repoName>.git
+git clone git@github.com:<myGitHubAccountName>/<repoName>.git
 ```
 
 ## Setting up Remotes
@@ -151,18 +147,6 @@ https://gist.github.com/trongthanh/2779392
 
 
 # REFERENCES
-
-
-[Well explained source for working with Git](https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git)
-
-
-
-
-# TODO
-
-* Clean the previous explanaition
-* Find a repository for data, this are some options:
-[GHtorrent](http://ghtorrent.org/), [GitData](https://developer.github.com/v3/git/).
-
+* [Well explained source for working with Git](https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git)
 
 
