@@ -33,12 +33,14 @@ xclip -sel clip < ~/.ssh/id_ed25519.pub
 Use a name, (e.g. `ed25519_machine_OSversion`) and add it in https://github.com/settings/keys
 
 5. Testing your SSH connection
-
 ```
 ssh -T git@github.com
+#The authenticity of host 'github.com (140.....)' can't be established.
+#ECDSA key fingerprint is SHA256:.....
+#Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+#Warning: Permanently added 'github.com,140.....' (ECDSA) to the list of known hosts.
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
 
 ### 1.2 Using RSA 4096
 Open a terminal in your GNU/Linux OS and follow this instructions:
