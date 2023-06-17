@@ -38,11 +38,15 @@ For a deeper explanation go to
 [basic branching and merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 
-###
+### Articles 
 * Dabbish, Laura, Colleen Stuart, Jason Tsay, and Jim Herbsleb. "Social coding in GitHub: transparency and collaboration in an open software repository." In Proceedings of the ACM 2012 conference on computer supported cooperative work, pp. 1277-1286. 2012.  https://scholar.google.com/scholar?cites=9850335067265206962&as_sdt=2005&sciodt=0,5&hl=en
 
 * Gousios, Georgios, Bogdan Vasilescu, Alexander Serebrenik, and Andy Zaidman. "Lean GHTorrent: GitHub data on demand." In Proceedings of the 11th working conference on mining software repositories, pp. 384-387. 2014. https://scholar.google.com/scholar?cites=13595814323057795092&as_sdt=2005&sciodt=0,5&hl=en
 
-## Extras
+## Other references
+* [A developer’s introduction to GitHub](https://www.freecodecamp.org/news/a-developers-introduction-to-github-1034fa55c0db/)
+* [syncing-a-fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
+* [Mastering Issues](https://guides.github.com/features/issues/)
+* Repository for data: [GHtorrent](http://ghtorrent.org/) and  [GitData](https://developer.github.com/v3/git/) (but not tested by myself).  
 * [how-to-push-large-files-to-github](https://medium.com/@AyunasCode/how-to-push-large-files-to-github-253d05cc6a09)
 * [how-to-synchronize-an-overleaf-latex-paper-with-a-github-repository/](https://ineed.coffee/3454/how-to-synchronize-an-overleaf-latex-paper-with-a-github-repository/)
