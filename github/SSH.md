@@ -12,10 +12,12 @@ NB. ed25519 is from a branch of cryptography called "elliptic curve cryptography
 1. generate key using ed25519
 ```
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "...@gmail.com"
+#PRESS ENTER FOR THIS LINES
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
 ```
 
 2. Adding your SSH key to the ssh-agent
-
 ```
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
@@ -26,11 +28,11 @@ ssh-add ~/.ssh/id_ed25519
 sudo apt-get install xclip
 xclip -sel clip < ~/.ssh/id_ed25519.pub
 ```
-New SSH and GPG keys
-https://github.com/settings/keys
 
+4. Add your New SSH 
+Use a name, (e.g. `ed25519_machine_OSversion`) and add it in https://github.com/settings/keys
 
-4. Testing your SSH connection
+5. Testing your SSH connection
 
 ```
 ssh -T git@github.com
