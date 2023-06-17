@@ -113,9 +113,15 @@ To solve  "Warning: the ECDSA host key for 'github.com' differs from the key for
 ```
 ssh-keygen -R github.com
 ```
+If you are stil getting the warning you need to delete the records from the IP, as the following example 
+```
+ssh-keygen -R 140.82.114.3
+```
+
 
 ## refererences
 * https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 * https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 * https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
 * https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
+* https://github.com/orgs/community/discussions/54604
