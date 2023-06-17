@@ -21,14 +21,14 @@ that I am very far away to use the full potential of GitHub.
 So, I am still learning from all the GitHub community. 
 
 Perhaps, a stronger reason to use GitHub is the following extract of 
- [Gousios et al. 2014](/references/lean-ghtorrent.pdf)
+ [Gousios et al. 2014](references/lean-ghtorrent.pdf)
 
 > "During recent years, [GitHub](https://en.wikipedia.org/wiki/GitHub),
 founded in 2008, has become the largest code host in the world, with more
 than 5M developers collaborating across 10M repositories.
 Due to its support for distributed
 version control (Git) and pull-based development [2], as well as
-its modern Web UI and focus on social coding [ [4] ](/references/dabbish-cscw2012.pdf),
+its modern Web UI and focus on social coding [(Dabbish et al. 2012)](references/dabbish-cscw2012.pdf),
 GitHub has quickly surpassed
 in size and popularity even much older forges such as Sourceforge (1999).
 GitHub offers a tremendous research potential. For instance, it is
@@ -40,9 +40,10 @@ the platform where social coding features or pull requests emerged."
 * [A developer’s introduction to GitHub](https://www.freecodecamp.org/news/a-developers-introduction-to-github-1034fa55c0db/)
 * [syncing-a-fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
 * [Mastering Issues](https://guides.github.com/features/issues/)
+* Repository for data: [GHtorrent](http://ghtorrent.org/) and  [GitData](https://developer.github.com/v3/git/) (but not tested by myself).
 
 ## Contact 
 If you have specific questions about the content of this repository, you can contact 
 [Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[github]"). 
 If your question might be relevant to other people, please instead 
-[open an issue](https://github.com/mxochicale/github/issues).
+[open an issue](https://github.com/mxochicale/tools/issues).
