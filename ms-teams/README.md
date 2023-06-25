@@ -1,5 +1,11 @@
 # MS Teams in GNU/Linux Ubuntu
 
+:warning: Microsoft has anadoned a full-fat deskipt app for Windows. > https://askubuntu.com/questions/1457083/cant-download-microsoft-teams-deb-file
+Sun 25 Jun 17:08:30 BST 2023
+
+There is an unfficial version https://github.com/IsmaelMartinez/teams-for-linux but I wouldn't recommend it to install unless MS is need.
+
+
 ## Download `Linux DEB (64-bit)` file for teams
 https://www.microsoft.com/en-gb/microsoft-teams/download-app#desktopAppDownloadregion
 
