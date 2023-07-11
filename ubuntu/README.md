@@ -9,7 +9,6 @@
 * Ubuntu Desktop 14.04 or later installed
 * An Ubuntu ISO file from:
 	* [Ubuntu 16.04 (Xenial Xerus)](http://releases.ubuntu.com/16.04/)
-		* 16.04.5-desktop-amd64.iso.torrent,2018-08-02,12:09,62K
 		* 16.04.5-desktop-amd64.iso
 	* [Ubuntu 18.04 (Bionic Beaver)](http://releases.ubuntu.com/18.04/)
 		* 18.04.2-live-server-amd64.iso, 2019-02-14, 834M
@@ -17,18 +16,25 @@
 	* [Ubuntu 20.04 (Focal Fossa)](http://releases.ubuntu.com/focal/)
 		* ubuntu-20.04.1-desktop-amd64.iso	2020-07-31 16:52 	2.6G  
 	* [Ubuntu 22.04.1 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/jammy/)
-		* 	ubuntu-22.04.1-desktop-amd64.iso	2022-08-10 16:21	3.6G	Desktop image for 64-bit PC (AMD64) computers (standard download)
+		* 2023-07-11 20:14:19 (6.94 MB/s) - ‘ubuntu-22.04.2-desktop-amd64.iso’ saved [4927586304/4927586304]
 	* [Ubuntu 22.10 LTS (Kinetic Kudu)](https://releases.ubuntu.com/kinetic/)
-		* 	ubuntu-22.10-desktop-amd64.iso	2022-10-20 07:22	3.8G	Desktop image for 64-bit PC (AMD64) computers (standard download)
+		* ubuntu-22.10-desktop-amd64.iso	2022-10-20 07:22	3.8G	
+	* [Ubuntu 23.04 (Luna Lobster)](https://releases.ubuntu.com/lunar/)
+		* 2023-07-11 21:30:07 (6.99 MB/s) - ‘ubuntu-23.04-desktop-amd64.iso’ saved [4932407296/4932407296]
 
+#### Download iso image
+```
+cd ~/Downloads && mkdir -p ubuntu && cd ~/Downloads/ubuntu
+wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-desktop-amd64.iso
+wget https://releases.ubuntu.com/lunar/ubuntu-23.04-desktop-amd64.iso
+```
 
 #### Launch 'Startup Disk Creator'
+* Install usb-creator from the terminal with`sudo apt install usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 * Insert your USB stick (select ‘Do nothing' if prompted by Ubuntu)  
-* On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'  
-* In older versions of Ubuntu, use the top left icon to open the dash  
+* On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'. In older versions of Ubuntu, use the top left icon to open the dash  
 * Use the search field to look for **Startup Disk Creator**   
 * Select Startup Disk Creator from the results to launch the application. 
- If you don't have it, install it from the terminal with`sudo apt install usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 
 #### ISO and USB selection
 It's likely that both your Ubuntu ISO and the correct USB device will have been 
@@ -52,30 +58,36 @@ That's it! You now have Ubuntu on a USB stick, bootable and ready to go.
 
 ### (1.2) Boot from USB flash drive
 
-:warning: **NOTE** Turn off BitLocker in Windows before install Ubuntu [:link:](https://www.youtube.com/watch?v=2mFeoiExeX0)
+* :warning: **NOTE** Turn off BitLocker in Windows before install Ubuntu [:link:](https://www.youtube.com/watch?v=2mFeoiExeX0)
+
+* :warning: **NOTE** You might got a single HDD/SSD set up in RAID (RST) mode, and the Ubuntu installer won't recognize your HDD/SSD until you switch your disk setting in the BIOS from RAID to AHCI. Please refer to this instructions > https://superuser.com/questions/1672500/ubuntu-installation-with-intel-rst 
+
 
 Most computers will boot from USB automatically. Simply insert the 
 USB flash drive and either power on your computer or restart it [:link:](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#3). 
 At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F10 as alternatives) and make sure that you have set Boot from Removable Devices/USB option at the top. Save and exit BIOS. This will allow you to boot into live USB [:link:](https://itsfoss.com/reinstall-ubuntu/).
 
 ### (1.3) Setting up options for new installation
-Once you are in the live USB, choose to install Ubuntu. 
-You should see the same welcome window we saw in the previous 
-Install from DVD step, prompting you to choose your language 
-and either install or try the Ubuntu desktop.
-You’ll get the usual option for choosing your language and keyboard layout. 
-You’ll also get the option to download updates etc.
-**NOTE** Go ahead with regular installation option as wireless will slowdown your regular installation).
+1. Once you are in the live USB, choose to install Ubuntu. 
+	You should see the same welcome window we saw in the previous 
+	Install from DVD step, prompting you to choose your language 
+	and either install or try the Ubuntu desktop.
+2. You’ll get the usual option for choosing your language and keyboard layout. 
+3. Wireless. You’ll also get the option to download updates etc.
+	"I don't want to connect to a Wi-Fi network right now"
+	**NOTE** Go ahead with regular installation option as wireless will slowdown your regular installation.
 
+4. Updates and other software
+	* **Minimal installation** with web browser and basic utilities
+  		* **NO** Download updates while installing Ubuntu
+	  	* **NO** Install third-party software for graphics and WiFi hardware and additional format media formats
+5. Install type
+	* Install Ubuntu alongside Windows Boot Manager
+		* Erase Ubuntu version and reinstall 
+		* INSTALL NOW
+	* Where are you?
 
-* I don't want to connect to a WiFi network right now  
-* Updates and other software
-  * **Minimal installation** with web browser and basic utilities
-  	* **NO** Download updates while installing Ubuntu
-  	* **NO** Install third-party software for graphics and WiFi hardware and additional format media formats
-* Install Ubuntu alongside Windows Boot Manager
-  * Erase Ubuntu version and reinstall 
-* Who are you?
+6. Who are you?
   * Your name: **mxochicale**
   * Your computer's name: **machine-version**
   * Pick a username: **mxochicale**
@@ -83,9 +95,7 @@ You’ll also get the option to download updates etc.
   * Confirm Password:
     * Require my password to login
 
-
-Complete installation and remove the installation medium then prese ENTER!!!
-
+7. Complete installation and remove the installation medium then prese ENTER!!!
 
 ### (1.3) References
 * https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu
@@ -166,7 +176,6 @@ by removing from favorites with a right-click!
 
 ### Install google chrome
 * see installations [tools/chrome](../chrome)
-
 
 
 ## (3) Tricks for Ubuntu
