@@ -3,7 +3,7 @@
 Learn more at [brave.com](https://brave.com/) and [github.com/brave](https://github.com/brave)
 
 ## Installation and update
-* In the terminal prime the sudo command (enter your password once) and run [installating-brave.bash](installating-brave.bash):
+* In the terminal, prime the sudo command (enter your password once) and run [installating-brave.bash](installating-brave.bash):
 ```
 cd $HOME/repositories/mxochicale/tools/brave
 sudo echo
@@ -28,11 +28,18 @@ sudo apt remove brave-browser brave-keyring apt-transport-https
 https://community.brave.com/t/continue-where-you-left-off-again-not-working/216866/2 
 
 ## Logs 
+Getting versions:    
+
+brave-browser --version    
+Open brave and go to main menu and select `About Brave` to get version:
+
 See logs for [installed versions](logs.md).
 
-## Version in Tags 
-https://github.com/brave/brave-browser/tags  
-https://github.com/brave/brave-core/tags  
+
+## Version in Tags   
+https://github.com/brave/brave-browser/tags     
+https://github.com/brave/brave-core/tags    
+https://brave.com/latest/   
 
 
 ## References 
