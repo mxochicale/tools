@@ -5,6 +5,7 @@
 ## Installation on Ubuntu 16.04x64, 18.04x64, 20.04x64, 22.04x64
 * In the terminal prime sudo command and type:
 ```
+sudo apt-get upgrade
 sudo apt-add-repository ppa:kdenlive/kdenlive-stable && sudo apt-get update
 sudo apt-get install kdenlive
 sudo apt-add-repository --remove ppa:kdenlive/kdenlive-stable 
@@ -16,13 +17,23 @@ sudo rm /etc/apt/sources.list.d/kdenlive-ubuntu-*
 sudo apt update
 ```
 
+* Remove 
+sudo apt-get purge kdenlive
+
+
 ## Logs
 See [logs](logs.md) for versions and OS features.
+
+## Useful tips
+* Countdown - Kdenlive Tutorial #27 > 
+https://www.youtube.com/watch?v=2TJHLuvoyS4
+
+* Compositing Multiple Videos into One Video > 
+https://www.youtube.com/watch?v=rjGa-ZrAnSY
 
 
 ## References 
 * Repository https://invent.kde.org/multimedia/kdenlive 
-* [Compositing Multiple Videos into One Video](https://www.youtube.com/watch?v=0-Jg4xdP-lY)  
 * Automatically aligning multiple video/audio clips in kdenlive  https://nerd.mmccoo.com/2017/06/19/automatically-aligning-multiple-videoaudio-clips-in-kdenlive/    
 * bugs: https://www.mail-archive.com/kde-bugs-dist@kde.org/msg456662.html   
 
