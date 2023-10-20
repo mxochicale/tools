@@ -3,3 +3,8 @@
 
 ## temporal vim files
 *.sw*
+
+## files for html-slides
+_site/
+**/*.jekyll-cache
+**/*.lock
