@@ -9,7 +9,7 @@ bundle exec jekyll serve
 ```
 2. Open hmtl slides using firefox on a local server.
 ```
-firefox http://127.0.0.1:4000/template/slides.html #or google-chrome http://127.0.0.1:4000/
+firefox http://127.0.0.1:4000/slides.html #or google-chrome http://127.0.0.1:4000/
 
 ```
 3. You might like to remove build files
