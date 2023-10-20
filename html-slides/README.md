@@ -21,8 +21,7 @@ rm -rf .jekyll-cache/ _site/ Gemfile.lock
 1. Setting up pages at https://github.com/mxochicale/tools/settings/pages
 2. Select branch with path /docs [SAVE]
 3. Github action https://github.com/mxochicale/tools/actions/runs/6584687104/job/17889701182 
-4. Slides should be ready here https://mxochicale.github.io/tools/slides-template.html
-
+4. Slides should be ready here https://mxochicale.github.io/tools/html-slides/slides-template.html
 
 ## References 
 * source https://github.com/sje30/sje30.github.io/tree/main/talks/2023 
