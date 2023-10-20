@@ -19,7 +19,7 @@ rm -rf .jekyll-cache/ _site/ Gemfile.lock
 
 ## Create github pages 
 1. Setting up pages at https://github.com/mxochicale/tools/settings/pages
-2. Select branch with path /docs [SAVE]
+2. During development, select branch with path /root [SAVE]. You might need to select `main` branch for the final version of the slides.
 3. Github action https://github.com/mxochicale/tools/actions/runs/6584687104/job/17889701182 
 4. Slides should be ready here https://mxochicale.github.io/tools/html-slides/template/slides.html
 
