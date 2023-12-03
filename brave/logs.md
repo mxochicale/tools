@@ -11,10 +11,8 @@ hostnamectl
 
 # Sun  3 Dec 23:26:25 GMT 2023
 * version
-brave-browser --version #terminal
-> Brave Browser 119.1.60.125 
-Version ?.?.? #from the app
-> Version 1.60.125 Chromium: 119.0.6045.199 (Official Build) (64-bit)
+Brave Browser 119.1.60.125    
+Version 1.60.125 Chromium: 119.0.6045.199 (Official Build) (64-bit)    
 
 * machine 
 hostnamectl
