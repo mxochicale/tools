@@ -28,12 +28,11 @@ sudo apt remove brave-browser brave-keyring apt-transport-https
 https://community.brave.com/t/continue-where-you-left-off-again-not-working/216866/2 
 
 ## Logs 
-Getting versions:    
-
-brave-browser --version    
-Open brave and go to main menu and select `About Brave` to get version:
-
 See logs for [installed versions](logs.md).
+To check versions in the terminal:    
+brave-browser --version    
+
+You can also open brave and go to main menu and select `About Brave` to get version.
 
 
 ## Version in Tags   
