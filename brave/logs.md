@@ -1,3 +1,35 @@
+# template
+* version
+brave-browser --version #terminal
+Version ?.?.? #from the app: go to main menu and select `About Brave` to get version.
+
+* machine 
+```
+hostnamectl
+
+``` 
+
+# Sun  3 Dec 23:26:25 GMT 2023
+* version
+brave-browser --version #terminal
+> Brave Browser 119.1.60.125 
+Version ?.?.? #from the app
+> Version 1.60.125 Chromium: 119.0.6045.199 (Official Build) (64-bit)
+
+* machine 
+hostnamectl
+```   
+   Static hostname: -
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: -
+           Boot ID: -
+  Operating System: Ubuntu 20.04.1 LTS
+            Kernel: Linux 5.15.0-60-generic
+      Architecture: x86-64
+``` 
+
+
 # Fri  6 Oct 07:27:33 BST 2023
 
 * version
