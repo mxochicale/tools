@@ -1,16 +1,28 @@
 # html-slides
 http://mxochicale.github.io/tools/#/title-slide
 
+
+## 💾 Requirements and dependencies
+```
+sudo apt-get install ruby-full build-essential zlib1g-dev
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+gem install jekyll bundler
+```
+
 ## Testing html slides locally
 
 Open two terminals: 
 1. to build the site:     
 ```
+cd template
 bundle exec jekyll serve
 ```
 2. Open hmtl slides using firefox on a local server.
 ```
-firefox http://127.0.0.1:4000/template/slides.html #or google-chrome http://127.0.0.1:4000/
+firefox http://127.0.0.1:4000  #or google-chrome http://127.0.0.1:4000/
 
 ```
 3. You might like to remove build files
