@@ -14,7 +14,7 @@ concurrency:
 jobs:
   deploy-slides:
     env:
-      BUNDLE_GEMFILE: ${{ github.workspace }}/html-slides/Gemfile
+      BUNDLE_GEMFILE: ${{ github.workspace }}/html-slides/template/Gemfile
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -37,7 +37,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html-slides/_site
+          publish_dir: ./html-slides/template/_site
           publish_branch: gh-pages
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
