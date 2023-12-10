@@ -1,4 +1,5 @@
 # html-slides
+http://mxochicale.github.io/tools/#/title-slide
 
 ## Testing html slides locally
 
@@ -21,7 +22,8 @@ rm -rf .jekyll-cache/ _site/ Gemfile.lock
 1. Setting up pages at https://github.com/mxochicale/tools/settings/pages
 2. During development, select branch with path /root [SAVE]. You might need to select `main` branch for the final version of the slides.
 3. Github action https://github.com/mxochicale/tools/actions/runs/6584687104/job/17889701182 
-4. Slides should be ready here https://mxochicale.github.io/tools/html-slides/template/slides.html
+4. Slides should be ready here http://mxochicale.github.io/tools/#/title-slide
+
 
 ## References 
 * source https://github.com/sje30/sje30.github.io/tree/main/talks/2023 
