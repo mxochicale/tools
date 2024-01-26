@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 28-quarto-js-and-ci
   workflow_dispatch:
 
 concurrency:
