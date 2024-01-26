@@ -22,3 +22,7 @@ jobs:
         with:
           target: gh-pages
           path: quarto-test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
