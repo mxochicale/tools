@@ -5,7 +5,7 @@ format:
   revealjs: 
     slide-number: true
     chalkboard: 
-      buttons: false
+      buttons: true
     preview-links: auto
     logo: quarto-logo.png
     css: quarto-styles.css
@@ -23,3 +23,23 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 -   Printing to PDF
 
 ...and much more
+
+
+## Executable Code
+
+```{r}
+#| echo: true
+#| fig-width: 10
+#| fig-height: 4.5
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg, color = am)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess")
+```
+
+::: footer
+Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code)
+:::
+
+
+
