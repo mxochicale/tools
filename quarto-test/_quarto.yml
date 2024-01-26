@@ -11,7 +11,7 @@ website:
   twitter-card:
     creator: "@mxochicale"
     card-style: summary
-    image: favicon_org.png
+    image: images/favicon_org.png
   open-graph:
-    image: favicon_org.png
+    image: images/favicon_org.png
 

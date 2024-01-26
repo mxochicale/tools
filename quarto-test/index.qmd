@@ -7,7 +7,7 @@ format:
     chalkboard: 
       buttons: true
     preview-links: auto
-    logo: quarto-logo.png
+    logo: images/quarto-logo.png
     css: quarto-styles.css
     footer: <https://quarto.org>
 ---
@@ -25,21 +25,21 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 ...and much more
 
 
-## Executable Code
 
-```{r}
-#| echo: true
-#| fig-width: 10
-#| fig-height: 4.5
-library(ggplot2)
-ggplot(mtcars, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess")
-```
+## Media Backgrounds {background="#43464B" background-image="images/milky-way.jpeg"}
+
+You can also use the following as a slide background:
+
+-   An image: `background-image`
+
+-   A video: `background-video`
+
+-   An iframe: `background-iframe`
 
 ::: footer
-Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code)
+Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#image-backgrounds)
 :::
+
 
 
 
