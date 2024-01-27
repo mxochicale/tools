@@ -11,9 +11,6 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
-    pointer:
-      pointerSize: 18
-      color: '#32cd32'
     #css:
       #- css/default.css
       #- css/callouts-html.css
@@ -21,6 +18,9 @@ format:
           # NOTES. white, blood, league, serif, moon, night, dark, sky seem to work
           # NOTES. solarized, beige, simple seem not be created
     footer: <https://quarto.org>
+    pointer:
+      pointerSize: 18
+      color: '#32cd32'
 revealjs-plugins:
   - pointer
 ---
