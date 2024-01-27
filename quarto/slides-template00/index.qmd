@@ -17,10 +17,12 @@ format:
     #css:
       #- css/default.css
       #- css/callouts-html.css
-    theme: [blood]
-          # NOTES. white, league, serif, moon, night, dark, sky seem to work
-          # NOTES. solarized, blood, beige, simple seem not be created
+    theme: [beige]
+          # NOTES. white, blood, league, serif, moon, night, dark, sky seem to work
+          # NOTES. solarized, beige, simple seem not be created
     footer: <https://quarto.org>
+revealjs-plugins:
+  - pointer
 ---
 
 
