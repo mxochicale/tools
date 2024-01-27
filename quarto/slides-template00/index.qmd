@@ -16,6 +16,20 @@ format:
 ---
 
 
+# Overview
+
+1. [Background: `{MCMC,HMC}`](#markov-chain-monte-carlo-mcmc-centeredslide)
+    - [Leapfrog Integrator](#leapfrog-integrator-hmc-centeredslide)
+    - [Issues with HMC](#sec-issues-with-hmc)
+    - [Can we do better?](#sec-can-we-do-better)
+2. [L2HMC: Generalizing MD](#sec-l2hmc)
+    - [4D $SU(3)$ Model](#sec-su3)
+    - [Results](#sec-results)
+3. [References](#sec-references)
+4. [Extras](#sec-extras)
+
+
+
 ## Housekeeping :robot:
 
 ::: {.incremental}
