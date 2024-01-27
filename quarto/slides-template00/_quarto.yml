@@ -6,7 +6,7 @@ project:
 
 website:
   favicon: images/favicon.ico
-  site-url: http://mxochicale.github.io/tools/quarto-test
+  site-url: http://mxochicale.github.io/tools
   search: false
   twitter-card:
     creator: "@mxochicale"
