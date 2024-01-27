@@ -11,10 +11,10 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
-    css:
-      - css/default.css
-      - css/callouts-html.css
-    theme: [dark]
+    #css:
+      #- css/default.css
+      #- css/callouts-html.css
+    theme: [white]
           # NOTES. league, serif, moon, night, dark, sky seem to work
           # NOTES. white, solarized, blood, beige, simple seem not be created
     footer: <https://quarto.org>
@@ -57,6 +57,21 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 -   Printing to PDF
 
 ...and much more
+
+
+# Status of Large Language Models[^slides-gh]
+
+::: {#fig-llms}
+
+![](https://github.com/Hannibal046/Awesome-LLM/raw/main/resources/image8.gif)
+
+Large Language Models have (LLM)s have taken the ~~NLP community~~ **world** by storm[^llm-animation]
+
+:::
+
+[^llm-animation]: [{{< fa brands github >}} `Hannibal046/Awesome-LLM`](https://github.com/Hannibal046/Awesome-LLM)
+[^slides-gh]: [{{< fa brands github >}} `saforem2/llm-lunch-talk`](https://github.com/Hannibal046/Awesome-LLM) [(slides)](https://saforem2.github.io/llm-lunch-talk)
+
 
 
 ## Media Backgrounds {background="#43464B" background-image="images/milky-way.jpeg"}
