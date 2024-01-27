@@ -5,6 +5,7 @@
 
 
 :root {
+    --callout-title-size: inherit;
     -webkit-font-smoothing:subpixel-antialiased;
 }
 
