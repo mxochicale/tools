@@ -1,0 +1,11 @@
+
+
+.callout.callout-style-simple div.callout-title {
+    color: var(--callout-title-color);
+    opacity: 100%!important;
+    width: fit-content;
+    font-size: 1.15em!important;
+    font-weight: 700;
+}
+
+

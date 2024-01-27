@@ -12,7 +12,8 @@ format:
     preview-links: auto
     logo: images/quarto-logo.png
     css:
-      - "custom.css"
+      - custom.css
+      - callouts-slides.css
     footer: <https://quarto.org>
 ---
 
