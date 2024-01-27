@@ -15,6 +15,18 @@ format:
     footer: <https://quarto.org>
 ---
 
+
+## Housekeeping :robot:
+
+::: {.incremental}
+- Intro :wave:
+- Workshop materials :arrow_down:
+- Break :clock9:
+- By the end of today :heavy_check_mark:
+- Today's plan :clipboard:
+:::
+
+
 ## Hello :robot:
 
 This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
@@ -26,7 +38,6 @@ This presentation will show you examples of what you can do with Quarto and [Rev
 -   Printing to PDF
 
 ...and much more
-
 
 
 ## Media Backgrounds {background="#43464B" background-image="images/milky-way.jpeg"}
