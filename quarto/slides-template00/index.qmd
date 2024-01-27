@@ -14,7 +14,9 @@ format:
     css:
       - css/default.css
       - css/callouts-html.css
-    theme: [blood] #beige] #serif] #simple] #moon] #night] #dark]
+    theme: [league]
+          # NOTES. serif, moon, night, dark seem to work
+          # NOTES. blood,beige, simple seem not be created
     footer: <https://quarto.org>
 ---
 
