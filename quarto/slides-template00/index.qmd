@@ -11,6 +11,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
+    pointer:
+      pointerSize: 18
+      color: '#32cd32'
     #css:
       #- css/default.css
       #- css/callouts-html.css
@@ -32,6 +35,12 @@ format:
     - [Results](#sec-results)
 3. [References](#sec-references)
 4. [Extras](#sec-extras)
+
+## Hello :robot: Pointer
+
+This presentation has a handful of slides which can be used to demonstrate the `pointer` extension.
+
+Press 'q' to enter and exit the pointer mode.
 
 
 

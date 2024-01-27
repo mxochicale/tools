@@ -17,7 +17,6 @@ jobs:
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
-          quarto add quarto-ext/fontawesome
           quarto --version
 
       - name: Publish to GitHub Pages (and render)
