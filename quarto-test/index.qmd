@@ -7,6 +7,7 @@ format:
     chalkboard: 
       buttons: true
     controls: true
+    controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
     css: quarto-styles.css
