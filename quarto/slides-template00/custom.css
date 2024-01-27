@@ -20,4 +20,12 @@
     line-height: var(--line-height-tight);
 }
 
+.bs-callout-default {
+    border: 1px solid #666;
+}
+.bs-callout-default .callout-title {
+    color: #666;
+    font-size: 0.6em;
+}
+
 
