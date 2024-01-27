@@ -55,5 +55,33 @@ Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#
 :::
 
 
+## Absolute Position
+
+Position images or other elements at precise locations
+
+![](mini/images/kitten-400-350.jpeg){.absolute top="170" left="30" width="400" height="400"}
+
+![](mini/images/kitten-450-250.jpeg){.absolute .fragment top="150" right="80" width="450"}
+
+![](mini/images/kitten-300-200.jpeg){.absolute .fragment bottom="110" right="130" width="300"}
+
+::: footer
+Learn more: [Absolute Position](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position)
+:::
+
+
+## And More...
+
+-   [Touch](https://quarto.org/docs/presentations/revealjs/advanced.html#touch-navigation) optimized (presentations look great on mobile, swipe to navigate slides)
+-   [Footer & Logo](https://quarto.org/docs/presentations/revealjs/#footer-logo) (optionally specify custom footer per-slide)
+-   [Auto-Slide](https://quarto.org/docs/presentations/revealjs/presenting.html#auto-slide) (step through slides automatically, without any user input)
+-   [Multiplex](https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex) (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).
+
+::: footer
+Learn more: [Quarto Presentations](https://quarto.org/docs/presentations/revealjs/)
+:::
+
+
+
 
 
