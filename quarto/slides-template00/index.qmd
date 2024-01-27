@@ -11,8 +11,8 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
-    css: 
-      - custom.css
+    css:
+      - "custom.css"
     footer: <https://quarto.org>
 ---
 
