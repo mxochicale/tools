@@ -14,7 +14,7 @@ format:
     css:
       - css/default.css
       - css/callouts-html.css
-    theme: [sky]
+    theme: [dark]
     footer: <https://quarto.org>
 ---
 
