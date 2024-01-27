@@ -3,3 +3,8 @@
 @import "https://unpkg.com/open-props/colors-oklch.min.css";
 @import "https://unpkg.com/open-props/oklch-hues.min.css";
 
+
+:root {
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
