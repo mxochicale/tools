@@ -14,6 +14,11 @@ format:
     css:
       - css/default.css
       - css/callouts-html.css
+    theme:
+      - white
+      - css/light.scss
+      - css/common.scss
+      - css/syntax-light.scs
     footer: <https://quarto.org>
 ---
 
