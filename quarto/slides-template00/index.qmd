@@ -14,9 +14,9 @@ format:
     #css:
       #- css/default.css
       #- css/callouts-html.css
-    theme: [simple]
+    theme: [white]
           # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
-          # NOTES. solarized, seem not be created
+          # NOTES. solarized, simple seem not be created
     footer: <https://quarto.org>
     pointer:
       pointerSize: 18
