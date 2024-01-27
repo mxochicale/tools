@@ -21,8 +21,6 @@ format:
     pointer:
       pointerSize: 18
       color: '#32cd32'
-revealjs-plugins:
-  - pointer
 ---
 
 
