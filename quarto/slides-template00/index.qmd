@@ -14,7 +14,7 @@ format:
     css:
       - css/default.css
       - css/callouts-html.css
-    theme: [simple] #moon] #night] #dark]
+    theme: [serif] #simple] #moon] #night] #dark]
     footer: <https://quarto.org>
 ---
 
