@@ -6,6 +6,8 @@ format:
     slide-number: true
     chalkboard: 
       buttons: true
+    controls: true
+    slide-number: true
     preview-links: auto
     logo: images/quarto-logo.png
     css: quarto-styles.css
