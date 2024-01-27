@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html#hello-there",
-    "href": "index.html#hello-there",
+    "objectID": "index.html#hello",
+    "href": "index.html#hello",
     "title": "Quarto Presentations",
-    "section": "Hello, There",
-    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
+    "section": "Hello 🤖",
+    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
   },
   {
     "objectID": "index.html#media-backgrounds",
