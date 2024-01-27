@@ -9,3 +9,15 @@
     -webkit-font-smoothing:subpixel-antialiased;
 }
 
+.bs-callout .callout-title {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+    padding: var(--callout-title-padding);
+    display: flex;
+    gap: var(--size-4-1);
+    font-size: var(--callout-title-size);
+    color: rgb(var(--callout-color));
+    line-height: var(--line-height-tight);
+}
+
+
