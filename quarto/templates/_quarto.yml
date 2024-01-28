@@ -18,4 +18,6 @@ website:
     image: images/favicon_org.png
   open-graph:
     image: images/favicon_org.png
-
+  page-footer:
+    right: "This page is built with {{< fa heart >}} and [Quarto](https://quarto.org/)."
+    left: "&copy; 2023, Andrew Bray"
