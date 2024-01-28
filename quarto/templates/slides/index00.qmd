@@ -1,7 +1,7 @@
 ---
 title: "Quarto Presentations Template 00"
 subtitle: "Create beautiful interactive slide decks with Reveal.js"
-from: markdown+emoji
+
 format:
   revealjs: 
     slide-number: true

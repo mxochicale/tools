@@ -9,7 +9,7 @@ from: markdown+emoji
 website:
   title: "Quarto X"
   page-navigation: true
-  favicon: favicon.svg
+  favicon: slides/favicon.svg
   site-url: http://mxochicale.github.io/tools/quarto/slides-template00
   search: false
   twitter-card:
