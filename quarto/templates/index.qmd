@@ -2,5 +2,6 @@
 title: "Listing Example"
 listing:
   contents:
-    - "templates/*.qmd"
+    - "templates/slides-template00/index.qmd"
+    - "templates/slides-template01/index.qmd"
 ---
