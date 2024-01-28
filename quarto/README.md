@@ -24,5 +24,6 @@
 * Reproducible authoring with Quarto - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/).
 * Reproducible Publications with Julia and Quarto - JuliaCon 2022 with J.J. Allaire (slides: https://jjallaire.github.io/quarto-juliacon-2022).
 * Workshop: Welcome to Quarto 2-hour Workshop - RStudio Meetup: Welcome to Quarto 2-hour Workshop by Tom Mock (slides: https://jthomasmock.github.io/quarto-2hr-webinar/). https://jthomasmock.github.io/quarto-2hr-webinar/materials/01-intro-quarto.html#/TitleSlide
-
+* fontawesome
+  * https://github.com/posit-conf-2023/quarto-r/tree/main/_extensions/quarto-ext/fontawesome
 
