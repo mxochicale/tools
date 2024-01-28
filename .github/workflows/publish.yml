@@ -19,13 +19,21 @@ jobs:
       - run: |
           quarto --version
 
-      - name: Publish to GitHub Pages (and render)
+      - name: Publish to GitHub Pages t00
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
           path: quarto/slides-template00
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Pages t01
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
           path: quarto/slides-template01
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
