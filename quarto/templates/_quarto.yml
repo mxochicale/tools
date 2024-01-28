@@ -1,12 +1,16 @@
 project:
   type: website
-  output-dir: docs
   render:
-    - index.qmd
+    - "*.qmd"
+  output-dir: docs
+
+from: markdown+emoji
 
 website:
+  title: "Quarto X"
+  page-navigation: true
   favicon: favicon.svg
-  site-url: http://mxochicale.github.io/tools/quarto/slides-template01
+  site-url: http://mxochicale.github.io/tools/quarto/slides-template00
   search: false
   twitter-card:
     creator: "@mxochicale"

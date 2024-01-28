@@ -3,3 +3,4 @@ title: "Listing Example"
 listing:
   contents:
     - "templates/*.qmd"
+---
