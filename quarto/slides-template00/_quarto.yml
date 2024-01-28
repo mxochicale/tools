@@ -5,7 +5,7 @@ project:
     - index.qmd
 
 website:
-  favicon: images/favicon.ico
+  favicon: favicon.svg
   site-url: http://mxochicale.github.io/tools
   search: false
   twitter-card:

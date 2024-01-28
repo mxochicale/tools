@@ -10,9 +10,8 @@ format:
     controls: true
     controls-layout: bottom-right
     preview-links: auto
-    logo: images/quarto-logo.png
-    theme: [css/syntax-dark.scss, css/dark-slides.scss]
-    #theme: [default]
+    logo: favicon.svg
+    theme: [default]
           # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
           # NOTES. dark, solarized, simple, white seem not be created
     #css:
