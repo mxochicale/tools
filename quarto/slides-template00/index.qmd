@@ -7,7 +7,7 @@ format:
     slide-number: true
     chalkboard: 
       buttons: true
-    controls: true
+    controls: false
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
