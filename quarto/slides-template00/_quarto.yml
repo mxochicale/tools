@@ -6,7 +6,7 @@ project:
 
 website:
   favicon: favicon.svg
-  site-url: http://mxochicale.github.io/tools/slides-template00
+  site-url: http://mxochicale.github.io/tools/quarto/slides-template00
   search: false
   twitter-card:
     creator: "@mxochicale"

@@ -1,5 +1,5 @@
 ---
-title: "Quarto Presentations"
+title: "Quarto Presentations Template 01"
 subtitle: "Create beautiful interactive slide decks with Reveal.js"
 from: markdown+emoji
 format:
