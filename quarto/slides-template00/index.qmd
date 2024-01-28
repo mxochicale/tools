@@ -11,16 +11,13 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: images/quarto-logo.png
+    theme: [default]
+          # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
+          # NOTES. dark, solarized, simple, white seem not be created
     #css:
       #- css/default.css
       #- css/callouts-html.css
-    theme: [dark]
-          # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
-          # NOTES. solarized, simple, white seem not be created
     footer: <https://quarto.org>
-    pointer:
-      pointerSize: 18
-      color: '#32cd32'
 ---
 
 
