@@ -1,1 +1,1 @@
-Sitemap: http://mxochicale.github.io/tools/sitemap.xml
+Sitemap: http://mxochicale.github.io/tools/slides-template00/sitemap.xml
