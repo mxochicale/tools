@@ -1,0 +1,6 @@
+---
+title: "Listing Example"
+listing:
+  contents:
+    - "slides/*.qmd"
+---

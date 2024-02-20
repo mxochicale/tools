@@ -1,0 +1,23 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+  output-dir: docs
+
+from: markdown+emoji
+
+website:
+  title: "Quarto X"
+  page-navigation: true
+  favicon: slides/favicon.svg
+  site-url: http://mxochicale.github.io/tools/rerun
+  search: false
+  twitter-card:
+    creator: "@mxochicale"
+    card-style: summary
+    image: images/favicon_org.png
+  open-graph:
+    image: images/favicon_org.png
+  page-footer:
+    right: "This page is built with {{< fa heart >}} and [Quarto](https://quarto.org/)."
+    left: "&copy; 2023, Miguel Xochicale"
