@@ -2,50 +2,50 @@
   {
     "objectID": "slides/index.html#housekeeping",
     "href": "slides/index.html#housekeeping",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "Housekeeping 🤖",
     "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
   },
   {
     "objectID": "slides/index.html#hello",
     "href": "slides/index.html#hello",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "Hello 🤖",
     "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
   },
   {
     "objectID": "slides/index.html#status-of-large-language-modelsslides-gh",
     "href": "slides/index.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "Status of Large Language Models1",
     "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
   },
   {
     "objectID": "slides/index.html#media-backgrounds",
     "href": "slides/index.html#media-backgrounds",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "Media Backgrounds",
     "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
   },
   {
     "objectID": "slides/index.html#absolute-position",
     "href": "slides/index.html#absolute-position",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "Absolute Position",
     "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
   },
   {
     "objectID": "slides/index.html#and-more",
     "href": "slides/index.html#and-more",
-    "title": "Quarto Presentations Template 00",
+    "title": "Rerun sdk: Visualize everything fast",
     "section": "And More…",
     "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Listing Example",
+    "title": "Slides",
     "section": "",
-    "text": "Quarto Presentations Template 00\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Rerun sdk: Visualize everything fast\n\n\nRerun is an SDK for visualizing multimodal data that changes over time.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
