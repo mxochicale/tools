@@ -4,6 +4,10 @@
 ## temporal vim files
 *.sw*
 
+##temporal model files
+blaze_face_short_range.tflite
+face_landmarker.task
+
 ## files for html-slides
 _site/
 **/*.jekyll-cache
