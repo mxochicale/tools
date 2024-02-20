@@ -7,7 +7,7 @@ project:
 from: markdown+emoji
 
 website:
-  title: "Quarto X"
+  title: ""
   page-navigation: true
   favicon: slides/favicon.svg
   site-url: http://mxochicale.github.io/tools/rerun

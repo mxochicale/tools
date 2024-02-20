@@ -1,6 +1,9 @@
 ---
 title: "Rerun sdk: Visualize everything fast"
 subtitle: "Rerun is an SDK for visualizing multimodal data that changes over time."
+author-title: "Miguel Xochicale"
+date: today
+
 
 format:
   revealjs: 
@@ -17,7 +20,7 @@ format:
     #css:
       #- css/default.css
       #- css/callouts-html.css
-    footer: <https://quarto.org>
+    footer: <https://www.rerun.io/>
 ---
 
 
