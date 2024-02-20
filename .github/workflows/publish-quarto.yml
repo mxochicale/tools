@@ -2,7 +2,7 @@ name: Quarto Publish
 
 on:
   push:
-    branches: mainX
+    branches: mainX #toname to main to build quarto/templates
   workflow_dispatch:
 
 jobs:

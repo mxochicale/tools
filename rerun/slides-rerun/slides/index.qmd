@@ -1,6 +1,6 @@
 ---
-title: "Quarto Presentations Template 00"
-subtitle: "Create beautiful interactive slide decks with Reveal.js"
+title: "Rerun sdk: Visualize everything fast"
+subtitle: "Rerun is an SDK for visualizing multimodal data that changes over time."
 
 format:
   revealjs: 

@@ -1,5 +1,5 @@
 ---
-title: "Listing Example"
+title: "Slides"
 listing:
   contents:
     - "slides/*.qmd"
