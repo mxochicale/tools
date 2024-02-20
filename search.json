@@ -39,13 +39,13 @@
     "href": "slides/index.html#and-more",
     "title": "Rerun sdk: Visualize everything fast",
     "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
+    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://www.rerun.io/"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Slides",
     "section": "",
-    "text": "Rerun sdk: Visualize everything fast\n\n\nRerun is an SDK for visualizing multimodal data that changes over time.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Rerun sdk: Visualize everything fast\n\n\nRerun is an SDK for visualizing multimodal data that changes over time.\n\n\n\n\n\n\n\n\nFeb 20, 2024\n\n\n\n\n\n\nNo matching items"
   }
 ]
