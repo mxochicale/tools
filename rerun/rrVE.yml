@@ -1,0 +1,30 @@
+## Some useful commands to manage your conda env:
+## LIST MAMBA ENVS: mamba list -n *VE # show list of installed packages
+## UPDATE MAMBA: mamba update -n base mamba
+## INSTALL MAMBA EV: mamba env create -f *VE.yml
+## UPDATE MAMBA ENV: mamba env update -f *VE.yml --prune
+## ACTIVATE MAMBA ENV: mamba activate *VE
+## REMOVE MAMBA ENV: mamba remove -n *VE --all
+
+name: rrVE 
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+     - rerun-sdk
+     #- matplotlib
+     #- opencv-python
+     #- scikit-learn
+     #- notebook
+     #- pandas
+     #- seaborn
+     #- opencv-contrib-python-headless #https://pypi.org/project/opencv-contrib-python-headless/#history
+     #- araviq6
+     #- civiq6
+     #- cv2PySide6
+     #- qimage2ndarray
+     #- numpy 
+
+
