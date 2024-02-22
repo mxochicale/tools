@@ -4,6 +4,15 @@
 ## temporal vim files
 *.sw*
 
+##temporal files for rerun
+blaze_face_short_range.tflite
+face_landmarker.task
+.pixi
+noetic_ws
+pixi.lock
+indoor_forward_3_snapdragon_with_gt.bag
+
+
 ## files for html-slides
 _site/
 **/*.jekyll-cache
