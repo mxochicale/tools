@@ -1,6 +1,6 @@
 # Brave
 > Brave is a free and open-source web browser developed by Brave Software, Inc. based on the Chromium web browser. Brave is a privacy-focused browser, which distinguishes itself from other browsers by automatically blocking online advertisements and website trackers in its default settings. https://en.wikipedia.org/wiki/Brave_(web_browser). 
-Learn more at [brave.com](https://brave.com/) and [github.com/brave](https://github.com/brave)
+Learn more at [brave.com](https://brave.com/), [github.com/brave](https://github.com/brave), and [Brave Release Notes](https://brave.com/latest/).
 
 ## Installation and update
 * In the terminal, prime the sudo command (enter your password once) and run [installating-brave.bash](installating-brave.bash):
