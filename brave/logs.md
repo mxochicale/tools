@@ -12,6 +12,35 @@ hostnamectl
 
 ``` 
 
+# Mon  8 Apr 12:07:35 BST 2024
+* version
+```
+## brave-browser --version #terminal
+Brave Browser 123.1.64.116 
+## Version ?.?.? #from the app: go to main menu and select `About Brave` to get version.
+Version 1.64.116 Chromium: 123.0.6312.105 (Official Build) (64-bit)
+```
+
+* machine 
+```
+hostnamectl
+ Static hostname: 
+       Icon name: 
+         Chassis: laptop
+      Machine ID: 
+         Boot ID: 
+Operating System: Ubuntu 22.04.2 LTS              
+          Kernel: Linux 6.5.0-14-generic
+    Architecture: x86-64
+ Hardware Vendor: 
+  Hardware Model: 
+
+``` 
+
+
+
+
+
 # Mon 11 Mar 21:11:03 GMT 2024
 
 * version
