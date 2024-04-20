@@ -11,10 +11,10 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: [default]
+    #theme: [default]
           # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
           # NOTES. dark, solarized, simple, white seem not be created
-    theme: [css/syntax-dark.scss, css/dark-slides.scss]
+    theme: [css/dark.scss]
     #css:
       #- css/default.css
       #- css/callouts-html.css
