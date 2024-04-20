@@ -1,1 +1,1 @@
-Sitemap: http://mxochicale.github.io/tools/quarto/slides-template00/sitemap.xml
+Sitemap: https://mxochicale.github.io/tools/sitemap.xml
