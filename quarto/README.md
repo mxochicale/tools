@@ -1,11 +1,12 @@
 # Quarto
 > An open-source scientific and technical publishing system [https://quarto.org/]
 
-
 ## Templates 
 * Listing: http://mxochicale.github.io/tools/
-  * http://mxochicale.github.io/tools/slides/index00.html#/title-slide
-  * http://mxochicale.github.io/tools/slides/index01.html#/title-slide
+
+## Configuration
+See [quarto-actions](https://github.com/quarto-dev/quarto-actions) to setup ci actions.
+* [publish-quarto.yml](../.github/workflows/publish-quarto.yml)
 
 ## References 
 * https://thedatasavvycorner.com/blogs/03-quarto-github-actions
