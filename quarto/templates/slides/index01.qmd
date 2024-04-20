@@ -11,8 +11,8 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: beige
-        #simple, serif, moon, white WORKS
+    theme: dark
+        #simple, serif, moon, white, beige WORKS
         #dark, night DONT'WORK FOR ME
         #blood, sky, solarized
     #css:
