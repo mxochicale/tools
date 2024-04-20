@@ -1,5 +1,5 @@
 ---
-title: "Quarto Presentations Template 01 with theme white"
+title: "Quarto Presentations Template 09 with theme sky"
 subtitle: "Create beautiful interactive slide decks with Reveal.js"
 
 format:
@@ -11,7 +11,7 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: white
+    theme: sky
     #css:
       #- css/default.css
       #- css/callouts-html.css
