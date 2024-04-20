@@ -15,6 +15,7 @@ format:
           # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
           # NOTES. dark, solarized, simple, white seem not be created
     theme: [css/dark.scss]
+    callot-style: simple
     css: [css/default.css, css/callouts.css]
     footer: <https://quarto.org>
   gfm:
