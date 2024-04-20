@@ -9,8 +9,15 @@ Version ??? Chromium: ???? (Official Build) (??)
 * machine 
 ```
 hostnamectl
-
 ``` 
+
+
+
+#Tue  2 Apr 12:06:56 BST 2024
+```
+brave-browser-nightly amd64 1.66.51 [116 MB]
+Version 1.66.51 Chromium: 123.0.6312.86 (Official Build) nightly (64-bit)
+```
 
 # Mon 11 Mar 21:11:03 GMT 2024
 
