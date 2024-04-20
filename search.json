@@ -1,253 +1,43 @@
 [
   {
-    "objectID": "slides/index11-theme-solarized.html#housekeeping",
-    "href": "slides/index11-theme-solarized.html#housekeeping",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index11-theme-solarized.html#hello",
-    "href": "slides/index11-theme-solarized.html#hello",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index11-theme-solarized.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index11-theme-solarized.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index11-theme-solarized.html#media-backgrounds",
-    "href": "slides/index11-theme-solarized.html#media-backgrounds",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index11-theme-solarized.html#absolute-position",
-    "href": "slides/index11-theme-solarized.html#absolute-position",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index11-theme-solarized.html#and-more",
-    "href": "slides/index11-theme-solarized.html#and-more",
-    "title": "Quarto Presentations Template 11 with theme solarized",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#housekeeping",
-    "href": "slides/index09-theme-sky.html#housekeeping",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#hello",
-    "href": "slides/index09-theme-sky.html#hello",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index09-theme-sky.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#media-backgrounds",
-    "href": "slides/index09-theme-sky.html#media-backgrounds",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#absolute-position",
-    "href": "slides/index09-theme-sky.html#absolute-position",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index09-theme-sky.html#and-more",
-    "href": "slides/index09-theme-sky.html#and-more",
-    "title": "Quarto Presentations Template 09 with theme sky",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#housekeeping",
-    "href": "slides/index07-theme-dark.html#housekeeping",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#hello",
-    "href": "slides/index07-theme-dark.html#hello",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index07-theme-dark.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#media-backgrounds",
-    "href": "slides/index07-theme-dark.html#media-backgrounds",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#absolute-position",
-    "href": "slides/index07-theme-dark.html#absolute-position",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index07-theme-dark.html#and-more",
-    "href": "slides/index07-theme-dark.html#and-more",
-    "title": "Quarto Presentations Template 07 with theme dark",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#housekeeping",
-    "href": "slides/index05-theme-serif.html#housekeeping",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#hello",
-    "href": "slides/index05-theme-serif.html#hello",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index05-theme-serif.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#media-backgrounds",
-    "href": "slides/index05-theme-serif.html#media-backgrounds",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#absolute-position",
-    "href": "slides/index05-theme-serif.html#absolute-position",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index05-theme-serif.html#and-more",
-    "href": "slides/index05-theme-serif.html#and-more",
-    "title": "Quarto Presentations Template 05 with theme serif",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#housekeeping",
-    "href": "slides/index03-theme-blood.html#housekeeping",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#hello",
-    "href": "slides/index03-theme-blood.html#hello",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index03-theme-blood.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#media-backgrounds",
-    "href": "slides/index03-theme-blood.html#media-backgrounds",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#absolute-position",
-    "href": "slides/index03-theme-blood.html#absolute-position",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index03-theme-blood.html#and-more",
-    "href": "slides/index03-theme-blood.html#and-more",
-    "title": "Quarto Presentations Template 03 with theme blood",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
     "objectID": "slides/index01-theme-white.html#housekeeping",
     "href": "slides/index01-theme-white.html#housekeeping",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "Housekeeping 🤖",
     "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
   },
   {
     "objectID": "slides/index01-theme-white.html#hello",
     "href": "slides/index01-theme-white.html#hello",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "Hello 🤖",
     "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
   },
   {
     "objectID": "slides/index01-theme-white.html#status-of-large-language-modelsslides-gh",
     "href": "slides/index01-theme-white.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "Status of Large Language Models1",
     "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
   },
   {
     "objectID": "slides/index01-theme-white.html#media-backgrounds",
     "href": "slides/index01-theme-white.html#media-backgrounds",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "Media Backgrounds",
     "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
   },
   {
     "objectID": "slides/index01-theme-white.html#absolute-position",
     "href": "slides/index01-theme-white.html#absolute-position",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "Absolute Position",
     "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
   },
   {
     "objectID": "slides/index01-theme-white.html#and-more",
     "href": "slides/index01-theme-white.html#and-more",
-    "title": "Quarto Presentations Template 01 with theme white",
+    "title": "Quarto Presentations Template 01",
     "section": "And More…",
     "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
   },
@@ -256,7 +46,7 @@
     "href": "index.html",
     "title": "Slides template examples",
     "section": "",
-    "text": "Quarto Presentations Template 00\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 01 with theme white\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 02 with theme beige\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 03 with theme blood\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 04 with theme league\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 05 with theme serif\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 06 with theme moon\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 07 with theme dark\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 08 with theme night\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 09 with theme sky\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 10 with theme simple\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 11 with theme solarized\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Quarto Presentations Template 00\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations Template 01\n\n\nCreate beautiful interactive slide decks with Reveal.js\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides/index00.html#housekeeping",
@@ -304,216 +94,6 @@
     "objectID": "slides/index00.html#and-more",
     "href": "slides/index00.html#and-more",
     "title": "Quarto Presentations Template 00",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#housekeeping",
-    "href": "slides/index02-theme-beige.html#housekeeping",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#hello",
-    "href": "slides/index02-theme-beige.html#hello",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index02-theme-beige.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#media-backgrounds",
-    "href": "slides/index02-theme-beige.html#media-backgrounds",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#absolute-position",
-    "href": "slides/index02-theme-beige.html#absolute-position",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index02-theme-beige.html#and-more",
-    "href": "slides/index02-theme-beige.html#and-more",
-    "title": "Quarto Presentations Template 02 with theme beige",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#housekeeping",
-    "href": "slides/index04-theme-league.html#housekeeping",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#hello",
-    "href": "slides/index04-theme-league.html#hello",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index04-theme-league.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#media-backgrounds",
-    "href": "slides/index04-theme-league.html#media-backgrounds",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#absolute-position",
-    "href": "slides/index04-theme-league.html#absolute-position",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index04-theme-league.html#and-more",
-    "href": "slides/index04-theme-league.html#and-more",
-    "title": "Quarto Presentations Template 04 with theme league",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#housekeeping",
-    "href": "slides/index06-theme-moon.html#housekeeping",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#hello",
-    "href": "slides/index06-theme-moon.html#hello",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index06-theme-moon.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#media-backgrounds",
-    "href": "slides/index06-theme-moon.html#media-backgrounds",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#absolute-position",
-    "href": "slides/index06-theme-moon.html#absolute-position",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index06-theme-moon.html#and-more",
-    "href": "slides/index06-theme-moon.html#and-more",
-    "title": "Quarto Presentations Template 06 with theme moon",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#housekeeping",
-    "href": "slides/index08-theme-night.html#housekeeping",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#hello",
-    "href": "slides/index08-theme-night.html#hello",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index08-theme-night.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#media-backgrounds",
-    "href": "slides/index08-theme-night.html#media-backgrounds",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#absolute-position",
-    "href": "slides/index08-theme-night.html#absolute-position",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index08-theme-night.html#and-more",
-    "href": "slides/index08-theme-night.html#and-more",
-    "title": "Quarto Presentations Template 08 with theme night",
-    "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#housekeeping",
-    "href": "slides/index10-theme-simple.html#housekeeping",
-    "title": "Quarto Presentations Template 10 with theme simple",
-    "section": "Housekeeping 🤖",
-    "text": "Housekeeping 🤖\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#hello",
-    "href": "slides/index10-theme-simple.html#hello",
-    "title": "Quarto Presentations Template 10 with theme simple",
-    "section": "Hello 🤖",
-    "text": "Hello 🤖\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#status-of-large-language-modelsslides-gh",
-    "href": "slides/index10-theme-simple.html#status-of-large-language-modelsslides-gh",
-    "title": "Quarto Presentations Template 10 with theme simple",
-    "section": "Status of Large Language Models1",
-    "text": "Status of Large Language Models1\n\n\n\n\n\n\nFigure 1: Large Language Models have (LLM)s have taken the NLP community world by storm2\n\n\n\n saforem2/llm-lunch-talk (slides) Hannibal046/Awesome-LLM"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#media-backgrounds",
-    "href": "slides/index10-theme-simple.html#media-backgrounds",
-    "title": "Quarto Presentations Template 10 with theme simple",
-    "section": "Media Backgrounds",
-    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#absolute-position",
-    "href": "slides/index10-theme-simple.html#absolute-position",
-    "title": "Quarto Presentations Template 10 with theme simple",
-    "section": "Absolute Position",
-    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
-  },
-  {
-    "objectID": "slides/index10-theme-simple.html#and-more",
-    "href": "slides/index10-theme-simple.html#and-more",
-    "title": "Quarto Presentations Template 10 with theme simple",
     "section": "And More…",
     "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\n\nhttps://quarto.org"
   }

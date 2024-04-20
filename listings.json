@@ -3,17 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/slides/index00.html",
-      "/slides/index01-theme-white.html",
-      "/slides/index02-theme-beige.html",
-      "/slides/index03-theme-blood.html",
-      "/slides/index04-theme-league.html",
-      "/slides/index05-theme-serif.html",
-      "/slides/index06-theme-moon.html",
-      "/slides/index07-theme-dark.html",
-      "/slides/index08-theme-night.html",
-      "/slides/index09-theme-sky.html",
-      "/slides/index10-theme-simple.html",
-      "/slides/index11-theme-solarized.html"
+      "/slides/index01-theme-white.html"
     ]
   }
 ]
