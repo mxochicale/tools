@@ -11,9 +11,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: night
-        #simple, serif, moon, white, beige, dark WORK WHEN RENDER SINGLE `qmd` files
-        #blood, sky, solarized
+    theme: sky
+        #simple, serif, moon, white, beige, dark, night WORK WHEN RENDER SINGLE `qmd` files
+        #blood, solarized
     #css:
       #- css/default.css
       #- css/callouts-html.css
