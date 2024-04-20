@@ -11,10 +11,10 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: white
-        #simple, serif, moon WORKS
+    theme: beige
+        #simple, serif, moon, white WORKS
         #dark, night DONT'WORK FOR ME
-        #beige, blood, sky, solarized
+        #blood, sky, solarized
     #css:
       #- css/default.css
       #- css/callouts-html.css
