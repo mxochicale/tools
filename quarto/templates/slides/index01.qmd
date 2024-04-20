@@ -11,9 +11,8 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: dark
-        #simple, serif, moon, white, beige WORKS
-        #dark, night DONT'WORK FOR ME
+    theme: night
+        #simple, serif, moon, white, beige, dark WORK WHEN RENDER SINGLE `qmd` files
         #blood, sky, solarized
     #css:
       #- css/default.css
