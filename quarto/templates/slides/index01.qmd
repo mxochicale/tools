@@ -11,9 +11,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: night
+    theme: serif
         #simple WORKS
-        #dark DONT'WORK FOR ME
+        #dark, night DONT'WORK FOR ME
         #simple, white, beige, blood, serif, moon, dark, night, sky, solarized
     #css:
       #- css/default.css
