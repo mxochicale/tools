@@ -94,6 +94,22 @@ Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#
 :::
 
 
+## Tabsets
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+
+
 ## Absolute Position
 
 Position images or other elements at precise locations
