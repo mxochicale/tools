@@ -18,6 +18,8 @@ format:
     callot-style: simple
     css: [css/default.css, css/callouts.css]
     footer: <https://quarto.org>
+    mermaid:
+      theme: dark
   gfm:
     author: Miguel Xochicale
 ---
