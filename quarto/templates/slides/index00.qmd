@@ -11,8 +11,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: [css/dark.scss]
-    css: [css/default.css]
+    theme: [default]
+    #theme: [css/dark.scss]
+    #css: [css/default.css]
     footer: <https://quarto.org>
   gfm:
     author: Miguel Xochicale
