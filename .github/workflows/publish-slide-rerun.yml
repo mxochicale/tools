@@ -2,7 +2,7 @@ name: Quarto Publish Slides rerun
 
 on:
   push:
-    branches: main
+    branches: mainX
   workflow_dispatch:
 
 jobs:
