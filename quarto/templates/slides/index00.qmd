@@ -51,7 +51,7 @@ format:
 :::
 
 
-## Hello :robot:
+## Hello :robot: {background="#43464B"}
 
 This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
 
@@ -94,7 +94,7 @@ Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#
 :::
 
 
-## Tabsets
+## Tabsets {background="#43464B"}
 
 ::: {.panel-tabset}
 
