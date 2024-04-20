@@ -10,7 +10,6 @@ website:
   title: "Quarto X"
   page-navigation: true
   favicon: slides/favicon.svg
-  site-url: http://mxochicale.github.io/tools/quarto/slides-template00
   search: false
   twitter-card:
     creator: "@mxochicale"
@@ -20,4 +19,4 @@ website:
     image: images/favicon_org.png
   page-footer:
     right: "This page is built with {{< fa heart >}} and [Quarto](https://quarto.org/)."
-    left: "&copy; 2023, Miguel Xochicale"
+    left: "&copy; 2024, Miguel Xochicale"
