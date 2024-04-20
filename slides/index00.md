@@ -60,6 +60,20 @@ Backgrounds](https://quarto.org/docs/presentations/revealjs/#image-backgrounds)
 
 </div>
 
+## Tabsets
+
+<div class="panel-tabset">
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+</div>
+
 ## Absolute Position
 
 Position images or other elements at precise locations

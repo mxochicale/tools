@@ -77,6 +77,13 @@
     "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
   },
   {
+    "objectID": "slides/index00.html#tabsets",
+    "href": "slides/index00.html#tabsets",
+    "title": "Quarto Presentations Template 00",
+    "section": "Tabsets",
+    "text": "Tabsets\n\nTab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
+  },
+  {
     "objectID": "slides/index00.html#absolute-position",
     "href": "slides/index00.html#absolute-position",
     "title": "Quarto Presentations Template 00",
