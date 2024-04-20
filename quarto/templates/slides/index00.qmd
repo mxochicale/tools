@@ -11,15 +11,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    #theme: [default]
-          # NOTES. white, beige, blood, league, serif, moon, night, dark, sky seem to work
-          # NOTES. dark, solarized, simple, white seem not be created
     theme: [css/dark.scss]
-    callot-style: simple
-    css: [css/default.css, css/callouts.css]
+    css: [css/default.css]
     footer: <https://quarto.org>
-    mermaid:
-      theme: dark
   gfm:
     author: Miguel Xochicale
 ---
@@ -51,7 +45,7 @@ format:
 :::
 
 
-## Hello :robot: {background="#43464B"}
+## Hello :robot:
 
 This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
 
@@ -94,7 +88,7 @@ Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#
 :::
 
 
-## Tabsets {background="#43464B"}
+## Tabsets
 
 ::: {.panel-tabset}
 
