@@ -11,7 +11,7 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     logo: favicon.svg
-    theme: simple
+    theme: night
         #[default] simple, serif, moon, white, beige, dark, night, solarized, blood WORK WHEN RENDER SINGLE `qmd` files
         #sky #DOES NOT WORK FOR ME
     #css:
