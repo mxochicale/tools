@@ -5,6 +5,20 @@
 bash download-installation.bash
 ```
 
+## Footprint
+```
+du -sh itksnap-4.*
+701M	itksnap-4.0.2-20230925-Linux-gcc64
+```
+
+## Datasets
+Site for datasets http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.Data
+* Multi-modal brain tumor MRI [Zip archive (9.1 MB)] 
+* Brain diffusion MRI dataset  [Zip archive (10.6 MB)]
+```
+bash download-datasets.bash
+```
+
 ## Usage
 * `itksnap-4*`
 ```
@@ -12,22 +26,8 @@ cd $HOME/Downloads/itksnap/itksnap-4*/bin
 ./itksnap
 ```
 
+* `itksnap-4*` with `diffusion.itksnap`
 ![app](app.png)
-
-
-## Footprint
-```
-du -sh itksnap-4.*
-701M	itksnap-4.0.2-20230925-Linux-gcc64
-```
-
-## Examples of datasets
-Site for datasets http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.Data
-* Multi-modal brain tumor MRI [Zip archive (9.1 MB)] 
-* Brain diffusion MRI dataset  [Zip archive (10.6 MB)]
-```
-bash download-datasets.bash
-```
 
 ## Source code 
 * https://github.com/pyushkevich/itksnap 
