@@ -18,6 +18,13 @@ cd $HOME/Downloads/3dslicer*/Slicer-5*
 ./Slicer 
 ```
 
+* Installation foodprint
+```
+du -sh Slicer-5.6.2-linux-amd64/
+1.3G	Slicer-5.6.2-linux-amd64/
+```
+
+
 ## * [ ] TOUPDATE: Windows Installation
 Download the latest version of slicer from https://download.slicer.org/
 ```
