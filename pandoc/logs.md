@@ -1,17 +1,17 @@
-Installing pandoc
----
 
-
+# Mon 20 May 12:25:35 BST 2024
+```
+pandoc -v
+pandoc 3.2
+Features: +server +lua
+Scripting engine: Lua 5.4
+User data directory: /home/mxochicale/.local/share/pandoc
+Copyright (C) 2006-2024 John MacFarlane. Web: https://pandoc.org
+This is free software; see the source for copying conditions. There is no
+warranty, not even for merchantability or fitness for a particular purpose.
 ```
 
-sudo apt-get update
-sudo apt-get install pandoc
-
-```
-
-
-[ref](https://www.devmanuals.net/install/ubuntu/ubuntu-16-04-LTS-Xenial-Xerus/how-to-install-pandoc.html)
-
+# Oct 7, 2017
 ```
 sudo apt-get install pandoc
 Reading package lists... Done
@@ -48,8 +48,7 @@ The following NEW packages will be installed
 Need to get 6,926 kB of archives.
 After this operation, 54.8 MB of additional disk space will be used.
 Do you want to continue? [Y/n] 
-
-
 ```
+
 
 
