@@ -34,6 +34,10 @@ brave-browser --version
 
 You can also open brave and go to main menu and select `About Brave` to get version.
 
+## Commit changes
+```
+git commit -m 'Brave Browser <ADD_VERSION> #12'
+```
 
 ## Version in Tags   
 https://github.com/brave/brave-browser/tags     

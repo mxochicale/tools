@@ -1,9 +1,10 @@
 # template
 * version
 ```
-## brave-browser --version #terminal
-Brave Browser ??.?.??.?? 
-## Version ?.?.? #from the app: go to main menu and select `About Brave` to get version.
+brave-browser --version #terminal
+?
+
+#Version ?.?.? #from the app: go to main menu > Help > `About Brave` to get version.
 Version ??? Chromium: ???? (Official Build) (??)
 ```
 * machine 
@@ -11,16 +12,28 @@ Version ??? Chromium: ???? (Official Build) (??)
 hostnamectl
 ``` 
 
-<<<<<<< HEAD
-
-
-#Tue  2 Apr 12:06:56 BST 2024
+# Sat 25 May 22:46:40 BST 2024
+* version
 ```
-brave-browser-nightly amd64 1.66.51 [116 MB]
-Version 1.66.51 Chromium: 123.0.6312.86 (Official Build) nightly (64-bit)
-```
+brave-browser --version #terminal
+Brave Browser 125.1.66.115 
 
-=======
+#Version ?.?.? #from the app: go to main menu > Help > `About Brave` to get version.
+Version 1.66.115 Chromium: 125.0.6422.112 (Official Build) (64-bit)
+```
+* machine 
+```
+hostnamectl
+  Operating System: Ubuntu 20.04.6 LTS
+            Kernel: Linux 5.15.0-107-generic
+      Architecture: x86-64
+
+
+``` 
+
+
+
+
 # Mon  8 Apr 12:07:35 BST 2024
 * version
 ```
@@ -46,11 +59,12 @@ Operating System: Ubuntu 22.04.2 LTS
 
 ``` 
 
+# Tue  2 Apr 12:06:56 BST 2024
+```
+brave-browser-nightly amd64 1.66.51 [116 MB]
+Version 1.66.51 Chromium: 123.0.6312.86 (Official Build) nightly (64-bit)
+```
 
-
-
-
->>>>>>> d66ac83ce8f83d2b2c9c33f525edf535c681a4bb
 # Mon 11 Mar 21:11:03 GMT 2024
 
 * version
