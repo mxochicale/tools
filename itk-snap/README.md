@@ -22,7 +22,8 @@ bash download-datasets.bash
 ## Usage
 * `itksnap-4*`
 ```
-cd $HOME/Downloads/itksnap/itksnap-4*/bin
+cd $HOME/Downloads/itksnap/itksnap-4.0*/bin
+cd $HOME/Downloads/itksnap/itksnap-4.2*/bin
 ./itksnap
 ```
 
