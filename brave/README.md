@@ -7,7 +7,7 @@ Learn more at [brave.com](https://brave.com/), [github.com/brave](https://github
 ```
 cd $HOME/repositories/mxochicale/tools/brave
 sudo echo
-bash installing-brave.bash
+bash installating-brave.bash
 ```
 
 * Delete brave repository paths source lists 
