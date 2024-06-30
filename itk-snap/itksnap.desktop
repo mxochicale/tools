@@ -1,0 +1,11 @@
+#REF
+#https://askubuntu.com/questions/1237042/desktop-files-not-launching-from-desktop-in-ubuntu-20-04-lts
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=ITK-SNAP
+Exec=/home/mxochicale/Downloads/itksnap/itksnap-4.2.0-20240422-Linux-gcc64/bin/itksnap
+Icon=/path/to/eclipse/icon
+Exec=application
+Type=Application
+Categories=Development;
