@@ -1,3 +1,11 @@
+## Thu 11 Jul 18:24:54 BST 2024
+kdenlive --version
+kdenlive 23.08.5
+
+Ubuntu 22.04.4 LTS
+Kernel: Linux 6.5.0-41-generic
+
+
 ## Sun 13 Aug 00:27:26 BST 2023
 
 * version
