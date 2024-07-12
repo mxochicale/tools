@@ -32,6 +32,11 @@ https://www.youtube.com/watch?v=2TJHLuvoyS4
 * Compositing Multiple Videos into One Video > 
 https://www.youtube.com/watch?v=rjGa-ZrAnSY
 
+* Kdenlive : How to Crop Video (2024)  
+https://www.youtube.com/watch?v=YMB6z-fwotE&t=0  
+
+
+
 
 ## References 
 * Repository https://invent.kde.org/multimedia/kdenlive 
