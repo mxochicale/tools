@@ -12,6 +12,12 @@ Version ??? Chromium: ???? (Official Build) (??)
 hostnamectl
 ``` 
 
+
+# Sat  3 Aug 18:28:52 BST 2024
+brave-browser --version #terminal
+Brave Browser 127.1.68.134 
+
+
 # Thu 20 Jun 07:37:14 BST 2024
 brave-browser --version #terminal
 Brave Browser 126.1.67.119 
