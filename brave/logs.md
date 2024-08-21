@@ -13,6 +13,11 @@ hostnamectl
 ``` 
 
 
+# Wed 21 Aug 03:35:31 BST 2024
+brave-browser --version #terminal
+Brave Browser 127.1.68.141 
+
+
 # Sat  3 Aug 18:28:52 BST 2024
 brave-browser --version #terminal
 Brave Browser 127.1.68.134 
