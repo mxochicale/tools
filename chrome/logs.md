@@ -1,5 +1,7 @@
 ## Logs
 
+* Version 128.0.6613.113 (Official Build) (64-bit) on Sat 31 Aug 23:09:44 BST 2024
+
 * Version 126.0.6478.55 (Official Build) (64-bit) on Wed 12 Jun 23:34:09 BST 2024
 
 * Version 107.0.5304.87 (Official Build) (64-bit) on Fri 28 Oct 14:46:28 BST 2022

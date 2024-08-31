@@ -16,7 +16,8 @@ rm google-chrome-stable_current_amd64.deb #delete deb file
 ## logs and commits
 See [logs](logs.md) for installed versions
 ```
-git commit -m 'chrome <INSERT_VERSION> #44'
+export V=$(google-chrome --version | awk '{print $3}')
+git commit -am 'chrome $V #44'
 ```
 
 ## Remove 
