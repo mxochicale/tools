@@ -17,7 +17,7 @@ rm google-chrome-stable_current_amd64.deb #delete deb file
 See [logs](logs.md) for installed versions
 ```
 export V=$(google-chrome --version | awk '{print $3}')
-git commit -am 'chrome $V #44'
+git commit -am "chrome $V #44"
 ```
 
 ## Remove 
@@ -28,11 +28,9 @@ rm -rf ~/.config/google-chrome
 rm -rf  ~/.cache/google-chrome
 ```
 
-
 ## Mirrors with older versions
 https://www.slimjet.com/chrome/google-chrome-old-version.php
 http://orion.lcg.ufrj.br/RPMS/myrpms/google/
-
 
 ## References
 * https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04
