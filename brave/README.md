@@ -37,7 +37,7 @@ You can also open brave and go to main menu and select `About Brave` to get vers
 ## Commit changes
 ```
 export V=$(brave-browser --version | awk '{print $3}')
-git commit -m "Brave Browser $ #12"
+git commit -m "Brave Browser $V #12"
 ```
 
 ## Version in Tags   
