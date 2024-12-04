@@ -27,5 +27,14 @@ Then, run:
 bash C_append_texbins_to_bashrc.bash
 ```
 
+### Remove texlive
+
+```
+sudo apt autoremove --purge texlive tex-common
+sudo apt-get purge texlive*
+sudo rm -rf /usr/local/texlive/*
+rm -rf ~/.texlive*
+```
+
 ## Terminal logs
 See terminal [logs](logs.md) for installation in different machines and others versions of Ubuntu 
