@@ -12,6 +12,10 @@ Version ??? Chromium: ???? (Official Build) (??)
 hostnamectl
 ``` 
 
+##logs         
+# Sat 21 Dec 00:26:11 GMT 2024 
+brave-version: 131.1.73.104 
+
 # Sun  1 Dec 05:58:28 GMT 2024
 131.1.73.91
 
@@ -321,7 +325,7 @@ Codename:	jammy
 
 ```
 
-* logs 
+* l o g s 
 
 ```
 ~/repositories/mxochicale/tools/brave$ bash installating-brave.bash 
@@ -470,7 +474,7 @@ Get:16 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Me
 Get:17 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]                                                 
 Get:18 http://gb.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7,980 B]                                                                            
 Get:19 http://gb.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30.8 kB]                                                 
-Hit:20 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease                                                                      
+Hit:20 https://packagecloud.io/slacktechno logies/slack/debian jessie InRelease                                                                      
 Fetched 1,163 kB in 1s (793 kB/s)
 Reading package lists... Done
 Building dependency tree       
@@ -885,6 +889,5 @@ E: Unable to locate package brave
 mapx@N55SL:~/github/scientificTOOLS/brave$ w
 
 ```
-
 
 
