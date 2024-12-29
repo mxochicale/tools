@@ -48,6 +48,8 @@ Add "set clipboard=unnamedplus" to ~/.vimrc then
 you can use "yy" in vim to copy text to the clibboard 
 ```
 clipboard=unnamedplus
+# checking if clipboard is supported
+vim --version | grep 'clipboard'
 ```
 
 ### display line numbers
