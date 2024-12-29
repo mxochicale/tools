@@ -21,12 +21,15 @@
 		* ubuntu-22.10-desktop-amd64.iso	2022-10-20 07:22	3.8G	
 	* [Ubuntu 23.04 (Luna Lobster)](https://releases.ubuntu.com/lunar/)
 		* 2023-07-11 21:30:07 (6.99 MB/s) - ‘ubuntu-23.04-desktop-amd64.iso’ saved [4932407296/4932407296]
+	* [Ubuntu 24.10 (Oracular Oriole)](https://releases.ubuntu.com/oracular/)
+		* /ubuntu-24.10-desktop-amd64.iso #Length: 5665497088 (5.3G)
 
 #### Download iso image
 ```
 cd ~/Downloads && mkdir -p ubuntu && cd ~/Downloads/ubuntu
-wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-desktop-amd64.iso
-wget https://releases.ubuntu.com/lunar/ubuntu-23.04-desktop-amd64.iso
+#wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-desktop-amd64.iso
+#wget https://releases.ubuntu.com/lunar/ubuntu-23.04-desktop-amd64.iso
+wget https://releases.ubuntu.com/oracular/ubuntu-24.10-desktop-amd64.iso
 ```
 
 #### Launch 'Startup Disk Creator'
@@ -108,44 +111,16 @@ At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F1
 ## Setting up new installation
 ### (2.1) Install [basics.sh](basics.sh) tools which also update and upgrade OS
 ```
+cd ~/Desktop
 wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
 ```
 and run
 ```
-sudo echo
 bash basics.bash
 rm basics.bash 
 ```
 
-### (2.2) Add aliases and functions to .bashrc file 
-```
-wget https://raw.githubusercontent.com/mxochicale/tools/main/bashrc/append_aliases_to_bashrc.bash
-```
-
-append lines to bashrc:
-```
-bash append_aliases_to_bashrc.bash
-```
-
-Reload bashrc file
-```
-source ~/.bashrc
-```
-
-```
-cd
-rm append_aliases_to_bashrc.bash
-```
-
-### (2.3) Setup .vimrc
-```
-cd
-wget https://raw.githubusercontent.com/mxochicale/tools/master/vim/.vimrc
-```
-See [here](https://github.com/mxochicale/tools/tree/master/vim) for more about vim configuration 
-
-
-### (2.4) Github Setting up
+### (2.2) Github Setting up
 * set up
 ```
 git config --global user.name "Miguel Xochicale"

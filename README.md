@@ -3,14 +3,6 @@ In this repository, I register various tools that I have been using in this jour
 ## _The tools we use have profound (and devious!) influence on our thinking habits, and therefore, on our thinking abilities_
 ~ [Edsger W.Dijkstra. 1975. How do we tell truths that might hurt?](https://www.cs.virginia.edu/~evans/cs655/readings/ewd498.html)
 
-## Clone repository
-After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [here](https://github.com/mxochicale/tools/blob/main/github/SSH.md) with few extra notes.
-You can then clone the repository by typing (or copying) the following line in a terminal at your selected path in your machine:
-```
-cd && mkdir -p repositories/mxochicale && cd repositories/mxochicale
-git clone git@github.com:mxochicale/tools.git
-```
-
 ## These are other tools that I am also familiar with:
 * [I :heart: github](https://github.com/mxochicale/github)  is a provider of Internet hosting for software development and version control using Git.
 * [R](https://github.com/mxochicale/r-code_repository) is a language and environment for statistical computing and graphics.
@@ -30,6 +22,13 @@ system for high-quality typesetting.
 * [supercollider](https://github.com/mxochicale/supercollider) is a platform for audio synthesis and algorithmic composition.
 * [elan](https://github.com/mxochicale/elan) Annotations on video and audio resources.
 
+## Clone repository
+After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [here](https://github.com/mxochicale/tools/blob/main/github/SSH.md) with few extra notes.
+You can then clone the repository by typing (or copying) the following line in a terminal at your selected path in your machine:
+```
+cd && mkdir -p repositories/mxochicale && cd repositories/mxochicale
+git clone git@github.com:mxochicale/tools.git
+```
 
 ## Contact 
 If you have specific questions about the content of this repository, you can contact 
