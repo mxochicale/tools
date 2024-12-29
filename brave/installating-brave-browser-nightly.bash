@@ -17,7 +17,7 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-nightly-archive-keyring.gpg h
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-nightly-archive-keyring.gpg] https://brave-browser-apt-nightly.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-nightly.list
 
 sudo apt update
-sudo apt install brave-browser-nightly
+sudo apt install -y brave-browser-nightly
 
 
 #/usr/share/applications

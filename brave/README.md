@@ -6,20 +6,16 @@ Learn more at [brave.com](https://brave.com/), [github.com/brave](https://github
 * In the terminal, prime the sudo command (enter your password once) and run [installating-brave.bash](installating-brave.bash):
 ```
 cd $HOME/repositories/mxochicale/tools/brave
-sudo echo
-bash installating-brave.bash
+bash installating-brave.bash #you need: sudo echo
 ```
 
-* Delete brave repository paths source lists 
+## Commit changes
 ```
-sudo vim /etc/apt/sources.list
-sudo rm /etc/apt/sources.list.d/brave-browser-*
-sudo apt update
-```
-
-## Remove
-```
-sudo apt remove brave-browser brave-keyring apt-transport-https
+export V=$(brave-browser --version | awk '{print $3}')
+export Vbn=$(brave-browser-nightly --version | awk '{print $3}')
+sed -i "/\<logs\>/ s/$/ \n# $(date) \nbrave-version: $V; brave-version-night $Vbn/" logs.md #insert date and version
+git commit -am "brave-browser $V brave-browser-nightly $Vbn #12"
+git push origin main
 ```
 
 ## Tips and tricks
@@ -34,17 +30,20 @@ brave-browser --version
 
 You can also open brave and go to main menu and select `About Brave` to get version.
 
-## Commit changes
-```
-export V=$(brave-browser --version | awk '{print $3}')
-sed -i "/\<logs\>/ s/$/ \n# $(date) \nbrave-version: $V /" logs.md #insert date and version
-git commit -m "Brave Browser $V #12"
-```
-
 ## Version in Tags   
 https://github.com/brave/brave-browser/tags     
 https://github.com/brave/brave-core/tags    
 https://brave.com/latest/   
+
+## Remove and delete brave
+* Delete brave repository paths source lists 
+```
+sudo vim /etc/apt/sources.list
+sudo rm /etc/apt/sources.list.d/brave-browser-*
+sudo apt update
+# remove
+sudo apt remove brave-browser brave-keyring apt-transport-https
+```
 
 
 ## References 
