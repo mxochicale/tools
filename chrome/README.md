@@ -17,6 +17,7 @@ rm google-chrome-stable_current_amd64.deb #delete deb file
 See [logs](logs.md) for installed versions
 ```
 export V=$(google-chrome --version | awk '{print $3}')
+sed -i "/\<Logs\>/ s/$/ \n* version: $V on $(date) /" logs.md #insert date and version
 git commit -am "chrome $V #44"
 ```
 
