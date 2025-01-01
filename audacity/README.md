@@ -4,8 +4,7 @@ available for Windows, macOS, Linux, and other Unix-like operating systems [:lin
 
 ## Installation using commands in the terminal
 ```
-sudo apt-get update
-sudo apt-get install audacity
+bash install-audacity.bash
 ```
 
 ## Tutorials
