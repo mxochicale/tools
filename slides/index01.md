@@ -81,7 +81,14 @@ and [Reveal.js](https://revealjs.com), including:
 
 ## Status of Large Language Models[^1]
 
+<div id="fig-llms">
+
 ![](https://github.com/Hannibal046/Awesome-LLM/raw/main/resources/image8.gif)
+
+Figure 1: Large Language Models have (LLM)s have taken the ~~NLP
+community~~ **world** by storm[^2]
+
+</div>
 
 ## Media Backgrounds
 
@@ -144,3 +151,6 @@ Presentations](https://quarto.org/docs/presentations/revealjs/)
 [^1]: [
     `saforem2/llm-lunch-talk`](https://github.com/Hannibal046/Awesome-LLM)
     [(slides)](https://saforem2.github.io/llm-lunch-talk)
+
+[^2]: [
+    `Hannibal046/Awesome-LLM`](https://github.com/Hannibal046/Awesome-LLM)
