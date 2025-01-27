@@ -7,6 +7,7 @@ Learn more at [brave.com](https://brave.com/), [github.com/brave](https://github
 ```
 cd $HOME/repositories/mxochicale/tools/brave
 bash installating-brave.bash #you need: sudo echo
+bash installating-brave-browser-nightly.bash
 ```
 
 ## Commit changes
