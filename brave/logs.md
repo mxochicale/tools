@@ -12,7 +12,9 @@ Version ??? Chromium: ???? (Official Build) (??)
 hostnamectl
 ``` 
 
-##logs             
+##logs              
+# Sun  6 Apr 20:41:53 BST 2025 
+brave-version: 135.1.77.95
 # Thu 20 Feb 08:18:37 GMT 2025 
 brave-version: 133.1.75.180; brave-version-night 134.1.77.52
 # Sat  8 Feb 09:42:32 GMT 2025 
