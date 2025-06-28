@@ -1,16 +1,9 @@
 # Chrome 
 [Google Chrome](https://en.wikipedia.org/wiki/Google_Chrome) is a web browser developed by Google. 
 
-## Download latest version of chrome
-Go to 
-https://www.google.com/chrome/ 
-to download `google-chrome-stable_current_amd64.deb`
-
-## Install and update package  via the terminal
+## Install and update package via bash in the terminal
 ```
-sudo apt-get -f install
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb #delete deb file
+bash download-install-google-chrome-stable.bash
 ```
 
 ## logs and commits
