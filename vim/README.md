@@ -1,5 +1,5 @@
 # VIM (V IMproved) text editor 
-VIM is a highly configurable text editor built to enable efficient text editing. Learn more [here](https://en.wikipedia.org/wiki/Vim_(text_editor)
+VIM is a highly configurable text editor built to enable efficient text editing. Learn more [here](https://en.wikipedia.org/wiki/Vim_(text_editor))
 ![General Overview of VIM](vim-comic.png)
 
 ## Installing Vim
