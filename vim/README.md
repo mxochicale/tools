@@ -1,7 +1,6 @@
 # VIM (V IMproved) text editor 
-VIM is a highly configurable text editor built to enable efficient text editing. Learn more [here](https://vim.sourceforge.io/about.php)
-![General Overview of VIM](https://vim.sourceforge.io/images/0xbabaf000l.png)
-
+VIM is a highly configurable text editor built to enable efficient text editing. Learn more [here](https://en.wikipedia.org/wiki/Vim_(text_editor)
+![General Overview of VIM](vim-comic.png)
 
 ## Installing Vim
 * In Ubuntu 18.04/22.04
