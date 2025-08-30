@@ -1,7 +1,7 @@
 #!/bin/bash
 # Usage: Open the terminal and type:
 # sudo echo
-# sh basics.sh
+# bash basics.bash
 
 
 # basics 
@@ -19,14 +19,14 @@ sudo apt install make
 # bashrc
 cd ~/Desktop
 wget https://raw.githubusercontent.com/mxochicale/tools/refs/heads/main/bashrc/append_tools_to_bashrc.bash
-#append lines to bashrc:
+##append lines to bashrc:
 bash append_aliases_to_bashrc.bash
-#Reload bashrc file
+##Reload bashrc file
 source ~/.bashrc
-#remove bash file
+##remove bash file
 rm append_tools_to_bashrc.bash
 
-# vimrc
+## vimrc
 wget https://raw.githubusercontent.com/mxochicale/tools/refs/heads/main/vim/setup-deps-vimrc.bash
 bash setup-deps-vimrc.bash
 rm setup-deps-vimrc.bash

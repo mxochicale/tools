@@ -117,7 +117,7 @@ At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F1
 
 
 ## Setting up new installation
-### (2.1) Install [basics.sh](basics.sh) tools which also update and upgrade OS
+### (2.1) Install [basics.bash](basics.bash) tools which also update and upgrade OS
 ```
 cd ~/Desktop
 wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
