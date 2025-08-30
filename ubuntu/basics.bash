@@ -20,7 +20,7 @@ sudo apt install make
 cd ~/Desktop
 wget https://raw.githubusercontent.com/mxochicale/tools/refs/heads/main/bashrc/append_tools_to_bashrc.bash
 ##append lines to bashrc:
-bash append_aliases_to_bashrc.bash
+bash append_tools_to_bashrc.bash
 ##Reload bashrc file
 source ~/.bashrc
 ##remove bash file
