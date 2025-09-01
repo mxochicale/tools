@@ -1,3 +1,23 @@
+# Logs
+
+```
+orignal logs
+##################################
+## LOGBOOK FOR INSTALLED VERSIONS
+# install-tl-20151030
+# install-tl-20161015
+# install-tl-20160405
+# install-tl-20170620
+# install-tl-20180830
+# TeX Live 2019 -- 51056
+# Tex Live 2020 ON Thu  8 Oct 00:29:48 BST 2020
+# install-tl-20210531 ## on Mon 31 May 21:15:43 BST 2021
+# install-tl-20210604 ## on Sun  6 Jun 00:23:32 BST 2021
+# install-tl-20210808 ## on Mon  9 Aug 00:02:51 BST 2021
+# install-tl-20220601 on Wed  1 Jun 10:36:47 BST 2022
+# install-tl-20221127 on Mon 28 Nov 14:12:03 GMT 2022
+```
+
 
 # Mon 28 Nov 14:15:37 GMT 2022
 
@@ -574,5 +594,7 @@ Logfile: /usr/local/texlive/2017/install-tl.log
 ./install_texlive.sh: line 36: rf: command not found
 
 ```
+
+
 
 
