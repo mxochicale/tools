@@ -1,18 +1,8 @@
-# template
-* version
-```
-brave-browser --version #terminal
-?
+# LOGS for brave versions
 
-#Version ?.?.? #from the app: go to main menu > Help > `About Brave` to get version.
-Version ??? Chromium: ???? (Official Build) (??)
-```
-* machine 
-```
-hostnamectl
-``` 
-
-##logs                 
+##logs
+# Fri Sep  5 09:33:56 PM BST 2025
+brave-version: 139.1.81.137; brave-version-night 140.1.84.32
 # Sun 13 Jul 06:32:27 BST 2025 
 brave-version: 138.1.80.120; brave-version-night 138.1.82.74
 # Sat Jun 28 05:39:48 PM BST 2025 
