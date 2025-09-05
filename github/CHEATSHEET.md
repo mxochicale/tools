@@ -8,7 +8,7 @@ gpg --generate-key
 ```
 Provide:
 	* Real name:
-	* Email address: 
+	* Email address:
 	* PassPharse
 ```
 gpg --list-secret-keys --keyid-format=long
@@ -27,6 +27,8 @@ git config -l | grep gpg
 		```
 		gpg --list-secret-keys --keyid-format=long
 		#sec   4096R/3AA5C34371567BD2
+		git config --global user.signingkey 3AA5C34371567BD2
+
 		gpg --armor --export 3AA5C34371567BD2
 		#Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 		```
@@ -35,9 +37,8 @@ git config -l | grep gpg
 
 
 ## References
-
-https://gist.github.com/paolocarrasco/18ca8fe6e63490ae1be23e84a7039374?permalink_comment_id=3976510
-
+* https://gist.github.com/paolocarrasco/18ca8fe6e63490ae1be23e84a7039374?permalink_comment_id=3976510
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 
 ## Signing commits
 * commit messages
