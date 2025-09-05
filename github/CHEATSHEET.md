@@ -5,6 +5,12 @@
 ```
 mkdir -p ~/.gnupg/private-keys-v1.d
 gpg --generate-key
+```
+Provide:
+	* Real name:
+	* Email address: 
+	* PassPharse
+```
 gpg --list-secret-keys --keyid-format=long
 export GPG_TTY=$(tty)
 echo "test" | gpg --clearsign
@@ -12,10 +18,11 @@ git config -l | grep gpg
 ```
 
 2. Upload your public signing GPG key to verify your signature.
-	Open https://github.com/settings/keys
-	Go to `GPG keys`
-		In the "Title" field, type a name for your GPG key.
-		In the "Key" field, paste the GPG key you copied when you generated your GPG key.
+	* Open https://github.com/settings/keys
+	* Go to `GPG keys`
+		* Create New GPG key
+		* In the "Title" field, type a name for your GPG key.
+		* In the "Key" field, paste the GPG key you copied when you generated your GPG key.
 			https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 		```
 		gpg --list-secret-keys --keyid-format=long
@@ -23,8 +30,8 @@ git config -l | grep gpg
 		gpg --armor --export 3AA5C34371567BD2
 		#Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 		```
-		Add the GPG key to your GitHub account.
-		Click Add GPG key.
+		* Add the GPG key to your GitHub account.
+		* Click Add GPG key.
 
 
 ## References
