@@ -36,4 +36,3 @@ If you have specific questions about the content of this repository, you can con
 [Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[tools]"). 
 If your question might be relevant to other people, please instead 
 [open an issue](https://github.com/mxochicale/tools/issues).
-
