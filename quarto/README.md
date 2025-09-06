@@ -1,6 +1,14 @@
 # Quarto
 > An open-source scientific and technical publishing system [https://quarto.org/]
 
+## Installation
+```bash
+bash download_install_quart.bash
+```
+* Check
+```bash
+quarto check
+```
 ## Templates 
 * Listing: http://mxochicale.github.io/tools/
 
