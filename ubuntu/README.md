@@ -69,12 +69,13 @@ That's it! You now have Ubuntu on a USB stick, bootable and ready to go.
 Simply insert the USB flash drive and either power on your computer or restart it [:link:](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#3). 
 At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F10 as alternatives) and make sure that you have set Boot from Removable Devices/USB option at the top. Save and exit BIOS. This will allow you to boot into live USB [:link:](https://itsfoss.com/reinstall-ubuntu/).
 
+
+* :warning: **NOTE** You might got a single HDD/SSD set up in RAID (RST) mode, and the Ubuntu installer won't recognize your HDD/SSD until you switch your disk setting in the BIOS from RAID to AHCI. [Please refer to Sergio's solution](https://superuser.com/questions/1672500/ubuntu-installation-with-intel-rst).
 * :warning: **NOTE** Turn off BitLocker in Windows before install Ubuntu [Watch video](https://www.youtube.com/watch?v=2mFeoiExeX0)
   * Click the Start Button and type cmd
   * Right-click the result and select Run as administrator
   * Type this command and press ENTER: bcdedit /set safeboot minimal
   * Restart the computer and enter BIOS Setup (the key to press varies between systems).
-* :warning: **NOTE** You might got a single HDD/SSD set up in RAID (RST) mode, and the Ubuntu installer won't recognize your HDD/SSD until you switch your disk setting in the BIOS from RAID to AHCI. [Please refer to Sergio's solution](https://superuser.com/questions/1672500/ubuntu-installation-with-intel-rst).
 
 ### (1.3) Setting up options for new installation
 1. Once you are in the live USB, choose to install Ubuntu. 
@@ -132,11 +133,12 @@ rm basics.bash
 * set up
 ```
 git config --global user.name "Miguel Xochicale"
-git config --global user.email "email@sth.com"
+git config --global user.email "email@gmail.com"
 ```
-* Setting up SSH keys
-See further details [here](../github/SSH.md)
-
+* Setting up SSH keys and verified commits
+	* For SSH keys [here](../github/SSH.md)
+	* For verified commits [here](../github/CHEATSHEET.md)
+	* See [more](../github)
 
 ### File Manager Preferences
 	1. Open Files
