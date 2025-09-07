@@ -9,8 +9,10 @@ bash download_install_quart.bash
 ```bash
 quarto check
 ```
-## Templates 
-* Listing: http://mxochicale.github.io/tools/
+## My templates 
+* https://github.com/mxochicale/open-healthcare-slides/tree/185b5a53fdfe32f3ff98de0734f54cd2c471183c
+* https://github.com/mxochicale/physical-ai-in-healthcare-slides/releases/tag/v0.0.1
+
 
 ## Configuration
 See [quarto-actions](https://github.com/quarto-dev/quarto-actions) to setup ci actions.
