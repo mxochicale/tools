@@ -1,6 +1,8 @@
 # LOGS for brave versions
 
-##logs
+##logs 
+# Tue Oct 28 09:13:41 PM GMT 2025 
+brave-version: 141.1.83.120; brave-version-night 142.1.86.14
 # Fri Sep  5 09:33:56 PM BST 2025
 brave-version: 139.1.81.137; brave-version-night 140.1.84.32
 # Sun 13 Jul 06:32:27 BST 2025 

@@ -12,10 +12,11 @@ bash installating-brave-browser-nightly.bash
 
 ## Commit changes
 ```
-export V=$(brave-browser --version | awk '{print $3}')
+export Vb=$(brave-browser --version | awk '{print $3}')
 export Vbn=$(brave-browser-nightly --version | awk '{print $3}')
-sed -i "/\<logs\>/ s/$/ \n# $(date) \nbrave-version: $V; brave-version-night $Vbn/" logs.md #insert date and version
-git commit -am "brave-browser $V brave-browser-nightly $Vbn #12"
+echo $Vb $Vbn
+sed -i "/\<logs\>/ s/$/ \n# $(date) \nbrave-version: $Vb; brave-version-night $Vbn/" logs.md #insert date and version
+git commit -am "brave-browser $Vb brave-browser-nightly $Vbn #12"
 git push origin main
 ```
 
