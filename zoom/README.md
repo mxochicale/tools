@@ -7,7 +7,7 @@ Download the version for Ubuntu 64-bits 16.04 from
 https://zoom.us/download
 
 ```
-sudo apt install ./zoom_amd64.deb
+sudo apt install -y ./zoom_amd64.deb
 rm zoom_amd64.deb
 ```
 
@@ -17,4 +17,8 @@ rm zoom_amd64.deb
 ## References 
 * https://linuxize.com/post/how-to-install-zoom-on-ubuntu-20-04/
 
-
+## know errors
+```
+#Thu  4 Dec 08:51:29 GMT 2025
+N: Download is performed unsandboxed as root, as file '/home/mxochicale/Downloads/zoom_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+```
