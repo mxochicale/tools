@@ -2,15 +2,17 @@
 
 ## Telling Git about your signing key
 1. Setting up your keys
-```
+```bash
 mkdir -p ~/.gnupg/private-keys-v1.d
+cd ~/.gnupg/private-keys-v1.d
 gpg --generate-key
 ```
 Provide:
 	* Real name:
 	* Email address:
-	* PassPharse
-```
+	* PassPharse:
+
+```bash
 gpg --list-secret-keys --keyid-format=long
 export GPG_TTY=$(tty)
 echo "test" | gpg --clearsign
@@ -31,7 +33,7 @@ git config -l | grep gpg
 		git config --global commit.gpgsign true
 		git config --global tag.gpgSign true
 
-		gpg --armor --export 3AA5C34371567BD2
+		gpg --armor --export 3AA5C34371567BD2 | xclip -selection c
 		#Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 		```
 		* Add the GPG key to your GitHub account.

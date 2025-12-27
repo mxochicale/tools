@@ -30,7 +30,7 @@ xclip -sel clip < ~/.ssh/id_ed25519.pub
 ```
 
 4. Add your New SSH 
-Use a name, (e.g. `ed25519_machine_OSversion`) and add it in https://github.com/settings/keys
+Use a name, (e.g. `ed25519_machine_OSversion`), select `authentification key` and add it in https://github.com/settings/keys
 
 5. Testing your SSH connection
 ```
