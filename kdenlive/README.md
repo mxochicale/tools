@@ -5,21 +5,33 @@
 
 ## Installation on Ubuntu 16.04x64, 18.04x64, 20.04x64, 22.04x64
 * In the terminal prime sudo command and type:
-```
-sudo apt-get upgrade
-sudo apt-add-repository ppa:kdenlive/kdenlive-stable && sudo apt-get update
-sudo apt-get install kdenlive
-sudo apt-add-repository --remove ppa:kdenlive/kdenlive-stable 
+```bash
+sudo apt-get install libcanberra-gtk-module libcanberra-gtk3-module
+sudo snap install kdenlive
 ```
 
-* Delete brave repository paths source lists 
-```
-sudo rm /etc/apt/sources.list.d/kdenlive-ubuntu-*
-sudo apt update
+* Remove
+```bash 
+sudo snap remove kdenlive
 ```
 
-* Remove 
-sudo apt-get purge kdenlive
+## Commit changes
+```
+
+export V=$(kdenlive --version | awk '{print $2}')
+echo $V
+os_info=$(hostnamectl | awk -F': ' '
+    /Operating System:/ {os=$2}
+    /Kernel:/ {kernel=$2}
+    /Architecture:/ {arch=$2}
+    END {print os " | " kernel " | " arch}
+')
+echo "$os_info"
+sed -i "/\<logs\>/ s/$/ \n## $(date) \nkdenlive-version: ${V} in ${os_info};/" logs.md #insert date and version
+git commit -am "kdenlive $V in ${os_info} #15"
+git push origin main
+```
+
 
 
 ## Logs

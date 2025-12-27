@@ -1,3 +1,8 @@
+logs    
+## Sat Dec 27 09:55:15 PM GMT 2025 
+kdenlive-version: 25.11.70 in Ubuntu 24.04.3 LTS | Linux 6.14.0-27-generic | x86-64;
+
+
 ## Thu 11 Jul 18:24:54 BST 2024
 kdenlive --version
 kdenlive 23.08.5
