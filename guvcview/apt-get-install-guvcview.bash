@@ -1,3 +1,2 @@
-
 sudo apt-get update -y 
-sudo apt-get install guvcview
+sudo apt-get install -y guvcview
