@@ -1,4 +1,4 @@
-# Quarto
+# Quarto [#28](https://github.com/mxochicale/tools/issues/28)
 > An open-source scientific and technical publishing system [https://quarto.org/]
 
 ## Installation
@@ -9,6 +9,19 @@ bash download_install_quart.bash
 ```bash
 quarto check
 ```
+
+## Commit changes
+```
+export V=$(quarto --version | awk '{print $1}')
+echo $V
+sed -i "/\<logs\>/ s/$/ \n \n# $(date) \n$V/" logs.md #insert date and version
+git commit -am "quarto $V #28"
+git push origin main
+```
+
+
+
+
 ## My templates 
 * https://github.com/mxochicale/open-healthcare-slides/tree/185b5a53fdfe32f3ff98de0734f54cd2c471183c
 * https://github.com/mxochicale/physical-ai-in-healthcare-slides/releases/tag/v0.0.1
