@@ -125,18 +125,16 @@ At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F1
 
 
 ## Setting up new installation
-### (2.1) Install [basics.bash](basics.bash) tools which also update and upgrade OS
-```
-cd ~/Desktop
-wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
-```
-and run
-```
-bash basics.bash
-rm basics.bash 
+
+### (2.0) Setup your keys for github
+
+* install tools
+```bash
+sudo apt-get update
+sudo apt-get install git -y
+sudo apt-get install xclip -y
 ```
 
-### (2.2) Github Setting up
 * set up
 ```
 git config --global user.name "Miguel Xochicale"
@@ -148,7 +146,18 @@ git config --global user.email "email@gmail.com"
 	* See [more](../github)
 
 
-### (2.3) Setting up `/etc/apt/sources.list`
+### (2.2) Install [basics.bash](basics.bash) tools which also update and upgrade OS
+```
+cd ~/Downloads
+wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
+```
+and run
+```
+bash basics.bash
+rm basics.bash 
+```
+
+### (2.4) Setting up `/etc/apt/sources.list`
 
 ```bash
 sudo /etc/apt/sources.list
@@ -157,19 +166,14 @@ sudo /etc/apt/sources.list
 	* Avoid random third-party repos unless necessary.
 	* Use signed repositories (GPG keys)
 
-### File Manager Preferences
+### (2.5) Personal setups 
+
+* File Manager Preferences
 	1. Open Files
 	2. Edit > Preferences> Behaviour
 	3. [CLICK] Single click to open items
 
-
-### Setting left-handed mouse
+* Setting left-handed mouse
   Go to Setting Manager to configure the left-handed mouse
-
-
-
-
-## (3) Tricks for Ubuntu
-This section contains a list a collection of tricks for Ubuntu and Ubuntu-like distributions (i.e. Debian).
 
 
