@@ -147,6 +147,16 @@ git config --global user.email "email@gmail.com"
 	* For verified commits [here](../github/CHEATSHEET.md)
 	* See [more](../github)
 
+
+### (2.3) Setting up `/etc/apt/sources.list`
+
+```bash
+sudo /etc/apt/sources.list
+```
+:warning:
+	* Avoid random third-party repos unless necessary.
+	* Use signed repositories (GPG keys)
+
 ### File Manager Preferences
 	1. Open Files
 	2. Edit > Preferences> Behaviour
@@ -155,6 +165,8 @@ git config --global user.email "email@gmail.com"
 
 ### Setting left-handed mouse
   Go to Setting Manager to configure the left-handed mouse
+
+
 
 
 ## (3) Tricks for Ubuntu
