@@ -13,6 +13,7 @@ sudo apt-get install -y vim-gtk
 sudo apt-get install -y xsel
 sudo apt-get install -y xclip
 sudo apt-get install -y tree
+sudo apt-get install -y tmux
 sudo apt-get install -y terminator
 sudo apt install make 
 

@@ -1,5 +1,7 @@
 # GNU/Linux Ubuntu installation, settings and tricks
 
+See [Ubuntu releases](https://old-releases.ubuntu.com/releases/)
+
 ## (1) Ubuntu installation via usb-stick
 
 ### (1.1) Create Booteable UBS-stick 
@@ -25,14 +27,17 @@
 		* ubuntu-24.04.2-desktop-amd64.iso  #Length: (5.9G)
 	* [Ubuntu 24.10 (Oracular Oriole)](https://releases.ubuntu.com/oracular/)
 		* /ubuntu-24.10-desktop-amd64.iso #Length: 5665497088 (5.3G)
+	* [Ubuntu 25.04 (Plucky Puffin)](https://old-releases.ubuntu.com/releases/plucky/)
+		* 	ubuntu-25.04-beta-desktop-amd64.iso	2025-03-26 20:03	5.9G
+
 
 #### Download iso image
 ```
 cd ~/Downloads && mkdir -p ubuntu && cd ~/Downloads/ubuntu
 #wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-desktop-amd64.iso
 #wget https://releases.ubuntu.com/lunar/ubuntu-23.04-desktop-amd64.iso
+wget https://old-releases.ubuntu.com/releases/noble/ubuntu-24.04-beta-desktop-amd64.iso #5.3Gb
 #wget https://releases.ubuntu.com/oracular/ubuntu-24.10-desktop-amd64.iso
-wget https://releases.ubuntu.com/noble/ubuntu-24.04.2-desktop-amd64.iso
 ```
 
 #### Launch 'Startup Disk Creator'
@@ -41,6 +46,7 @@ wget https://releases.ubuntu.com/noble/ubuntu-24.04.2-desktop-amd64.iso
 * On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'. In older versions of Ubuntu, use the top left icon to open the dash  
 * Use the search field to look for **Startup Disk Creator**   
 * Select Startup Disk Creator from the results to launch the application. 
+
 
 #### ISO and USB selection
 It's likely that both your Ubuntu ISO and the correct USB device will have been 
@@ -70,6 +76,7 @@ Simply insert the USB flash drive and either power on your computer or restart i
 At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F10 as alternatives) and make sure that you have set Boot from Removable Devices/USB option at the top. Save and exit BIOS. This will allow you to boot into live USB [:link:](https://itsfoss.com/reinstall-ubuntu/).
 
 
+* :warning: **NOTE** You might get SBAT/Secure Boot: "security policy violation": Many linux bootable USB environments use a component called shim to work with Secure Boot, where you need to disable secure boot [:link:](https://www.techstoreon.com/pages/sbat-security-policy-violation).
 * :warning: **NOTE** You might got a single HDD/SSD set up in RAID (RST) mode, and the Ubuntu installer won't recognize your HDD/SSD until you switch your disk setting in the BIOS from RAID to AHCI. [Please refer to Sergio's solution](https://superuser.com/questions/1672500/ubuntu-installation-with-intel-rst).
 * :warning: **NOTE** Turn off BitLocker in Windows before install Ubuntu [Watch video](https://www.youtube.com/watch?v=2mFeoiExeX0)
   * Click the Start Button and type cmd
