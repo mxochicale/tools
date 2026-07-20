@@ -1,8 +1,9 @@
 # Quarto [#28](https://github.com/mxochicale/tools/issues/28)
 > An open-source scientific and technical publishing system [https://quarto.org/]
 
-## Installation
+## Installation in Ubuntu amd64
 ```bash
+cd $HOME/repositories/mxochicale/tools/quarto
 bash download_install_quart.bash
 ```
 * Check
@@ -15,6 +16,8 @@ quarto check
 export V=$(quarto --version | awk '{print $1}')
 echo $V
 sed -i "/\<logs\>/ s/$/ \n \n# $(date) \n$V/" logs.md #insert date and version
+vim logs.md # to check version
+cd $HOME/repositories/mxochicale/tools
 git commit -am "quarto $V #28"
 git push origin main
 ```
