@@ -12,6 +12,7 @@ See [logs](logs.md) for installed versions
 export V=$(google-chrome --version | awk '{print $3}')
 echo $V
 sed -i "/\<Logs\>/ s/$/ \n* version: $V on $(date) /" logs.md #insert date and version
+cd ..
 git commit -am "chrome $V #44"
 git push origin main
 ```
