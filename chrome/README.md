@@ -25,6 +25,10 @@ rm -rf ~/.config/google-chrome
 rm -rf  ~/.cache/google-chrome
 ```
 
+## First time launch
+* Do not choose it as default browsers
+* Do not automatically send usage statistics and crash reports to google
+
 ## Mirrors with older versions
 https://www.slimjet.com/chrome/google-chrome-old-version.php
 http://orion.lcg.ufrj.br/RPMS/myrpms/google/
