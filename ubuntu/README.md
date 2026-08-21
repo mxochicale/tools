@@ -1,6 +1,7 @@
 # GNU/Linux Ubuntu installation, settings and tricks
 
-See [Ubuntu releases](https://old-releases.ubuntu.com/releases/)
+* [Ubuntu releases](https://old-releases.ubuntu.com/releases/)
+* [Version timeline](https://en.wikipedia.org/wiki/Ubuntu_version_history#Version_timeline)
 
 ## (1) Ubuntu installation via usb-stick
 
@@ -28,16 +29,13 @@ See [Ubuntu releases](https://old-releases.ubuntu.com/releases/)
 	* [Ubuntu 24.10 (Oracular Oriole)](https://releases.ubuntu.com/oracular/)
 		* /ubuntu-24.10-desktop-amd64.iso #Length: 5665497088 (5.3G)
 	* [Ubuntu 25.04 (Plucky Puffin)](https://old-releases.ubuntu.com/releases/plucky/)
-		* 	ubuntu-25.04-beta-desktop-amd64.iso	2025-03-26 20:03	5.9G
-
+		* ubuntu-25.04-beta-desktop-amd64.iso	2025-03-26 20:03	5.9G
+	* [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/)
+		* ubuntu-26.04-desktop-amd64.iso	2026-04-23 02:25	6.1G
 
 #### Download iso image
 ```
-cd ~/Downloads && mkdir -p ubuntu && cd ~/Downloads/ubuntu
-#wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-desktop-amd64.iso
-#wget https://releases.ubuntu.com/lunar/ubuntu-23.04-desktop-amd64.iso
-wget https://old-releases.ubuntu.com/releases/noble/ubuntu-24.04-beta-desktop-amd64.iso #5.3Gb
-#wget https://releases.ubuntu.com/oracular/ubuntu-24.10-desktop-amd64.iso
+bash download.bash
 ```
 
 #### Launch 'Startup Disk Creator'
