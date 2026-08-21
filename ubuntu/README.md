@@ -124,7 +124,20 @@ At boot time, press "F12" key to go into the BIOS settings (or Escape, F2 and F1
 
 ## Setting up new installation
 
-### (2.0) Setup your keys for github
+### (2.1) Install [basics.bash](basics.bash) tools which also update and upgrade OS
+```
+cd ~/Downloads
+wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
+```
+and run
+```
+bash basics.bash
+rm basics.bash 
+```
+
+
+
+### (2.2) Setup your keys for github
 
 * install tools
 ```bash
@@ -140,22 +153,11 @@ git config --global user.email "email@gmail.com"
 ```
 * Setting up SSH keys and verified commits
 	* For SSH keys [here](../github/SSH.md)
-	* For verified commits [here](../github/CHEATSHEET.md)
+	* (OPTIONAL in the first installation) For verified commits [here](../github/CHEATSHEET.md)
 	* See [more](../github)
 
 
-### (2.2) Install [basics.bash](basics.bash) tools which also update and upgrade OS
-```
-cd ~/Downloads
-wget https://raw.githubusercontent.com/mxochicale/tools/master/ubuntu/basics.bash
-```
-and run
-```
-bash basics.bash
-rm basics.bash 
-```
-
-### (2.4) Setting up `/etc/apt/sources.list`
+### (2.3) Setting up `/etc/apt/sources.list`
 
 ```bash
 sudo /etc/apt/sources.list
@@ -164,7 +166,7 @@ sudo /etc/apt/sources.list
 	* Avoid random third-party repos unless necessary.
 	* Use signed repositories (GPG keys)
 
-### (2.5) Personal setups 
+### (2.4) Personal setups 
 
 * File Manager Preferences
 	1. Open Files
