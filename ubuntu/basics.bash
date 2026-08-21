@@ -8,6 +8,7 @@
 sudo apt-get update
 sudo apt-get -f upgrade
 sudo apt-get install -y curl
+sudo apt-get install -y cmake
 sudo apt-get install -y git
 sudo apt-get install -y vim
 sudo apt-get install -y vim-gtk
