@@ -9,9 +9,12 @@
 * https://protonvpn.com/download-linux
 
 ```bash
-echo "deb [signed-by=/usr/share/keyrings/protonvpn-stable-archive-keyring.gpg] https://repo.protonvpn.com/debian stable main" | sudo tee /etc/apt/sources.list.d/protonvpn-stable.list
+# Remove the old repo
+sudo rm /etc/apt/sources.list.d/protonvpn.list
+# Download and install the official repo package
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb
+sudo dpkg -i protonvpn-stable-release_1.0.3-2_all.deb
 sudo apt update
-apt search protonvpn | grep -v stable-release
-sudo apt install proton-vpn-gnome-desktop
 ```
+
 
