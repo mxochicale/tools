@@ -1,3 +1,5 @@
+*.env
+
 ## pycharm project path
 .idea
 
@@ -17,3 +19,8 @@ indoor_forward_3_snapdragon_with_gt.bag
 _site/
 **/*.jekyll-cache
 **/*.lock
+
+##linkwarden
+*data
+*meili_data
+*pgdata
