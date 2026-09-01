@@ -1,10 +1,17 @@
-#logs
+# LOGS for vlc versions
 
-* Wed Jan  1 10:10:18 PM GMT 2025
+##logs
+# Tue Sep  1 01:30:14 AM BST 2026
+vlc-version: VLC version 3.0.20 Vetinari (3.0.20-0-g6f0d0ab126b)
+os: Ubuntu 24.04.4 LTS
+kernel: Linux 7.0.0-30-generic
+arch: x86-64
+
+# Wed Jan  1 10:10:18 PM GMT 2025
 vlc --version
 VLC media player 3.0.21 Vetinari (revision 3.0.21-0-gdd8bfdbabe8)
 
-* Tue 13 Dec 13:00:11 GMT 2022
+# Tue 13 Dec 13:00:11 GMT 2022
 vlc --version
 VLC media player 3.0.16 Vetinari (revision 3.0.13-8-g41878ff4f2)
 VLC version 3.0.16 Vetinari (3.0.13-8-g41878ff4f2)
