@@ -6,13 +6,25 @@ Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linu
 ```
 bash install-inkscape-latestversion.bash
 ```
-which runs:
+
+#TODO adds logs of distro-kernel-arch and software version into logs:
+
+## Push changes
+```bash
+# Extract info
+VER=$(inkscape --version | head -n1)
+os=$(hostnamectl | grep "Operating System" | sed 's/.*Operating System: //')
+kernel=$(hostnamectl | grep "Kernel" | sed 's/.*Kernel: //')
+arch=$(hostnamectl | grep "Architecture" | sed 's/.*Architecture: //')
+echo $VER $os $kernel $arch $echo
+
+# Append to logs.md
+sed -i "/\<logs\>/a # $(date)\nvlc-version: ${VER}\nos: ${os}\nkernel: ${kernel}\narch: ${arch}" logBOOK.md
+git commit -am "updates inkscpae-version $VER under $os $kernel $arch #68"
+git push origin main
 ```
-sudo add-apt-repository --yes ppa:inkscape.dev/stable
-sudo apt --yes update
-sudo apt --yes install inkscape
-sudo add-apt-repository --remove ppa:inkscape.dev/stable
-```
+
+
 
 * Logs and versions
 See logs and installed versions [here](logBOOK.md).

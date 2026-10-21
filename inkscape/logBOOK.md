@@ -1,7 +1,19 @@
+logs
+# Wed Oct 21 08:15:36 AM BST 2026
+vlc-version: Inkscape 1.4.4 (1:1.4.4+202605061435+dcaf3e7d9e)
+os: Ubuntu 26.04 LTS
+kernel: Linux 7.0.0-31-generic
+arch: x86-64
+
 
 # Tue 29 Nov 05:54:54 GMT 2022
 
 * logs
+# Wed Oct 21 08:15:36 AM BST 2026
+vlc-version: Inkscape 1.4.4 (1:1.4.4+202605061435+dcaf3e7d9e)
+os: Ubuntu 26.04 LTS
+kernel: Linux 7.0.0-31-generic
+arch: x86-64
 ```
 $ bash install-inkscape-latestversion.bash 
 [sudo] password for mxochicale: 
