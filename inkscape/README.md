@@ -7,8 +7,6 @@ Inkscape is a professional vector graphics editor for Windows, Mac OS X and Linu
 bash install-inkscape-latestversion.bash
 ```
 
-#TODO adds logs of distro-kernel-arch and software version into logs:
-
 ## Push changes
 ```bash
 # Extract info
