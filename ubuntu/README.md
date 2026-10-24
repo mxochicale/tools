@@ -32,6 +32,9 @@
 		* ubuntu-25.04-beta-desktop-amd64.iso	2025-03-26 20:03	5.9G
 	* [Ubuntu 26.04 LTS (Resolute Raccoon)](https://releases.ubuntu.com/26.04/)
 		* ubuntu-26.04-desktop-amd64.iso	2026-04-23 02:25	6.1G
+	* [Ubuntu 26.10 (Stonking Stingray)](https://releases.ubuntu.com/26.10/)
+		* ubuntu-26.10-desktop-amd64.iso	2026-10-13 14:14	6.2G
+
 
 #### Download iso image
 ```
