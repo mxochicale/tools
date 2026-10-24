@@ -36,12 +36,13 @@
 		* ubuntu-26.10-desktop-amd64.iso	2026-10-13 14:14	6.2G
 
 
-#### Download iso image
+### Download iso image
 ```
 bash download.bash
+bash rewrite-verify-USB.bash
 ```
 
-#### Launch 'Startup Disk Creator'
+### (optional) Launch 'Startup Disk Creator'
 * Install usb-creator from the terminal with`sudo apt install -y usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 * Insert your USB stick (select ‘Do nothing' if prompted by Ubuntu)  
 * On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'. In older versions of Ubuntu, use the top left icon to open the dash  

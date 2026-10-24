@@ -7,6 +7,6 @@ cd ~/Downloads && mkdir -p ubuntu && cd ~/Downloads/ubuntu
 #wget https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso
 #
 #ubuntu-26.10-desktop-amd64.iso	2026-10-13 14:14	6.2G	Desktop image for 64-bit PC (AMD64) computers (standard download)
-wget https://releases.ubuntu.com/26.10/ubuntu-26.10-desktop-amd64.iso
-#
-
+wget -c https://releases.ubuntu.com/26.10/{ubuntu-26.10-desktop-amd64.iso,SHA256SUMS,SHA256SUMS.gpg}
+#Verify the ISO against the checksum
+sha256sum -c SHA256SUMS --ignore-missing
