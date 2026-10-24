@@ -39,7 +39,7 @@ bash download.bash
 ```
 
 #### Launch 'Startup Disk Creator'
-* Install usb-creator from the terminal with`sudo apt install usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
+* Install usb-creator from the terminal with`sudo apt install -y usb-creator-gtk` [more](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 * Insert your USB stick (select ‘Do nothing' if prompted by Ubuntu)  
 * On Ubuntu 18.04 and later, use the bottom left icon to open ‘Show Applications'. In older versions of Ubuntu, use the top left icon to open the dash  
 * Use the search field to look for **Startup Disk Creator**   
