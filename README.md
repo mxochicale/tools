@@ -23,10 +23,10 @@ system for high-quality typesetting.
 * [elan](https://github.com/mxochicale/elan) Annotations on video and audio resources.
 
 ## Clone repository
-* Generate your SSH keys as suggested [here](https://github.com/mxochicale/tools/blob/main/github/SSH.md) with few extra notes.
-* Setting up signing Git commits with your signing key as suggested [here](https://github.com/mxochicale/tools/blob/main/github/CHEATSHEET.md).
+* Generate your SSH keys as suggested [here](/github/SSH.md) with few extra notes.
+* Setting up signing Git commits with your signing key as suggested [here](/github/GPG.md).
 * You can then clone the repository by typing (or copying) the following line in a terminal at your selected path in your machine:
-```
+```bash
 cd && mkdir -p repositories/mxochicale && cd repositories/mxochicale
 git clone git@github.com:mxochicale/tools.git
 ```

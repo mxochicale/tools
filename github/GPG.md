@@ -1,16 +1,16 @@
-# Cheatsheet
+# gpg keys
 
 ## Telling Git about your signing key
 1. Setting up your keys
 ```bash
-mkdir -p ~/.gnupg/private-keys-v1.d
-cd ~/.gnupg/private-keys-v1.d
+mkdir -p ~/.gnupg/private-keys-v1.d && cd ~/.gnupg/private-keys-v1.d
 gpg --generate-key
 ```
 Provide:
-	* Real name:
-	* Email address:
+	* Real name: e.g. "mxochicale"
+	* Email address: e.g. "mxochicale@users.noreply.github.com"
 	* PassPharse:
+
 
 ```bash
 gpg --list-secret-keys --keyid-format=long
