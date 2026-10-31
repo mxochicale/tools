@@ -10,23 +10,27 @@ Open a terminal in your GNU/Linux OS and follow this instructions:
 NB. ed25519 is from a branch of cryptography called "elliptic curve cryptography (ECC).
 
 1. generate key using ed25519
-```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "...@gmail.com"
+```bash
+
+MACHINE=matchwx9
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519_${MACHINE}
+
 #PRESS ENTER FOR THIS LINES
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
 ```
 
 2. Adding your SSH key to the ssh-agent
-```
+```bash
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
 
 3. Adding a new SSH key to your GitHub account
-```
+```bash
 sudo apt-get install xclip
-xclip -sel clip < ~/.ssh/id_ed25519.pub
+xclip -sel clip < ~/.ssh/id_ed25519_${MACHINE}
+
 ```
 
 4. Add your New SSH 
@@ -89,9 +93,9 @@ Hi mxochicale! You've successfully authenticated, but GitHub does not provide sh
 
 5. Set Up Git
 
-```
+```bash
 git config --global user.name "mxochicale"
-git config --global user.email "...@gmail.com"
+git config --global user.email "mxochicale@users.noreply.github.com"
 ```
 
 #### 1.1.1 Extra: adding a DEPLOY KEY
@@ -101,7 +105,7 @@ where the value looks like the below lines and is taken from id_rsa with
 
 xclip -selection clipboard < ~/.ssh/id_rsa     
 
-```
+```bash
 -----BEGIN RSA PRIVATE KEY-----
 ...
 -----END RSA PRIVATE KEY-----
@@ -113,7 +117,7 @@ Open a terminal which is based on Gitbash
 
 ### GitBash!
 Also in windows use cat instead of xclip for copying keys
-``` 
+```bash
 cat ~/.ssh/id_rsa.pub
 ```
 
@@ -121,11 +125,12 @@ cat ~/.ssh/id_rsa.pub
 ## 3. Warnings
 To solve  "Warning: the ECDSA host key for 'github.com' differs from the key for the IP address", you need to remove old keys for GitHub from your `know_host` file
 
-```
+```bash
 ssh-keygen -R github.com
 ```
+
 If you are still getting the warning you need to delete the records from the IP, as the following example 
-```
+```bash
 ssh-keygen -R 140.82.114.3
 ```
 
