@@ -3,6 +3,13 @@ The mission of PDF Labs, the creators of PDFtk, is to make PDF easier to use. [:
 
 ## Installation 
 
+### Debian
+```bash
+su -
+apt update
+apt install -y pdftk-java
+```
+
 ### Ubuntu 22.04
 ```
 sudo apt update
@@ -37,19 +44,25 @@ https://www.howtoinstall.co/en/ubuntu/trusty/pdftk
 
 ## Usage 
 
-
-### Join 1.pdf and 2.pdf into a new PDF, out.pdf
-```
+* Join 1.pdf and 2.pdf into a new PDF, out.pdf
+```bash
 pdftk 1.pdf 2.pdf cat output out.pdf
 ```
 
-```
-pdftk 1.pdf 2.pdf 3.pdf 4.pdf 5.pdf 6.pdf 7.pdf 8.pdf 9.pdf 10.pdf 11.pdf 12.pdf 13.pdf cat output out.pdf
+* Split pdf
+```bash
+pdftk input.pdf burst
 ```
 
-### Remove page 13 from in1.pdf to create out1.pdf
+* Rotate files: "north" "south" "east" "west" "left" "right" or "down"
+```bash
+pdftk input.pdf cat 1-endsouth output output.pdf
+```
+
+* Remove page 13 from in1.pdf to create out1.pdf
+```bash
 pdftk in.pdf cat 1-12 14-end output out1.pdf
-
+```
 
 
 ## References
