@@ -12,7 +12,7 @@ NB. ed25519 is from a branch of cryptography called "elliptic curve cryptography
 1. generate key using ed25519
 ```bash
 
-MACHINE=matchwx9
+MACHINE=$(hostnamectl | awk -F': ' '/Static hostname/ {print $2}')
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519_${MACHINE}
 
 #PRESS ENTER FOR THIS LINES
@@ -23,7 +23,7 @@ Enter same passphrase again:
 2. Adding your SSH key to the ssh-agent
 ```bash
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519_${MACHINE}
 ```
 
 3. Adding a new SSH key to your GitHub account
@@ -45,6 +45,28 @@ ssh -T git@github.com
 #Warning: Permanently added 'github.com,140.....' (ECDSA) to the list of known hosts.
 Hi mxochicale! You've successfully authenticated, but GitHub does not provide shell access.
 ```
+
+6. Set Up Git user name and email
+
+```bash
+git config --global user.name "mxochicale"
+git config --global user.email "mxochicale@users.noreply.github.com"
+```
+
+#### 1.1.1 Extra: adding a DEPLOY KEY
+
+Create a new secret variable called `DEPLOY_KEY` in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
+where the value looks like the below lines and is taken from id_rsa with     
+
+xclip -selection clipboard < ~/.ssh/id_rsa     
+
+```bash
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+
 
 ### 1.2 Using RSA 4096
 Open a terminal in your GNU/Linux OS and follow this instructions:
@@ -91,25 +113,6 @@ Hi mxochicale! You've successfully authenticated, but GitHub does not provide sh
 ```
 
 
-5. Set Up Git
-
-```bash
-git config --global user.name "mxochicale"
-git config --global user.email "mxochicale@users.noreply.github.com"
-```
-
-#### 1.1.1 Extra: adding a DEPLOY KEY
-
-Create a new secret variable called `DEPLOY_KEY` in `https://github.com/REPOSITORY_USER/REPOSITORY_NAME/settings/secrets`
-where the value looks like the below lines and is taken from id_rsa with     
-
-xclip -selection clipboard < ~/.ssh/id_rsa     
-
-```bash
------BEGIN RSA PRIVATE KEY-----
-...
------END RSA PRIVATE KEY-----
-```
 
 
 ## 2. Windows
@@ -120,6 +123,9 @@ Also in windows use cat instead of xclip for copying keys
 ```bash
 cat ~/.ssh/id_rsa.pub
 ```
+
+
+
 
 
 ## 3. Warnings
