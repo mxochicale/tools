@@ -16,11 +16,13 @@ sudo usermod -aG libvirt,kvm $USER
 Log out and back in (or reboot) so the group change takes effect.
 
 # Download a Windows ISO
-Get it free from Microsoft: https://www.microsoft.com/software-download/windows11 (or the Windows 10 page). 
-Choose the “Download Windows Disk Image (ISO)” option.
-```bash
-wget -c -O Win11.iso "https://software.download.prss.microsoft.com/dbazure/Windows11_Client_x64_en-us_26300_9457.iso?t=bd7870b8-29c6-4802-8ba0-a926c6f7d2ce&P1=1793445186&P2=602&P3=2&P4=bBGiSJQv8CvieyDLoV3YYzbpCkfLaPnihv1b3q4SwVx%2fcZgPEIlno3EGZCKEkjTeK022DSzjM1ZsQZJ8OTCzR3s03FAJ416pughPineVWe7z4dtTAqojoUJtn4EedwrSMlw9Q7bCXQrzOsvgy8%2f3Owi1AEhJxtnnAXqK%2bjj6pzjAcil1hpGegzDlRkXyEEtwd6jHUJa4Cb%2fy2t0j7xeBcqLDg99Ke1yxc6dXIupK6%2fOXq8O%2blEYlomw%2fROS3VNdbPHJ%2fVbpAJUvCyGjHdJkLE2m8ZzSVav1il83ipo5r%2buJPi7R3c8KMWupayCOvsZ6S7iBdJdWnr33rA3DeJETyYA%3d%3d"
-```
+Get it free from Microsoft  https://www.microsoft.com/software-download/windows11 
+where you need to select: 
+
+* `Windows 11: multi-edition ISO for x64 devices` ): 
+* Language: English 
+* Links are only valid for 24 hours from time of creation.
+* Choose the “Download Windows Disk Image (ISO)” option.
 
 # Create the virtual machine
 
