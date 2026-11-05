@@ -29,7 +29,7 @@ ssh-add ~/.ssh/id_ed25519_${MACHINE}
 3. Adding a new SSH key to your GitHub account
 ```bash
 sudo apt-get install xclip
-xclip -sel clip < ~/.ssh/id_ed25519_${MACHINE}
+xclip -sel clip < ~/.ssh/id_ed25519_${MACHINE}.pub
 
 ```
 
