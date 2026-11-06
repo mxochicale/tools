@@ -8,13 +8,24 @@
 * https://github.com/protonvpn
 * https://protonvpn.com/download-linux
 
+## installation and lauch
+
 ```bash
-# Remove the old repo
-sudo rm /etc/apt/sources.list.d/protonvpn.list
-# Download and install the official repo package
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb
-sudo dpkg -i protonvpn-stable-release_1.0.3-2_all.deb
-sudo apt update
+bash install.bash
 ```
+```bash
+protonvpn-app
+```
+
+## logs
+
+```bash
+export V=$(protonvpn-app --version 2>&1 | grep -oP 'proton-vpn-gtk-app==\K[0-9.]+')
+echo $V
+sed -i "/\<LOGS\>/ s/$/ \n## $(date) \n protonvpn-app $V;/" logs.log #insert date and version
+git commit -am "protonvpn $V #0"
+git push origin main
+```
+
 
 

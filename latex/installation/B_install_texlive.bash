@@ -16,7 +16,7 @@ echo
 echo
 
 mkdir -p $HOME/Downloads/latex && cd $HOME/Downloads/latex/install-tl-2*
-sudo ./install-tl
-
+su -c "cd $(pwd)"
+./install-tl -texdir=$HOME/texlive/2026
 rm -rf $HOME/Downloads/latex
 
