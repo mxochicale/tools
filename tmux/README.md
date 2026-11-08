@@ -1,7 +1,11 @@
 # tmux
+## dependencies
+```bash
+# Install a clipboard tool
+sudo apt install xclip        # Debian/Ubuntu
+```
 
-## config
-
+## add config
 
 ```bash
 #copy to user root path
@@ -10,6 +14,11 @@ cp .tmux.conf ~/
 # Reload inside a running tmux session
 tmux source-file ~/.tmux.conf
 ```
+
+## Copy and paste
+
+Enter copy mode with C-a [, select text with vi motions, press Enter, and paste in a non-tmux app with Ctrl+Shift+V / Cmd+V.
+
 
 ## usage
 
