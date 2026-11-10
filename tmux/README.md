@@ -15,6 +15,12 @@ cp .tmux.conf ~/
 tmux source-file ~/.tmux.conf
 ```
 
+
+## Apply config changes
+Save the file, then either:
+* In tmux: press C-a then r (your reload binding), or
+* From a shell: tmux source-file ~/.tmux.conf
+
 ## Copy and paste
 
 Enter copy mode with C-a [, select text with vi motions, press Enter, and paste in a non-tmux app with Ctrl+Shift+V / Cmd+V.
