@@ -8,9 +8,10 @@ sudo apt install xclip        # Debian/Ubuntu
 ## add config
 
 ```bash
-#copy to user root path
-cp .tmux.conf ~/
-#
+bash setup.bash
+```
+
+```bash
 # Reload inside a running tmux session
 tmux source-file ~/.tmux.conf
 ```
