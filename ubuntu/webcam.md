@@ -5,6 +5,9 @@
 # hostnamectl:
 Operating System: Ubuntu 24.04.4 LTS              
 Kernel: Linux 7.0.0-42-generic
+#after the update
+#Operating System: Ubuntu 24.04.5 LTS
+#          Kernel: Linux 7.0.0-43-generic
 
 
 # v4l2-ctl --list-devices 
@@ -14,6 +17,11 @@ ipu6 (PCI:0000:00:05.0):
     /dev/video1
     /dev/video2
     /dev/video3
+
+#after the update
+Intel MIPI Camera (platform:v4l2loopback-000):
+        /dev/video0
+
 
 ```
 
@@ -51,6 +59,18 @@ Then reboot and check:
 uname -r
 ls /dev/ipu*
 gst-launch-1.0 icamerasrc ! videoconvert ! autovideosink
+#sudo gst-launch-1.0 icamerasrc ! videoconvert ! autovideosink
 
 ```
 
+* If the device is owned by root root with no group access, add a udev rule so it gets the right permissions every time:
+```bash
+echo 'KERNEL=="ipu-psys*", GROUP="video", MODE="0660"' | sudo tee /etc/udev/rules.d/70-ipu-psys.rules
+sudo udevadm control --reload
+sudo udevadm trigger
+
+```bash
+echo 'softdep intel_ipu6_psys pre: intel_ipu6_isys' | sudo tee /etc/modprobe.d/ipu6-psys.conf
+sudo update-initramfs -u
+sudo reboot
+```
